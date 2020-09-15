@@ -1,5 +1,4 @@
 import torch
-import model
 
 
 class AllLoss(torch.nn.Module):
@@ -56,10 +55,11 @@ class AllLoss(torch.nn.Module):
         return closs
 
     def optical_loss(self, before_person_label, flow_label, flow_output):
+        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         indisize = before_person_label.size()
         indicator = torch.where(before_person_label > 0.9,
-                                torch.ones(indisize[0], indisize[1], indisize[2], indisize[3]),
-                                torch.zeros(indisize[0], indisize[1], indisize[2], indisize[3]))
+                                torch.ones(indisize[0], indisize[1], indisize[2], indisize[3]).to(device),
+                                torch.zeros(indisize[0], indisize[1], indisize[2], indisize[3]).to(device))
         se = (flow_label - flow_output) * (flow_label - flow_output)
 
         loss = torch.sum((indicator * se))
@@ -68,6 +68,7 @@ class AllLoss(torch.nn.Module):
 
 
 if __name__ == "__main__":
+    import model
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
     can_model = model.CANNet(load_weights=True)
@@ -87,7 +88,7 @@ if __name__ == "__main__":
         output_befoer_forward = can_model(x1, x2)
         output_after_forward = can_model(x2, x3)
         output_before_back = can_model(x2, x1)
-    
+
     with torch.set_grad_enabled(True):
         output_after_back = can_model(x3, x2)
 
