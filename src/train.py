@@ -1,6 +1,5 @@
 import time
 import torch
-from torch.autograd import Variable
 import torch.optim as optim
 import torchvision
 from utils import model
@@ -9,10 +8,11 @@ from utils import load_datasets as LD
 
 
 def train():
-    minibatch_size = 1
+    minibatch_size = 10
     epock_num = 1
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # device = "cpu"
 
     CANnet = model.CANNet()
     CANnet.to(device)
@@ -45,16 +45,16 @@ def train():
             tm_person, t_person, tp_person = persons[0], persons[1], persons[2]
             tm2t_flow, t2tp_flow = flows[0], flows[1]
 
-            tm_img, t_img, tp_img = Variable(tm_img).to(device, dtype=torch.float),\
-                Variable(t_img).to(device, dtype=torch.float),\
-                Variable(tp_img).to(device, dtype=torch.float)
+            tm_img, t_img, tp_img = tm_img.to(device, dtype=torch.float),\
+                t_img.to(device, dtype=torch.float),\
+                tp_img.to(device, dtype=torch.float)
 
-            tm_person, t_person, tp_person = Variable(tm_person).to(device, dtype=torch.float), \
-                Variable(t_person).to(device, dtype=torch.float), \
-                Variable(tp_person).to(device, dtype=torch.float)
+            tm_person, t_person, tp_person = tm_person.to(device, dtype=torch.float), \
+                t_person.to(device, dtype=torch.float), \
+                tp_person.to(device, dtype=torch.float)
 
-            tm2t_flow, t2tp_flow = Variable(tm2t_flow).to(device, dtype=torch.float),\
-                Variable(t2tp_flow).to(device, dtype=torch.float)
+            tm2t_flow, t2tp_flow = tm2t_flow.to(device, dtype=torch.float),\
+                t2tp_flow.to(device, dtype=torch.float)
 
             optimizer.zero_grad()
 
@@ -68,7 +68,7 @@ def train():
                              output_after_forward, output_after_back)
 
             e_loss += loss.item()
-            loss.backend()
+            loss.backward()
             optimizer.step()
 
         e_time_stop = time.time()

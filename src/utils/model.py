@@ -98,9 +98,10 @@ def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):
 
 if __name__ == "__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # device = "cpu"
     can_model = CANNet(load_weights=True)
     can_model.to(device)
-    # print(can_model)
+    print(can_model)
     # print("\n")
     x1 = torch.randn(2, 3, 720, 1280).to(device)
     x2 = torch.randn(2, 3, 720, 1280).to(device)

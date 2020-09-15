@@ -1,6 +1,7 @@
 import numpy as np
 from scipy import ndimage
 from progress.bar import Bar
+import argparse
 import cv2
 import os
 
@@ -60,6 +61,7 @@ def person_annotate_img_generator(txtfile, frame):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="This code is to make bgTrajecotries/denseTrajectories/personTrajectoris label images")
     frame_num_list = [300, 300, 250, 300, 450]
 
     for i, scene in enumerate(SceneFolderNameLis):
