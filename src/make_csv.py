@@ -1,6 +1,7 @@
 import random
 import csv
 from progress.bar import Bar
+import argparse
 
 
 def main():
@@ -11,15 +12,23 @@ def main():
         index 3: person label(step t-1), index 4: label flow(step t-1 2 t), index 5: input image(step t+1)
         index 6: preson label(step t+1), index 7: label flw(step t 2 t+1)
     """
+    parser = argparse.ArgumentParser(description="""
+                                                 Please specify the root folder of the Datasets.
+                                                 In default, path is 'E:/Dataset/TUBCrowdFlow/'
+                                                 """)
+    parser.add_argument('-p', '--path', default='E:/Dataset/TUBCrowdFlow/')
+    args = parser.parse_args()
+
     TrainPathList = []
     TrainPathDict = {}
     TestPathList = []
     TestPathDict = {}
 
     frame_num_list = [300, 300, 250, 300, 450]
-    ImgFolder = "E:/Dataset/TUBCrowdFlow/images/"
-    GTTrajFolder = "E:/Dataset/TUBCrowdFlow/gt_trajectories/"
-    GTFlowFolder = "E:/Dataset/TUBCrowdFlow/gt_flow/"
+    DatasetFolder = args.path
+    ImgFolder = DatasetFolder + "images/"
+    GTTrajFolder = DatasetFolder + "gt_trajectories/"
+    GTFlowFolder = DatasetFolder + "gt_flow/"
     GTPersonFolder = "PersonTrajectories/"
     SceneFolderNameLis = ["IM01/", "IM01_hDyn/",
                           "IM02/", "IM02_hDyn/",

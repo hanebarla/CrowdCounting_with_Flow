@@ -68,8 +68,8 @@ class AllLoss(torch.nn.Module):
 
 
 if __name__ == "__main__":
-    # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    device = "cpu"
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # device = "cpu"
     can_model = model.CANNet(load_weights=True)
     can_model.to(device)
 
@@ -83,10 +83,13 @@ if __name__ == "__main__":
     t_person = torch.randn(1, 1, 90, 160).to(device)
     tm2t_flow = torch.randn(1, 10, 90, 160).to(device)
 
-    output_befoer_forward = can_model(x1, x2)
-    output_after_forward = can_model(x2, x3)
-    output_before_back = can_model(x2, x1)
-    output_after_back = can_model(x3, x2)
+    with torch.set_grad_enabled(False):
+        output_befoer_forward = can_model(x1, x2)
+        output_after_forward = can_model(x2, x3)
+        output_before_back = can_model(x2, x1)
+    
+    with torch.set_grad_enabled(True):
+        output_after_back = can_model(x3, x2)
 
     loss = criterion(tm_person, t_person, tm2t_flow,
                      output_befoer_forward, output_before_back,

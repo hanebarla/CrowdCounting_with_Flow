@@ -2,13 +2,22 @@ import time
 import torch
 import torch.optim as optim
 import torchvision
+import argparse
 from utils import model
 from utils import functions
 from utils import load_datasets as LD
 
 
 def train():
-    minibatch_size = 10
+    parser = argparse.ArgumentParser(description="""
+                                                 Please specify the csv file of the Datasets path.
+                                                 In default, path is 'Data/TrainData_Path.csv'
+                                                 """)
+    parser.add_argument('-p', '--path', default='Data/TrainData_Path.csv')
+    args = parser.parse_args()
+    train_d_path = args.path
+
+    minibatch_size = 1
     epock_num = 1
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -21,7 +30,7 @@ def train():
     torch.backends.cudnn.benchmark = True
 
     trans = torchvision.transforms.ToTensor()
-    Traindataset = LD.CrowdDatasets(transform=trans, Trainpath="CrowdCounting_with_Flow/Data/TrainData_Path.csv")
+    Traindataset = LD.CrowdDatasets(transform=trans, Trainpath=train_d_path)
     TrainLoader = torch.utils.data.DataLoader(Traindataset, batch_size=minibatch_size, shuffle=True)
 
     criterion = functions.AllLoss()
@@ -58,10 +67,13 @@ def train():
 
             optimizer.zero_grad()
 
-            output_befoer_forward = CANnet(tm_img, t_img)
-            output_after_forward = CANnet(t_img, tp_img)
-            output_before_back = CANnet(t_img, tm_img)
-            output_after_back = CANnet(tp_img, t_img)
+            with torch.set_grad_enabled(False):
+                output_befoer_forward = CANnet(tm_img, t_img)
+                output_after_forward = CANnet(t_img, tp_img)
+                output_before_back = CANnet(t_img, tm_img)
+
+            with torch.set_grad_enabled(True):
+                output_after_back = CANnet(tp_img, t_img)
 
             loss = criterion(tm_person, t_person, tm2t_flow,
                              output_befoer_forward, output_before_back,
