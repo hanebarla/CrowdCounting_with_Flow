@@ -11,9 +11,13 @@ IP = {0: 202.5, 1: 247.5, 2: 292.5, 3: 157.5, 5: 337.5, 6: 22.5, 7: 67.5, 8: 112
 
 
 class CrowdDatasets(torch.utils.data.Dataset):
-    def __init__(self, transform=None, Trainpath="Data/TrainData_Path.csv"):
+    def __init__(self, transform=None, width=1280, height=720, Trainpath="Data/TrainData_Path.csv"):
         super().__init__()
         self.transform = transform
+        self.width = width
+        self.height = height
+        self.out_width = int(width / 8)
+        self.out_height = int(height / 8)
         with open(Trainpath) as f:
             reader = csv.reader(f)
             self.Pathes = [row for row in reader]
@@ -50,8 +54,10 @@ class CrowdDatasets(torch.utils.data.Dataset):
         return [tm_input, t_input, tp_input], [tm_person, t_person, tp_person], [tm2t_flow, t2tp_flow]
 
     def IndexProgress(self, i, gt_flow_edge, h, s):
+        oheight = self.out_height
+        owidth = self.out_width
         if i == 4:
-            grid_i = np.zeros((90, 160, 1))
+            grid_i = np.zeros((oheight, owidth, 1))
             return grid_i
         elif i == 9:
             gt_flow_edge_ndarr = np.array(gt_flow_edge)
@@ -62,13 +68,13 @@ class CrowdDatasets(torch.utils.data.Dataset):
             grid_i = np.where((h >= IP[i] * ras2bits) & (h < ((IP[i] + 45) % 360) * ras2bits), 1, 0)
             grid_i = np.array(grid_i, dtype=np.uint8)
             grid_i = s * grid_i
-            grid_i = cv2.resize(grid_i, (160, 90))  # width, height
-            grid_i_inner = grid_i[1:89, 1:159]
+            grid_i = cv2.resize(grid_i, (owidth, oheight))  # width, height
+            grid_i_inner = grid_i[1:(oheight-1), 1:(owidth-1)]
             grid_i_edge = grid_i
             grid_i_inner = np.pad(grid_i_inner, 1)
-            grid_i_edge[1:89, 1:159] = 0
-            grid_i_inner = np.reshape(grid_i_inner, (90, 160, 1))  # height, width, channel
-            grid_i_edge = np.reshape(grid_i_edge, (90, 160, 1))
+            grid_i_edge[1:(oheight-1), 1:(owidth-1)] = 0
+            grid_i_inner = np.reshape(grid_i_inner, (oheight, owidth, 1))  # height, width, channel
+            grid_i_edge = np.reshape(grid_i_edge, (oheight, owidth, 1))
             gt_flow_edge.append(grid_i_edge)
 
             return grid_i_inner
@@ -102,12 +108,16 @@ class CrowdDatasets(torch.utils.data.Dataset):
             return print("No such file: {}".format(mask_path))
 
         input_img = cv2.imread(img_path)
+        input_img = cv2.resize(input_img, (self.width, self.height))  # width, height
         input_img = cv2.cvtColor(input_img, cv2.COLOR_BGR2RGB)
+
         mask_img = cv2.imread(mask_path, 0)
+        if mask_img is None:
+            return print("CRC error: {}".format(mask_path))
         mask_img = np.reshape(mask_img, (mask_img.shape[0], mask_img.shape[1], 1))
 
         input_img = input_img / 255
-        mask_img = cv2.resize(mask_img, (160, 90)) / 255  # width, height
+        mask_img = cv2.resize(mask_img, (self.out_width, self.out_height)) / 255  # width, height
 
         input_img = self.transform(input_img)
         mask_img = self.transform(mask_img)

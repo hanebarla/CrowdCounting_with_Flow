@@ -1,4 +1,5 @@
 import torch
+import pytorch_memlab
 
 
 class AllLoss(torch.nn.Module):
@@ -73,6 +74,7 @@ if __name__ == "__main__":
     # device = "cpu"
     can_model = model.CANNet(load_weights=True)
     can_model.to(device)
+    reporter = pytorch_memlab.MemReporter(can_model)
 
     criterion = AllLoss()
 
@@ -95,7 +97,8 @@ if __name__ == "__main__":
     loss = criterion(tm_person, t_person, tm2t_flow,
                      output_befoer_forward, output_before_back,
                      output_after_forward, output_after_back)
+    loss.backward()
+    reporter.report()
 
-    print(loss)
     e_loss = loss.item()
-    print(e_loss)
+    print("loss: {}".format(e_loss))

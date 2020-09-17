@@ -3,9 +3,11 @@ import torch
 import torch.optim as optim
 import torchvision
 import argparse
+from progress.bar import Bar
 from utils import model
 from utils import functions
 from utils import load_datasets as LD
+# import pytorch_memlab as PM
 
 
 def train():
@@ -14,27 +16,37 @@ def train():
                                                  In default, path is 'Data/TrainData_Path.csv'
                                                  """)
     parser.add_argument('-p', '--path', default='Data/TrainData_Path.csv')
+    parser.add_argument('-wd', '--width', type=int, default=1280)
+    parser.add_argument('-ht', '--height', type=int, default=720)
     args = parser.parse_args()
     train_d_path = args.path
 
-    minibatch_size = 1
+    minibatch_size = 32
     epock_num = 1
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
 
     CANnet = model.CANNet()
+    if torch.cuda.device_count() > 1:
+        print("You can use {} GPUs!".format(torch.cuda.device_count()))
+        CANnet = torch.nn.DataParallel(CANnet)
     CANnet.to(device)
     CANnet.train()
+
+    # reporter = PM.MemReporter(CANnet)
 
     torch.backends.cudnn.benchmark = True
 
     trans = torchvision.transforms.ToTensor()
-    Traindataset = LD.CrowdDatasets(transform=trans, Trainpath=train_d_path)
+    Traindataset = LD.CrowdDatasets(transform=trans, width=args.width, height=args.height, Trainpath=train_d_path)
     TrainLoader = torch.utils.data.DataLoader(Traindataset, batch_size=minibatch_size, shuffle=True)
+    data_len = len(Traindataset)
 
     criterion = functions.AllLoss()
     optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8)
+
+    # reporter.report()
 
     for epock in range(epock_num):
         e_loss = 0.0
@@ -45,6 +57,8 @@ def train():
         print('Epoch {}/{}'.format(epock, epock_num))
         print('-------------')
         print('（train）')
+
+        bar = Bar('training... ', max=int(data_len/minibatch_size))
 
         for i, data in enumerate(TrainLoader):
 
@@ -82,15 +96,21 @@ def train():
             e_loss += loss.item()
             loss.backward()
             optimizer.step()
+            bar.next()
 
         e_time_stop = time.time()
-        e_time = e_time_start - e_time_stop
+        e_time = e_time_stop - e_time_start
+        bar.finish()
 
         print('-------------')
-        print('epoch {} || Epoch_Loss:{:.4f}'.format(epock, e_loss / minibatch_size))
+        print('epoch {} || Epoch_Loss:{:.4f}'.format(epock, e_loss/minibatch_size))
         print('timer:  {:.4f} sec.'.format(e_time))
 
-        print("Training Done!!")
+    print("Training Done!!")
+    # reporter.report()
+    CANnet = CANnet.to('cpu')
+    torch.save(CANnet.state_dict(), 'CrowdCounting_model_cpu_epoch_{}.pth'.format(epock_num))
+    print("Save Done!!")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ import torch.nn as nn
 import torch
 from torch.nn import functional as F
 from torchvision import models
+# from pytorch_memlab import profile
 
 
 class ContextualModule(nn.Module):
@@ -22,6 +23,7 @@ class ContextualModule(nn.Module):
         conv = nn.Conv2d(features, features, kernel_size=1, bias=False)
         return nn.Sequential(prior, conv)
 
+    # @profile
     def forward(self, feats):
         h, w = feats.size(2), feats.size(3)
         multi_scales = [F.interpolate(input=stage(feats), size=(h, w), mode='bilinear') for stage in self.scales]  # upsample
@@ -57,9 +59,10 @@ class CANNet(nn.Module):
         x1: before step img , x2: after step img
         """
         x1 = self.frontend(x1)
-        x2 = self.frontend(x2)
         x1 = self.context(x1)
-        x2 = self.context(x2)
+        with torch.set_grad_enabled(False):
+            x2 = self.frontend(x2)
+            x2 = self.context(x2)
         x = torch.cat((x1, x2), dim=1)
         x = self.backend(x)
         x = self.output_layer(x)
