@@ -105,11 +105,12 @@ def train():
         print('-------------')
         print('epoch {} || Epoch_Loss:{:.4f}'.format(epock, e_loss/minibatch_size))
         print('timer:  {:.4f} sec.'.format(e_time))
+        if (epock+1) == (epock_num-5) or (epock+1) == epock_num:
+            torch.save(CANnet.state_dict(), 'CrowdCounting_model_cpu_epoch_{}.pth'.format(epock+1))
 
     print("Training Done!!")
     # reporter.report()
     CANnet = CANnet.to('cpu')
-    torch.save(CANnet.state_dict(), 'CrowdCounting_model_cpu_epoch_{}.pth'.format(epock_num))
     print("Save Done!!")
 
 
