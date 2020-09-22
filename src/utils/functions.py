@@ -2,10 +2,11 @@ import torch
 import pytorch_memlab
 
 
-class AllLoss(torch.nn.Module):
-    def __init__(self, optical_loss_on=1):
-        super().__init__()
+class AllLoss():
+    def __init__(self, optical_loss_on=1, batchsize=1):
+        # super().__init__()
         self.optical_loss_on = optical_loss_on
+        self.bathsize = batchsize
 
     def forward(self, tm_personlabel, t_person_label, tm2t_flow_label,
                 output_before_foward, output_before_back,
@@ -26,6 +27,15 @@ class AllLoss(torch.nn.Module):
             oloss = self.optical_loss(tm_personlabel, tm2t_flow_label, output_before_foward)
             loss_combi += beta * oloss
 
+        # loss_combi /= self.bathsize
+
+        """
+        floss_nan = (torch.sum(torch.isnan(floss)).item() == 0)
+        closs_nan = (torch.sum(torch.isnan(closs)).item() == 0)
+        oloss_nan = (torch.sum(torch.isnan(oloss)).item() == 0)
+
+        print("floss_nan: {}, closs_nan: {}, oloss_nan: {}".format(floss_nan, closs_nan, oloss_nan))
+        """
         return loss_combi
 
     def flow_loss(self, output_before_forward, output_after_forward, label):
@@ -38,7 +48,7 @@ class AllLoss(torch.nn.Module):
         se_before = res_before * res_before
         se_after = res_after * res_after
 
-        floss = torch.sum((se_before + se_after))
+        floss = torch.sum((se_before + se_after)) / self.bathsize
 
         return floss
 
@@ -51,7 +61,7 @@ class AllLoss(torch.nn.Module):
         se_before = torch.sum((res_before * res_before), dim=1, keepdim=True)
         se_after = torch.sum((res_after * res_after), dim=1, keepdim=True)
 
-        closs = torch.sum((se_before + se_after))
+        closs = torch.sum((se_before + se_after)) / self.bathsize
 
         return closs
 
@@ -63,7 +73,7 @@ class AllLoss(torch.nn.Module):
                                 torch.zeros(indisize[0], indisize[1], indisize[2], indisize[3]).to(device))
         se = (flow_label - flow_output) * (flow_label - flow_output)
 
-        loss = torch.sum((indicator * se))
+        loss = torch.sum((indicator * se)) / self.bathsize
 
         return loss
 
@@ -94,9 +104,9 @@ if __name__ == "__main__":
     with torch.set_grad_enabled(True):
         output_after_back = can_model(x3, x2)
 
-    loss = criterion(tm_person, t_person, tm2t_flow,
-                     output_befoer_forward, output_before_back,
-                     output_after_forward, output_after_back)
+    loss = criterion.forward(tm_person, t_person, tm2t_flow,
+                             output_befoer_forward, output_before_back,
+                             output_after_forward, output_after_back)
     loss.backward()
     reporter.report()
 

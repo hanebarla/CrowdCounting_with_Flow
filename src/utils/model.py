@@ -1,7 +1,6 @@
 import torch.nn as nn
 import torch
 from torch.nn import functional as F
-from torchvision import models
 # from pytorch_memlab import profile
 
 
@@ -47,12 +46,14 @@ class CANNet(nn.Module):
         self.frontend = make_layers(self.frontend_feat)
         self.backend = make_layers(self.backend_feat, in_channels=1024, batch_norm=True, dilation=True)
         self.output_layer = nn.Conv2d(64, 10, kernel_size=1)  # フロー用の
+        """
         if not load_weights:
             mod = models.vgg16(pretrained=True)
             self._initialize_weights()
             for i in range(len(self.frontend.state_dict().items())):
                 list(self.frontend.state_dict().items())[i][1].data[:] = list(mod.state_dict().items())[i][1].data[:]
                 # TypeError: 'odict_items' object does not support indexing .items()[i][1].data[:]
+        """
 
     def forward(self, x1, x2):
         """

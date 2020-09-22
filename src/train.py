@@ -1,8 +1,8 @@
-import time
 import torch
 import torch.optim as optim
 import torchvision
 import argparse
+import matplotlib.pyplot as plt
 from progress.bar import Bar
 from utils import model
 from utils import functions
@@ -22,7 +22,7 @@ def train():
     train_d_path = args.path
 
     minibatch_size = 32
-    epock_num = 1
+    epock_num = 50
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
@@ -43,22 +43,23 @@ def train():
     TrainLoader = torch.utils.data.DataLoader(Traindataset, batch_size=minibatch_size, shuffle=True)
     data_len = len(Traindataset)
 
-    criterion = functions.AllLoss()
-    optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8)
+    criterion = functions.AllLoss(batchsize=minibatch_size)
+    # optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.9)
+    optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.5)
 
     # reporter.report()
+
+    losses = []
 
     for epock in range(epock_num):
         e_loss = 0.0
 
-        e_time_start = time.time()
-
         print('-------------')
-        print('Epoch {}/{}'.format(epock, epock_num))
+        print('Epoch {}/{}'.format(epock+1, epock_num))
         print('-------------')
         print('（train）')
 
-        bar = Bar('training... ', max=int(data_len/minibatch_size))
+        bar = Bar('training... ', max=int(data_len/minibatch_size)+1)
 
         for i, data in enumerate(TrainLoader):
 
@@ -89,28 +90,33 @@ def train():
             with torch.set_grad_enabled(True):
                 output_after_back = CANnet(tp_img, t_img)
 
-            loss = criterion(tm_person, t_person, tm2t_flow,
-                             output_befoer_forward, output_before_back,
-                             output_after_forward, output_after_back)
+            loss = criterion.forward(tm_person, t_person, tm2t_flow,
+                                     output_befoer_forward, output_before_back,
+                                     output_after_forward, output_after_back)
 
-            e_loss += loss.item()
+            e_loss += loss.item()/int(data_len/minibatch_size)
             loss.backward()
             optimizer.step()
             bar.next()
 
-        e_time_stop = time.time()
-        e_time = e_time_stop - e_time_start
         bar.finish()
 
+        losses.append(e_loss)
         print('-------------')
-        print('epoch {} || Epoch_Loss:{:.4f}'.format(epock, e_loss/minibatch_size))
-        print('timer:  {:.4f} sec.'.format(e_time))
+        print('epoch {} || Epoch_Loss:{}'.format(epock+1, e_loss))
+        if (epock+1) == (epock_num-5) or (epock+1) == epock_num:
+            torch.save(CANnet.state_dict(), 'CrowdCounting_model_cpu_epoch_{}.pth'.format(epock+1))
 
     print("Training Done!!")
     # reporter.report()
-    CANnet = CANnet.to('cpu')
-    torch.save(CANnet.state_dict(), 'CrowdCounting_model_cpu_epoch_{}.pth'.format(epock_num))
-    print("Save Done!!")
+    # CANnet = CANnet.to('cpu')
+    # print("Save Done!!")
+
+    x = [i for i in range(len(losses))]
+    plt.plot(x, losses)
+    plt.title("loss")
+    plt.show()
+    plt.savefig("loss_record.png")
 
 
 if __name__ == "__main__":
