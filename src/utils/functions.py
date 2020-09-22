@@ -24,7 +24,10 @@ class AllLoss():
         loss_combi = floss + alpha * closs
 
         if self.optical_loss_on == 1:
-            oloss = self.optical_loss(tm_personlabel, tm2t_flow_label, output_before_foward)
+            oloss = self.optical_loss(
+                tm_personlabel,
+                tm2t_flow_label,
+                output_before_foward)
             loss_combi += beta * oloss
 
         # loss_combi /= self.bathsize
@@ -45,8 +48,8 @@ class AllLoss():
         res_before = label - est_sum_before
         res_after = label - est_sum_after
 
-        se_before = res_before * res_before
-        se_after = res_after * res_after
+        se_before = res_before * res_before / self.bathsize
+        se_after = res_after * res_after / self.bathsize
 
         floss = torch.sum((se_before + se_after)) / self.bathsize
 
@@ -58,8 +61,14 @@ class AllLoss():
         res_before = output_before_foward - output_before_back
         res_after = output_after_foward - output_after_back
 
-        se_before = torch.sum((res_before * res_before), dim=1, keepdim=True)
-        se_after = torch.sum((res_after * res_after), dim=1, keepdim=True)
+        se_before = torch.sum(
+            (res_before * res_before),
+            dim=1,
+            keepdim=True) / self.bathsize
+        se_after = torch.sum(
+            (res_after * res_after),
+            dim=1,
+            keepdim=True) / self.bathsize
 
         closs = torch.sum((se_before + se_after)) / self.bathsize
 
@@ -68,10 +77,20 @@ class AllLoss():
     def optical_loss(self, before_person_label, flow_label, flow_output):
         device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         indisize = before_person_label.size()
-        indicator = torch.where(before_person_label > 0.9,
-                                torch.ones(indisize[0], indisize[1], indisize[2], indisize[3]).to(device),
-                                torch.zeros(indisize[0], indisize[1], indisize[2], indisize[3]).to(device))
-        se = (flow_label - flow_output) * (flow_label - flow_output)
+        indicator = torch.where(
+            before_person_label > 0.9,
+            torch.ones(
+                indisize[0],
+                indisize[1],
+                indisize[2],
+                indisize[3]).to(device),
+            torch.zeros(
+                indisize[0],
+                indisize[1],
+                indisize[2],
+                indisize[3]).to(device))
+        se = (flow_label - flow_output) * \
+            (flow_label - flow_output) / self.bathsize
 
         loss = torch.sum((indicator * se)) / self.bathsize
 

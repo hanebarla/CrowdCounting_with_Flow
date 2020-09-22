@@ -39,13 +39,26 @@ def train():
     torch.backends.cudnn.benchmark = True
 
     trans = torchvision.transforms.ToTensor()
-    Traindataset = LD.CrowdDatasets(transform=trans, width=args.width, height=args.height, Trainpath=train_d_path)
-    TrainLoader = torch.utils.data.DataLoader(Traindataset, batch_size=minibatch_size, shuffle=True)
+    Traindataset = LD.CrowdDatasets(
+        transform=trans,
+        width=args.width,
+        height=args.height,
+        Trainpath=train_d_path)
+
+    TrainLoader = torch.utils.data.DataLoader(
+        Traindataset, batch_size=minibatch_size, shuffle=True)
     data_len = len(Traindataset)
 
     criterion = functions.AllLoss(batchsize=minibatch_size)
     # optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.9)
-    optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.5)
+    optimizer = optim.Adam(
+        CANnet.parameters(),
+        lr=0.001,
+        betas=(
+            0.9,
+            0.999),
+        eps=1e-8,
+        weight_decay=0.5)
 
     # reporter.report()
 
@@ -55,11 +68,11 @@ def train():
         e_loss = 0.0
 
         print('-------------')
-        print('Epoch {}/{}'.format(epock+1, epock_num))
+        print('Epoch {}/{}'.format(epock + 1, epock_num))
         print('-------------')
         print('（train）')
 
-        bar = Bar('training... ', max=int(data_len/minibatch_size)+1)
+        bar = Bar('training... ', max=int(data_len / minibatch_size) + 1)
 
         for i, data in enumerate(TrainLoader):
 
@@ -73,9 +86,10 @@ def train():
                 t_img.to(device, dtype=torch.float),\
                 tp_img.to(device, dtype=torch.float)
 
-            tm_person, t_person, tp_person = tm_person.to(device, dtype=torch.float), \
-                t_person.to(device, dtype=torch.float), \
-                tp_person.to(device, dtype=torch.float)
+            tm_person, t_person, tp_person = tm_person.to(
+                device, dtype=torch.float), t_person.to(
+                device, dtype=torch.float), tp_person.to(
+                device, dtype=torch.float)
 
             tm2t_flow, t2tp_flow = tm2t_flow.to(device, dtype=torch.float),\
                 t2tp_flow.to(device, dtype=torch.float)
@@ -94,7 +108,7 @@ def train():
                                      output_befoer_forward, output_before_back,
                                      output_after_forward, output_after_back)
 
-            e_loss += loss.item()/int(data_len/minibatch_size)
+            e_loss += loss.item() / int(data_len / minibatch_size)
             loss.backward()
             optimizer.step()
             bar.next()
@@ -103,9 +117,12 @@ def train():
 
         losses.append(e_loss)
         print('-------------')
-        print('epoch {} || Epoch_Loss:{}'.format(epock+1, e_loss))
-        if (epock+1) == (epock_num-5) or (epock+1) == epock_num:
-            torch.save(CANnet.state_dict(), 'CrowdCounting_model_cpu_epoch_{}.pth'.format(epock+1))
+        print('epoch {} || Epoch_Loss:{}'.format(epock + 1, e_loss))
+        if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num:
+            torch.save(
+                CANnet.state_dict(),
+                'CrowdCounting_model_cpu_epoch_{}.pth'.format(
+                    epock + 1))
 
     print("Training Done!!")
     # reporter.report()
