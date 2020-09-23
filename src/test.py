@@ -45,9 +45,14 @@ def test():
         Testdataset, batch_size=minibatch_size, shuffle=False)
     data_len = len(Testdataset)
 
-    # mae = []
-    # rmse = []
+    # Loss Func
+    mae = torch.nn.L1Loss()
+    mse = torch.nn.MSELoss()
 
+    all_mae = 0
+    all_rmse = 0
+
+    bar = Bar('testing... ', max=int(data_len / minibatch_size) + 1)
     for i, data in enumerate(TestLoader):
         inputs, persons, flows = data
 
@@ -57,9 +62,7 @@ def test():
 
         tm_img, t_img = tm_img.to(device, dtype=torch.float),\
             t_img.to(device, dtype=torch.float)
-
         t_person = t_person.to(device, dtype=torch.float)
-
         tm2t_flow = tm2t_flow.to(device, dtype=torch.float)
 
         with torch.set_grad_enabled(False):
@@ -67,9 +70,15 @@ def test():
 
         output = torch.sum(output_before_forward, dim=1, keepdim=True)
 
-        loss = F.mse_loss(output, t_person)
+        d_mae = mae(output, t_person)
+        d_mse = mse(output, t_person)
+        d_rmse = torch.sqrt(d_mse)
 
-        print(loss)
+        all_mae += d_mae
+        all_rmse += d_rmse
+        bar.next()
+    bar.finish()
+    print("MAE: {}, RMSE: {}".format(all_mae, all_rmse))
 
 
 if __name__ == "__main__":
