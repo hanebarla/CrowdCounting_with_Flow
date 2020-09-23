@@ -1,23 +1,24 @@
+import csv
+import os
+
+import cv2
+import numpy as np
 import torch
 import torchvision
-import numpy as np
-import cv2
-import os
-import csv
-
 
 ras2bits = 0.71
 IP = {0: 202.5, 1: 247.5, 2: 292.5, 3: 157.5, 5: 337.5, 6: 22.5, 7: 67.5, 8: 112.5}
 
 
 class CrowdDatasets(torch.utils.data.Dataset):
-    def __init__(self, transform=None, width=1280, height=720, Trainpath="Data/TrainData_Path.csv"):
+    def __init__(self, transform=None, width=1280, height=720, Trainpath="Data/TrainData_Path.csv", test_on=False):
         super().__init__()
         self.transform = transform
         self.width = width
         self.height = height
         self.out_width = int(width / 8)
         self.out_height = int(height / 8)
+        self.test_on = test_on
         with open(Trainpath) as f:
             reader = csv.reader(f)
             self.Pathes = [row for row in reader]
@@ -29,29 +30,55 @@ class CrowdDatasets(torch.utils.data.Dataset):
         """
         CSV Pathlist reference
         -------
-            index 0: input image(step t), index 1: person label(step t),
-            index 2: input image(step t-1), index 3: person label(step t-1),
-            index 4: label flow(step t-1 2 t),
-            index 5: input image(step t+1), index 6: preson label(step t+1),
-            index 7: label flw(step t 2 t+1)
+            train
+                index 0: input image(step t),
+                index 1: person label(step t),
+                index 2: input label(step t-1),
+                index 3: person label(step t-1),
+                index 4: label flow(step t-1 2 t),
+                index 5: input image(step t+1),
+                index 6: preson label(step t+1),
+                index 7: label flow(step t 2 t+1)
+
+            test
+                index 0: input image(step tm),
+                index 1: person label(step tm),
+                index 2: input image(step t),
+                index 3: person label(step t),
+                index 4: label flow(step tm 2 t)
         """
-        pathlist = self.Pathes[index]
-        t_img_path = pathlist[0]
-        t_person_path = pathlist[1]
-        t_m_img_path = pathlist[2]
-        t_m_person_path = pathlist[3]
-        t_m_t_flow_path = pathlist[4]
-        t_p_img_path = pathlist[5]
-        t_p_person_path = pathlist[6]
-        t_t_p_flow_path = pathlist[7]
+        if self.test_on:
+            test_pathlist = self.Pathes[index]
+            tm_img_path = test_pathlist[0]
+            tm_person_path = test_pathlist[1]
+            t_img_path = test_pathlist[2]
+            t_person_path = test_pathlist[3]
+            tm2t_flow_path = test_pathlist[4]
 
-        t_input, t_person = self.gt_img_density(t_img_path, t_person_path)
-        tm_input, tm_person = self.gt_img_density(t_m_img_path, t_m_person_path)
-        tp_input, tp_person = self.gt_img_density(t_p_img_path, t_p_person_path)
-        tm2t_flow = self.gt_flow(t_m_t_flow_path)
-        t2tp_flow = self.gt_flow(t_t_p_flow_path)
+            t_input, t_person = self.gt_img_density(t_img_path, tm_img_path)
+            tm_input, tm_person = self.gt_img_density(tm_img_path, tm_person_path)
+            tm2t_flow = self.gt_flow(tm2t_flow_path)
 
-        return [tm_input, t_input, tp_input], [tm_person, t_person, tp_person], [tm2t_flow, t2tp_flow]
+            return [tm_input, t_input], [t_person], [tm2t_flow]
+
+        else:
+            pathlist = self.Pathes[index]
+            t_img_path = pathlist[0]
+            t_person_path = pathlist[1]
+            t_m_img_path = pathlist[2]
+            t_m_person_path = pathlist[3]
+            t_m_t_flow_path = pathlist[4]
+            t_p_img_path = pathlist[5]
+            t_p_person_path = pathlist[6]
+            t_t_p_flow_path = pathlist[7]
+
+            t_input, t_person = self.gt_img_density(t_img_path, t_person_path)
+            tm_input, tm_person = self.gt_img_density(t_m_img_path, t_m_person_path)
+            tp_input, tp_person = self.gt_img_density(t_p_img_path, t_p_person_path)
+            tm2t_flow = self.gt_flow(t_m_t_flow_path)
+            t2tp_flow = self.gt_flow(t_t_p_flow_path)
+
+            return [tm_input, t_input, tp_input], [tm_person, t_person, tp_person], [tm2t_flow, t2tp_flow]
 
     def IndexProgress(self, i, gt_flow_edge, h, s):
         oheight = self.out_height

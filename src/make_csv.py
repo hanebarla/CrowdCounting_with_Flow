@@ -8,9 +8,22 @@ def main():
     """
     csv format
     --------
-        index 0: input image(step t), index 1: person label(step t), index 2: input label(step t-1),
-        index 3: person label(step t-1), index 4: label flow(step t-1 2 t), index 5: input image(step t+1)
-        index 6: preson label(step t+1), index 7: label flw(step t 2 t+1)
+        train
+            index 0: input image(step t),
+            index 1: person label(step t),
+            index 2: input label(step t-1),
+            index 3: person label(step t-1),
+            index 4: label flow(step t-1 2 t),
+            index 5: input image(step t+1),
+            index 6: preson label(step t+1),
+            index 7: label flow(step t 2 t+1)
+
+        test
+            index 0: input image(step tm),
+            index 1: person label(step tm),
+            index 2: input image(step t),
+            index 3: person label(step t),
+            index 4: label flow(step tm 2 t)
     """
     parser = argparse.ArgumentParser(description="""
                                                  Please specify the root folder of the Datasets.
@@ -41,31 +54,40 @@ def main():
         frame_num = frame_num_list[int(i / 2)]
         gtTraj_img_path = GTTrajFolder + scene + GTPersonFolder
         for fr in range(frame_num - 2):
-            t_m = fr
+            tm = fr
             t = fr + 1
-            t_p = fr + 2
+            tp = fr + 2
 
             t_img_path = ImgFolder + scene + "frame_{:0=4}.png".format(t)
-            t_m_img_path = ImgFolder + scene + "frame_{:0=4}.png".format(t_m)
-            t_p_img_path = ImgFolder + scene + "frame_{:0=4}.png".format(t_p)
+            tm_img_path = ImgFolder + scene + "frame_{:0=4}.png".format(tm)
+            tp_img_path = ImgFolder + scene + "frame_{:0=4}.png".format(tp)
 
             t_person_img_path = gtTraj_img_path + "PersonTrajectories_frame_{:0=4}.png".format(t)
-            t_m_person_img_path = gtTraj_img_path + "PersonTrajectories_frame_{:0=4}.png".format(t_m)
-            t_p_person_img_path = gtTraj_img_path + "PersonTrajectories_frame_{:0=4}.png".format(t_p)
+            tm_person_img_path = gtTraj_img_path + "PersonTrajectories_frame_{:0=4}.png".format(tm)
+            tp_person_img_path = gtTraj_img_path + "PersonTrajectories_frame_{:0=4}.png".format(tp)
 
-            t_m_t_flow_path = GTFlowFolder + scene + "frameGT_{:0=4}.png".format(t_m)
-            t_t_p_flow_path = GTFlowFolder + scene + "frameGT_{:0=4}.png".format(t)
+            tm2t_flow_path = GTFlowFolder + scene + "frameGT_{:0=4}.png".format(tm)
+            t2tp_flow_path = GTFlowFolder + scene + "frameGT_{:0=4}.png".format(t)
 
-            PathList_per_frame = [t_img_path, t_person_img_path,
-                                  t_m_img_path, t_m_person_img_path, t_m_t_flow_path,
-                                  t_p_img_path, t_p_person_img_path, t_t_p_flow_path]
-
-            if int(i / 2) < 3:
+            if int(i / 2) < 3:  # TrainPathes
+                PathList_per_frame = [t_img_path, t_person_img_path,
+                                      tm_img_path, tm_person_img_path, tm2t_flow_path,
+                                      tp_img_path, tp_person_img_path, t2tp_flow_path]
                 TrainPathList.append(t_img_path)
                 TrainPathDict[t_img_path] = PathList_per_frame
-            else:
+            else:  # TestPathes
+                if fr == 0:
+                    tm_PathList_per_frame = [tm_img_path, tm_person_img_path,
+                                             t_img_path, t_person_img_path,
+                                             tm2t_flow_path]
+                    TestPathList.append(tm_img_path)
+                    TestPathDict[tm_img_path] = tm_PathList_per_frame
+
+                t_PathList_per_frame = [t_img_path, t_person_img_path,
+                                        tp_img_path, tp_person_img_path,
+                                        t2tp_flow_path]
                 TestPathList.append(t_img_path)
-                TestPathDict[t_img_path] = PathList_per_frame
+                TestPathDict[t_img_path] = t_PathList_per_frame
 
         bar.next()
     bar.finish()
@@ -76,7 +98,7 @@ def main():
         for path in TrainPathList:
             writer.writerow(TrainPathDict[path])
 
-    with open("TestData_path.csv", "w", newline='') as f:
+    with open("TestData_Path.csv", "w", newline='') as f:
         writer = csv.writer(f)
         for path in TestPathList:
             writer.writerow(TestPathDict[path])

@@ -50,13 +50,10 @@ def train():
     data_len = len(Traindataset)
 
     criterion = functions.AllLoss(batchsize=minibatch_size)
-    # optimizer = optim.Adam(CANnet.parameters(), lr=0.001, betas=(0.9, 0.999), eps=1e-8, weight_decay=0.9)
     optimizer = optim.Adam(
         CANnet.parameters(),
         lr=0.001,
-        betas=(
-            0.9,
-            0.999),
+        betas=(0.9, 0.999),
         eps=1e-8,
         weight_decay=0.5)
 
