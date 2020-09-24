@@ -32,6 +32,8 @@ def main():
     parser.add_argument('-p', '--path', default='E:/Dataset/TUBCrowdFlow/')
     args = parser.parse_args()
 
+    AllPathList = []
+    AllPathDict = {}
     TrainPathList = []
     TrainPathDict = {}
     TestPathList = []
@@ -69,6 +71,18 @@ def main():
             tm2t_flow_path = GTFlowFolder + scene + "frameGT_{:0=4}.png".format(tm)
             t2tp_flow_path = GTFlowFolder + scene + "frameGT_{:0=4}.png".format(t)
 
+            if fr == 0:
+                all_pathlist_per_frame = [tm_img_path, tm_person_img_path,
+                                          t_img_path, t_person_img_path,
+                                          tm2t_flow_path]
+                AllPathList.append(tm_img_path)
+                AllPathDict[tm_img_path] = all_pathlist_per_frame
+            all_pathlist_per_frame = [t_img_path, t_person_img_path,
+                                      tp_img_path, tp_person_img_path,
+                                      t2tp_flow_path]
+            AllPathList.append(t_img_path)
+            AllPathDict[t_img_path] = all_pathlist_per_frame
+
             if int(i / 2) < 3:  # TrainPathes
                 PathList_per_frame = [t_img_path, t_person_img_path,
                                       tm_img_path, tm_person_img_path, tm2t_flow_path,
@@ -102,6 +116,11 @@ def main():
         writer = csv.writer(f)
         for path in TestPathList:
             writer.writerow(TestPathDict[path])
+
+    with open("AllData_Path.csv", "w", newline='') as f:
+        writer = csv.writer(f)
+        for path in AllPathList:
+            writer.writerow(AllPathDict[path])
 
     print("Done")
 

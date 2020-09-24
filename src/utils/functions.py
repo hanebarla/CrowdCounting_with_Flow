@@ -1,5 +1,9 @@
+import os
+import cv2
+import numpy as np
 import torch
 import pytorch_memlab
+# from utils  import model
 
 
 class AllLoss():
@@ -97,8 +101,22 @@ class AllLoss():
         return loss
 
 
+def output_to_img(output):
+    root = os.getcwd()
+    imgfolder = root + "/images/"
+
+    output_num = output.detach().cpu().numpy()
+    out = output_num[0, 0, :, :]
+
+    heatmap = cv2.resize(out, (out.shape[1]*8, out.shape[0]*8))
+    heatmap = np.array(heatmap*255, dtype=np.uint8)
+
+    cv2.imwrite(imgfolder+"test.png", heatmap)
+
+
 if __name__ == "__main__":
-    import model
+    import CrowdCounting_with_Flow.src.utils.model as model
+
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
     can_model = model.CANNet(load_weights=True)

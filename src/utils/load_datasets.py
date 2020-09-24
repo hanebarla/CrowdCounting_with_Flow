@@ -55,7 +55,7 @@ class CrowdDatasets(torch.utils.data.Dataset):
             t_person_path = test_pathlist[3]
             tm2t_flow_path = test_pathlist[4]
 
-            t_input, t_person = self.gt_img_density(t_img_path, tm_img_path)
+            t_input, t_person = self.gt_img_density(t_img_path, t_person_path)
             tm_input, tm_person = self.gt_img_density(tm_img_path, tm_person_path)
             tm2t_flow = self.gt_flow(tm2t_flow_path)
 

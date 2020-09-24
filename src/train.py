@@ -69,7 +69,7 @@ def train():
         print('-------------')
         print('（train）')
 
-        bar = Bar('training... ', max=int(data_len / minibatch_size) + 1)
+        bar = Bar('training... ', max=int(-(-data_len // minibatch_size)))
 
         for i, data in enumerate(TrainLoader):
 
@@ -105,7 +105,7 @@ def train():
                                      output_befoer_forward, output_before_back,
                                      output_after_forward, output_after_back)
 
-            e_loss += loss.item() / int(data_len / minibatch_size)
+            e_loss += loss.item() / int(-(-data_len // minibatch_size))
             loss.backward()
             optimizer.step()
             bar.next()
