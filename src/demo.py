@@ -2,7 +2,6 @@ import torch
 import torch.nn.functional as F
 import torchvision
 import argparse
-import matplotlib.pyplot as plt
 from progress.bar import Bar
 from utils import model
 from utils import functions
@@ -18,7 +17,7 @@ def demo():
     parser.add_argument('-p', '--path', default='TestData_Path.csv')  # Testdata path csv
     parser.add_argument('-wd', '--width', type=int, default=640)  # image width that input to model
     parser.add_argument('-ht', '--height', type=int, default=360)  # image height thta input to model
-    parser.add_argument('-mw', '--model_weight', default="CrowdCounting_model_cpu_epoch_50.pth")
+    parser.add_argument('-mw', '--model_weight', default="CrowdCounting_model_cpu_epoch_45.pth")
 
     args = parser.parse_args()
     test_d_path = args.path

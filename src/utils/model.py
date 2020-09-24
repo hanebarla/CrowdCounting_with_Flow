@@ -54,6 +54,8 @@ class CANNet(nn.Module):
                 list(self.frontend.state_dict().items())[i][1].data[:] = list(mod.state_dict().items())[i][1].data[:]
                 # TypeError: 'odict_items' object does not support indexing .items()[i][1].data[:]
         """
+        if not load_weights:
+            self._initialize_weights()
 
     def forward(self, x1, x2):
         """
@@ -75,10 +77,10 @@ class CANNet(nn.Module):
             if isinstance(m, nn.Conv2d):
                 nn.init.normal_(m.weight, std=0.01)
                 if m.bias is not None:
-                    nn.init.constant_(m.bias, 0)
+                    nn.init.constant_(m.bias, 0.01)
             elif isinstance(m, nn.BatchNorm2d):
-                nn.init.constant_(m.weight, 1)
-                nn.init.constant_(m.bias, 0)
+                nn.init.constant_(m.weight, 0.9)
+                nn.init.constant_(m.bias, 0.01)
 
 
 def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):

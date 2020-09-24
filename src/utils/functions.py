@@ -2,7 +2,7 @@ import os
 import cv2
 import numpy as np
 import torch
-import pytorch_memlab
+# import pytorch_memlab
 # from utils  import model
 
 
@@ -52,8 +52,8 @@ class AllLoss():
         res_before = label - est_sum_before
         res_after = label - est_sum_after
 
-        se_before = res_before * res_before / self.bathsize
-        se_after = res_after * res_after / self.bathsize
+        se_before = res_before * res_before
+        se_after = res_after * res_after
 
         floss = torch.sum((se_before + se_after)) / self.bathsize
 
@@ -115,23 +115,23 @@ def output_to_img(output):
 
 
 if __name__ == "__main__":
-    import CrowdCounting_with_Flow.src.utils.model as model
+    import model
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
     can_model = model.CANNet(load_weights=True)
     can_model.to(device)
-    reporter = pytorch_memlab.MemReporter(can_model)
+    # reporter = pytorch_memlab.MemReporter(can_model)
 
     criterion = AllLoss()
 
-    x1 = torch.randn(1, 3, 720, 1280).to(device)
-    x2 = torch.randn(1, 3, 720, 1280).to(device)
-    x3 = torch.randn(1, 3, 720, 1280).to(device)
+    x1 = torch.ones(1, 3, 720, 1280).to(device)
+    x2 = torch.ones(1, 3, 720, 1280).to(device)
+    x3 = torch.ones(1, 3, 720, 1280).to(device)
 
-    tm_person = torch.randn(1, 1, 90, 160).to(device)
-    t_person = torch.randn(1, 1, 90, 160).to(device)
-    tm2t_flow = torch.randn(1, 10, 90, 160).to(device)
+    tm_person = torch.zeros(1, 1, 90, 160).to(device)
+    t_person = torch.zeros(1, 1, 90, 160).to(device)
+    tm2t_flow = torch.zeros(1, 10, 90, 160).to(device)
 
     with torch.set_grad_enabled(False):
         output_befoer_forward = can_model(x1, x2)
@@ -145,7 +145,7 @@ if __name__ == "__main__":
                              output_befoer_forward, output_before_back,
                              output_after_forward, output_after_back)
     loss.backward()
-    reporter.report()
+    # reporter.report()
 
     e_loss = loss.item()
     print("loss: {}".format(e_loss))

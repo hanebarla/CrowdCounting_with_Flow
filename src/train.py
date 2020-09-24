@@ -22,7 +22,7 @@ def train():
     train_d_path = args.path
 
     minibatch_size = 32
-    epock_num = 50
+    epock_num = 10
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
@@ -31,6 +31,8 @@ def train():
     if torch.cuda.device_count() > 1:
         print("You can use {} GPUs!".format(torch.cuda.device_count()))
         CANnet = torch.nn.DataParallel(CANnet)
+    for p in CANnet.parameters():
+        p.data.clamp_(-1.0, 1.0)
     CANnet.to(device)
     CANnet.train()
 
@@ -95,11 +97,11 @@ def train():
 
             with torch.set_grad_enabled(False):
                 output_befoer_forward = CANnet(tm_img, t_img)
-                output_after_forward = CANnet(t_img, tp_img)
                 output_before_back = CANnet(t_img, tm_img)
+                output_after_back = CANnet(tp_img, t_img)
 
             with torch.set_grad_enabled(True):
-                output_after_back = CANnet(tp_img, t_img)
+                output_after_forward = CANnet(t_img, tp_img)
 
             loss = criterion.forward(tm_person, t_person, tm2t_flow,
                                      output_befoer_forward, output_before_back,
@@ -118,8 +120,7 @@ def train():
         if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num:
             torch.save(
                 CANnet.state_dict(),
-                'CrowdCounting_model_cpu_epoch_{}.pth'.format(
-                    epock + 1))
+                'CrowdCounting_{}_{}_epoch_{}.pth'.format(args.height, args.width, epock + 1))
 
     print("Training Done!!")
     # reporter.report()

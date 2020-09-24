@@ -121,7 +121,7 @@ class CrowdDatasets(torch.utils.data.Dataset):
             gt_flow_list.append(grid_i)
 
         gt_flow_img_data = np.concatenate(gt_flow_list, axis=2)
-        gt_flow_img_data /= 255
+        gt_flow_img_data /= np.max(gt_flow_img_data)
 
         gt_flow_img_data = self.transform(gt_flow_img_data)
 

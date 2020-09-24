@@ -2,7 +2,6 @@ import torch
 import torch.nn.functional as F
 import torchvision
 import argparse
-import matplotlib.pyplot as plt
 from progress.bar import Bar
 from utils import model
 from utils import functions
@@ -66,6 +65,9 @@ def test():
             t_img.to(device, dtype=torch.float)
         t_person = t_person.to(device, dtype=torch.float)
         tm2t_flow = tm2t_flow.to(device, dtype=torch.float)
+
+        flow = torch.sum(tm2t_flow, dim=1)
+        print(torch.max(flow))
 
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
