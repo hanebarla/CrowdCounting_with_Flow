@@ -67,7 +67,6 @@ def test():
         tm2t_flow = tm2t_flow.to(device, dtype=torch.float)
 
         flow = torch.sum(tm2t_flow, dim=1)
-        print(torch.max(flow))
 
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
