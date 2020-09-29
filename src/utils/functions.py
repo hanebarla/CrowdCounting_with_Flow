@@ -10,6 +10,8 @@ class AllLoss():
     def __init__(self, optical_loss_on=1, batchsize=1):
         # super().__init__()
         self.optical_loss_on = optical_loss_on
+        if self.optical_loss_on == 0:
+            print("***Not Using Optical Loss***")
         self.bathsize = batchsize
 
     def forward(self, tm_personlabel, t_person_label, tm2t_flow_label,
@@ -46,7 +48,7 @@ class AllLoss():
         return loss_combi
 
     def flow_loss(self, output_before_forward, output_after_forward, label):
-        est_sum_before = torch.sum(output_before_forward, dim=1, keepdim=True)
+        est_sum_before = torch.sum(output_before_forward, dim=1, keepdim=True)  # ここの計算が違う論文みて実装を改良する
         est_sum_after = torch.sum(output_after_forward, dim=1, keepdim=True)
 
         res_before = label - est_sum_before

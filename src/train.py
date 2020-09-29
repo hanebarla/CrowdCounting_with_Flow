@@ -22,7 +22,7 @@ def train():
     train_d_path = args.path
 
     minibatch_size = 32
-    epock_num = 150
+    epock_num = 10
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
@@ -51,7 +51,7 @@ def train():
         Traindataset, batch_size=minibatch_size, shuffle=True)
     data_len = len(Traindataset)
 
-    criterion = functions.AllLoss(batchsize=minibatch_size)
+    criterion = functions.AllLoss(batchsize=minibatch_size, optical_loss_on=0)
     optimizer = optim.Adam(
         CANnet.parameters(),
         lr=0.001,

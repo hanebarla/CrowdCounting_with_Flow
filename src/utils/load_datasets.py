@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import torch
 import torchvision
+from . import functions as fc
 
 ras2bits = 0.71
 IP = {0: 202.5, 1: 247.5, 2: 292.5, 3: 157.5, 5: 337.5, 6: 22.5, 7: 67.5, 8: 112.5}
@@ -123,7 +124,21 @@ class CrowdDatasets(torch.utils.data.Dataset):
         gt_flow_img_data = np.concatenate(gt_flow_list, axis=2)
         gt_flow_img_data /= np.max(gt_flow_img_data)
 
+        """
+        # テスト
+        traj = np.sum(gt_flow_img_data, axis=2)
+        print(traj.shape)
+
+        root = os.getcwd()
+        imgfolder = root + "/images/"
+        heatmap = cv2.resize(traj, (traj.shape[1]*8, traj.shape[0]*8))
+        heatmap = np.array(heatmap*255, dtype=np.uint8)
+        cv2.imwrite(imgfolder+"flow_test.png", heatmap)
+        # print(gt_flow_img_data.shape)
+        # print(np.max(np.sum(gt_flow_img_data, axis=2)))
+
         gt_flow_img_data = self.transform(gt_flow_img_data)
+        """
 
         return gt_flow_img_data
 
@@ -148,6 +163,8 @@ class CrowdDatasets(torch.utils.data.Dataset):
 
         input_img = self.transform(input_img)
         mask_img = self.transform(mask_img)
+        # print(torch.max(mask_img))
+        # print(torch.min(mask_img))
 
         return input_img, mask_img
 

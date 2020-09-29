@@ -25,7 +25,7 @@ def test():
     model_weights = args.model_weight
     is_normalize = args.normarize_loss
 
-    minibatch_size = 1
+    minibatch_size = 32
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
