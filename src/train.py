@@ -16,13 +16,14 @@ def train():
                                                  In default, path is 'Data/TrainData_Path.csv'
                                                  """)
     parser.add_argument('-p', '--path', default='Data/TrainData_Path.csv')
+    parser.add_argument('-e', '--epoch', type=int, default=50)
     parser.add_argument('-wd', '--width', type=int, default=1280)
     parser.add_argument('-ht', '--height', type=int, default=720)
     args = parser.parse_args()
     train_d_path = args.path
 
     minibatch_size = 32
-    epock_num = 10
+    epock_num = args.epoch
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"

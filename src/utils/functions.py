@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 import torch
+# import model
 # import pytorch_memlab
 # from utils  import model
 
@@ -48,7 +49,7 @@ class AllLoss():
         return loss_combi
 
     def flow_loss(self, output_before_forward, output_after_forward, label):
-        est_sum_before = torch.sum(output_before_forward, dim=1, keepdim=True)  # ここの計算が違う論文みて実装を改良する
+        est_sum_before = self.sum_flow(output_before_forward)
         est_sum_after = torch.sum(output_after_forward, dim=1, keepdim=True)
 
         res_before = label - est_sum_before
@@ -62,10 +63,10 @@ class AllLoss():
         return floss
 
     def cycle_loss(self, output_before_foward, output_before_back,
-                   output_after_foward, output_after_back):
+                   output_after_foward, output_after_back):  # ここも間違っている
 
-        res_before = output_before_foward - output_before_back
-        res_after = output_after_foward - output_after_back
+        res_before = output_before_foward - self.back_flow(output_before_back)
+        res_after = output_after_foward - self.back_flow(output_after_back)
 
         se_before = torch.sum(
             (res_before * res_before),
@@ -102,6 +103,87 @@ class AllLoss():
 
         return loss
 
+    def sum_flow(self, output):
+        """
+        Sum tm2tflow to trajectories map
+        -------------
+            Slide flows to sum flows for trajectories map
+            output(10 channel) -> Trajectories map(1 channel)
+        """
+        o_shape = output.size()
+
+        for i in range(10):
+            if i == 4 or i == 9:
+                continue
+            elif i == 0:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, -1), dims=(1, 2))
+                output[:, i, :o_shape[2], (o_shape[3]-1)] = 0.0
+                output[:, i, (o_shape[2]-1), :o_shape[2]] = 0.0
+            elif i == 1:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=1)
+                output[:, i, o_shape[2]-1, :o_shape[3]] = 0.0
+            elif i == 2:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, 1), dims=(1, 2))
+                output[:, i, :o_shape[2], 0] = 0.0
+                output[:, i, (o_shape[2]-1), :o_shape[2]] = 0.0
+            elif i == 3:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=2)
+                output[:, i, :o_shape[2], o_shape[3]-1] = 0.0
+            elif i == 5:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=2)
+                output[:, i, :o_shape[2], 0] = 0.0
+            elif i == 6:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, -1), dims=(1, 2))
+                output[:, i, 0, :(o_shape[3])] = 0.0
+                output[:, i, :o_shape[2], o_shape[3]-1] = 0.0
+            elif i == 7:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=1)
+                output[:, i, 0, :o_shape[3]] = 0.0
+            elif i == 8:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, 1), dims=(1, 2))
+                output[:, i, 0, :o_shape[3]] = 0.0
+                output[:, i, :o_shape[2], 0] = 0.0
+
+        return torch.sum(output, dim=1, keepdim=True)
+
+    def back_flow(self, output):
+        o_shape = output.size()
+        output[:, 9, :, :] = 0.0
+
+        for i in range(10):
+            if i == 4 or i == 9:
+                continue
+            elif i == 0:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, -1), dims=(1, 2))
+                output[:, 9, :o_shape[2], (o_shape[3]-1)] += output[:, i, :o_shape[2], (o_shape[3]-1)]
+                output[:, 9, (o_shape[2]-1), :o_shape[2]] += output[:, i, (o_shape[2]-1), :o_shape[2]]
+            elif i == 1:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=1)
+                output[:, 9, o_shape[2]-1, :o_shape[3]] += output[:, i, o_shape[2]-1, :o_shape[3]]
+            elif i == 2:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, 1), dims=(1, 2))
+                output[:, 9, :o_shape[2], 0] += output[:, i, :o_shape[2], 0]
+                output[:, 9, (o_shape[2]-1), :o_shape[2]] += output[:, i, (o_shape[2]-1), :o_shape[2]]
+            elif i == 3:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=2)
+                output[:, 9, :o_shape[2], o_shape[3]-1] += output[:, i, :o_shape[2], o_shape[3]-1]
+            elif i == 5:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=2)
+                output[:, 9, :o_shape[2], 0] += output[:, i, :o_shape[2], 0]
+            elif i == 6:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, -1), dims=(1, 2))
+                output[:, 9, 0, :o_shape[3]] += output[:, i, 0, :(o_shape[3])]
+                output[:, 9, :o_shape[2], o_shape[3]-1] = output[:, i, :o_shape[2], o_shape[3]-1]
+            elif i == 7:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=1)
+                output[:, 9, 0, :o_shape[3]] += output[:, i, 0, :o_shape[3]]
+            elif i == 8:
+                output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, 1), dims=(1, 2))
+                output[:, 9, 0, :o_shape[3]] += output[:, i, 0, :o_shape[3]]
+                output[:, 9, :o_shape[2], 0] += output[:, i, :o_shape[2], 0]
+
+        return output
+
 
 def output_to_img(output):
     root = os.getcwd()
@@ -117,8 +199,6 @@ def output_to_img(output):
 
 
 if __name__ == "__main__":
-    import model
-
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
     can_model = model.CANNet(load_weights=True)
