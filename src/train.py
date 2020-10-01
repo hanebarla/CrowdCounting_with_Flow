@@ -15,10 +15,10 @@ def train():
                                                  Please specify the csv file of the Datasets path.
                                                  In default, path is 'Data/TrainData_Path.csv'
                                                  """)
-    parser.add_argument('-p', '--path', default='Data/TrainData_Path.csv')
+    parser.add_argument('-p', '--path', default='TrainData_Path.csv')
     parser.add_argument('-e', '--epoch', type=int, default=50)
-    parser.add_argument('-wd', '--width', type=int, default=1280)
-    parser.add_argument('-ht', '--height', type=int, default=720)
+    parser.add_argument('-wd', '--width', type=int, default=640)
+    parser.add_argument('-ht', '--height', type=int, default=360)
     args = parser.parse_args()
     train_d_path = args.path
 
@@ -109,6 +109,7 @@ def train():
                                      output_after_forward, output_after_back)
 
             e_loss += loss.item() / int(-(-data_len // minibatch_size))
+            print(loss.item())
             loss.backward()
             optimizer.step()
             bar.next()
