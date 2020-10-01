@@ -76,6 +76,7 @@ def train():
 
         for i, data in enumerate(TrainLoader):
 
+            torch.cuda.empty_cache()
             inputs, persons, flows = data
 
             tm_img, t_img, tp_img = inputs[0], inputs[1], inputs[2]
