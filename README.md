@@ -5,10 +5,17 @@
 
     Anaconda
     ```
-    pip install pytorch_memlab (本当は良くない)
     conda install matplotlib
     conda install pytorch torchvision cudatoolkit=10.2 -c pytorch (depend on machine)
-    conda install -c conda-forge opencv, progress
+    conda install -c conda-forge progress
+    conda install -c menpo opencv3
+    pip install pytorch_memlab (本当は良くない)
+    ```
+
+    pip
+    ```
+    pip install torch torchvision
+    pip install matplotlib, opencv-python==3.1.0, progress, pytorch_memlab
     ```
 1. Clone This Repositry
 1. Go to the repo flolder
