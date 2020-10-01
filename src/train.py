@@ -22,10 +22,10 @@ def train():
     args = parser.parse_args()
     train_d_path = args.path
 
-    minibatch_size = 32
+    minibatch_size = 64
     epock_num = args.epoch
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
 
     CANnet = model.CANNet()
@@ -49,7 +49,7 @@ def train():
         Trainpath=train_d_path)
 
     TrainLoader = torch.utils.data.DataLoader(
-        Traindataset, batch_size=minibatch_size, shuffle=True)
+        Traindataset, batch_size=minibatch_size, shuffle=True, num_workers=8)
     data_len = len(Traindataset)
 
     criterion = functions.AllLoss(batchsize=minibatch_size, optical_loss_on=0)
@@ -114,6 +114,9 @@ def train():
             optimizer.step()
             bar.next()
 
+            del tm_img, t_img, tp_img
+            del tm_person, t_person, tp_person
+            del tm2t_flow, t2tp_flow
         bar.finish()
 
         losses.append(e_loss)
