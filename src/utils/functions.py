@@ -46,7 +46,7 @@ class AllLoss():
 
         print("floss_nan: {}, closs_nan: {}, oloss_nan: {}".format(floss_nan, closs_nan, oloss_nan))
         """
-        return loss_combi
+        return loss_combi, floss, closs  # 後で減らす
 
     def flow_loss(self, output_before_forward, output_after_forward, label):
         est_sum_before = self.sum_flow(output_before_forward)
@@ -63,7 +63,7 @@ class AllLoss():
         return floss
 
     def cycle_loss(self, output_before_foward, output_before_back,
-                   output_after_foward, output_after_back):  # ここも間違っている
+                   output_after_foward, output_after_back):
 
         res_before = output_before_foward - self.back_flow(output_before_back)
         res_after = output_after_foward - self.back_flow(output_after_back)
@@ -108,6 +108,7 @@ class AllLoss():
         Sum tm2tflow to trajectories map
         -------------
             Slide flows to sum flows for trajectories map
+            Step t-1 2 t flow -> Step t Trajectory map
             output(10 channel) -> Trajectories map(1 channel)
         """
         o_shape = output.size()

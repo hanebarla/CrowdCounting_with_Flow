@@ -27,7 +27,7 @@ def test():
 
     minibatch_size = 32
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     CANnet = model.CANNet()
     CANnet.to(device)
@@ -43,10 +43,11 @@ def test():
         Trainpath=test_d_path,
         test_on=True)
     TestLoader = torch.utils.data.DataLoader(
-        Testdataset, batch_size=minibatch_size, shuffle=False)
+        Testdataset, batch_size=minibatch_size, shuffle=False, num_workers=8)
     data_len = len(Testdataset)
 
     # Loss Func
+    criterion = functions.AllLoss(batchsize=minibatch_size, optical_loss_on=0)
     mae = torch.nn.L1Loss()
     mse = torch.nn.MSELoss()
 
@@ -55,6 +56,7 @@ def test():
 
     bar = Bar('testing... ', max=int(-(-data_len // minibatch_size)))
     for i, data in enumerate(TestLoader):
+        torch.cuda.empty_cache()
         inputs, persons, flows = data
 
         tm_img, t_img = inputs[0], inputs[1]
@@ -71,7 +73,7 @@ def test():
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
 
-            output = torch.sum(output_before_forward, dim=1, keepdim=True)
+            output = criterion.sum_flow(output_before_forward)
 
             # pixel range 0~1(float) → 0~255(float)
             if not is_normalize:
@@ -82,13 +84,17 @@ def test():
                 t_person = t_person.type(torch.uint8)
                 t_person = t_person.type(torch.float)
 
-        d_mae = mae(output, t_person)
-        d_mse = mse(output, t_person)
-        d_rmse = torch.sqrt(d_mse)
+            d_mae = mae(output, t_person)
+            d_mse = mse(output, t_person)
+            d_rmse = torch.sqrt(d_mse)
 
-        all_mae += d_mae.item()/int(-(-data_len // minibatch_size))
-        all_rmse += d_rmse.item()/int(-(-data_len // minibatch_size))
+            all_mae += d_mae.item()/int(-(-data_len // minibatch_size))
+            all_rmse += d_rmse.item()/int(-(-data_len // minibatch_size))
+
         bar.next()
+        del tm_img, t_img
+        del t_person
+        del tm2t_flow
     bar.finish()
     print("MAE: {}, RMSE: {}".format(all_mae, all_rmse))
 

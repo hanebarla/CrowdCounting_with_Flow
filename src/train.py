@@ -13,7 +13,7 @@ from utils import load_datasets as LD
 def train():
     parser = argparse.ArgumentParser(description="""
                                                  Please specify the csv file of the Datasets path.
-                                                 In default, path is 'Data/TrainData_Path.csv'
+                                                 In default, path is 'TrainData_Path.csv'
                                                  """)
     parser.add_argument('-p', '--path', default='TrainData_Path.csv')
     parser.add_argument('-e', '--epoch', type=int, default=50)
@@ -33,7 +33,7 @@ def train():
         print("You can use {} GPUs!".format(torch.cuda.device_count()))
         CANnet = torch.nn.DataParallel(CANnet)
     for p in CANnet.parameters():
-        p.data.clamp_(-1.0, 1.0)
+        p.data.clamp_(-2.0, 2.0)
     CANnet.to(device)
     CANnet.train()
 
@@ -66,6 +66,8 @@ def train():
 
     for epock in range(epock_num):
         e_loss = 0.0
+        e_floss = 0.0
+        e_closs = 0.0
 
         print('-------------')
         print('Epoch {}/{}'.format(epock + 1, epock_num))
@@ -105,12 +107,13 @@ def train():
             with torch.set_grad_enabled(True):
                 output_after_forward = CANnet(t_img, tp_img)
 
-            loss = criterion.forward(tm_person, t_person, tm2t_flow,
-                                     output_befoer_forward, output_before_back,
-                                     output_after_forward, output_after_back)
+            loss, floss, closs = criterion.forward(tm_person, t_person, tm2t_flow,
+                                                   output_befoer_forward, output_before_back,
+                                                   output_after_forward, output_after_back)
 
             e_loss += loss.item() / int(-(-data_len // minibatch_size))
-            print(loss.item())
+            e_floss += floss.item() / int(-(-data_len // minibatch_size))
+            e_closs += closs.item() / int(-(-data_len // minibatch_size))
             loss.backward()
             optimizer.step()
             bar.next()
@@ -122,7 +125,7 @@ def train():
 
         losses.append(e_loss)
         print('-------------')
-        print('epoch {} || Epoch_Loss:{}'.format(epock + 1, e_loss))
+        print('epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(epock + 1, e_loss, e_floss, e_closs))
         if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num:
             torch.save(
                 CANnet.state_dict(),
