@@ -32,8 +32,7 @@ def train():
     if torch.cuda.device_count() > 1:
         print("You can use {} GPUs!".format(torch.cuda.device_count()))
         CANnet = torch.nn.DataParallel(CANnet)
-    for p in CANnet.parameters():
-        p.data.clamp_(-2.0, 2.0)
+
     CANnet.to(device)
     CANnet.train()
 
@@ -53,12 +52,18 @@ def train():
     data_len = len(Traindataset)
 
     criterion = functions.AllLoss(batchsize=minibatch_size, optical_loss_on=0)
+    """
+    optimizer = optim.SGD(
+        CANnet.parameters(),
+        lr=0.01,
+        weight_decay=0.001)
+    """
     optimizer = optim.Adam(
         CANnet.parameters(),
         lr=0.001,
         betas=(0.9, 0.999),
         eps=1e-8,
-        weight_decay=0.5)
+        weight_decay=0.01)
 
     # reporter.report()
 
@@ -126,7 +131,7 @@ def train():
         losses.append(e_loss)
         print('-------------')
         print('epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(epock + 1, e_loss, e_floss, e_closs))
-        if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num:
+        if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num or (epock+1) % 100 == 0:
             torch.save(
                 CANnet.state_dict(),
                 'CrowdCounting_{}_{}_epoch_{}.pth'.format(args.height, args.width, epock + 1))

@@ -1,0 +1,3005 @@
+You can use 4 GPUs!
+***Not Using Optical Loss***
+-------------
+Epoch 1/500
+-------------
+（train）
+-------------
+epoch 1 || Epoch_Loss:325.3586106476961, Epoch_FlowLoss:325.30067133020486, Epock_CycleLoss:0.057940055926640845
+-------------
+Epoch 2/500
+-------------
+（train）
+/home/habara/anaconda3/envs/crowd/lib/python3.6/site-packages/torch/nn/functional.py:3121: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  "See the documentation of nn.Upsample for details.".format(mode))
+-------------
+epoch 2 || Epoch_Loss:287.47647066469534, Epoch_FlowLoss:287.4349602593316, Epock_CycleLoss:0.04151023717390166
+-------------
+Epoch 3/500
+-------------
+（train）
+-------------
+epoch 3 || Epoch_Loss:281.4358356617115, Epoch_FlowLoss:281.3947556107132, Epock_CycleLoss:0.04108199611720111
+-------------
+Epoch 4/500
+-------------
+（train）
+-------------
+epoch 4 || Epoch_Loss:280.7937817043728, Epoch_FlowLoss:280.75105455186633, Epock_CycleLoss:0.04272719596823057
+-------------
+Epoch 5/500
+-------------
+（train）
+-------------
+epoch 5 || Epoch_Loss:280.341680738661, Epoch_FlowLoss:280.30300394694007, Epock_CycleLoss:0.03867701427252204
+-------------
+Epoch 6/500
+-------------
+（train）
+-------------
+epoch 6 || Epoch_Loss:280.99470293963395, Epoch_FlowLoss:280.95532819959845, Epock_CycleLoss:0.039377030882018584
+-------------
+Epoch 7/500
+-------------
+（train）
+-------------
+epoch 7 || Epoch_Loss:279.74618134675205, Epoch_FlowLoss:279.70935538963033, Epock_CycleLoss:0.0368268102131508
+-------------
+Epoch 8/500
+-------------
+（train）
+-------------
+epoch 8 || Epoch_Loss:278.45766901086876, Epoch_FlowLoss:278.41815157289864, Epock_CycleLoss:0.03951792322375156
+-------------
+Epoch 9/500
+-------------
+（train）
+-------------
+epoch 9 || Epoch_Loss:278.1907718799733, Epoch_FlowLoss:278.1535127427843, Epock_CycleLoss:0.03725997172296047
+-------------
+Epoch 10/500
+-------------
+（train）
+-------------
+epoch 10 || Epoch_Loss:277.86727311876086, Epoch_FlowLoss:277.83199988471137, Epock_CycleLoss:0.03527303095217105
+-------------
+Epoch 11/500
+-------------
+（train）
+-------------
+epoch 11 || Epoch_Loss:277.5486964473018, Epoch_FlowLoss:277.51604320384837, Epock_CycleLoss:0.03265334127677812
+-------------
+Epoch 12/500
+-------------
+（train）
+-------------
+epoch 12 || Epoch_Loss:276.9807541458695, Epoch_FlowLoss:276.9485925745081, Epock_CycleLoss:0.03216087845740495
+-------------
+Epoch 13/500
+-------------
+（train）
+-------------
+epoch 13 || Epoch_Loss:277.40330109772856, Epoch_FlowLoss:277.37191518147785, Epock_CycleLoss:0.031385646443124166
+-------------
+Epoch 14/500
+-------------
+（train）
+-------------
+epoch 14 || Epoch_Loss:276.89473017939815, Epoch_FlowLoss:276.8634140579789, Epock_CycleLoss:0.03131338629733633
+-------------
+Epoch 15/500
+-------------
+（train）
+-------------
+epoch 15 || Epoch_Loss:276.68283928765186, Epoch_FlowLoss:276.6540872079355, Epock_CycleLoss:0.028753110656031856
+-------------
+Epoch 16/500
+-------------
+（train）
+-------------
+epoch 16 || Epoch_Loss:276.95845088252315, Epoch_FlowLoss:276.9301904748987, Epock_CycleLoss:0.028263182758733078
+-------------
+Epoch 17/500
+-------------
+（train）
+-------------
+epoch 17 || Epoch_Loss:276.696588869448, Epoch_FlowLoss:276.66768787525314, Epock_CycleLoss:0.0289008476667934
+-------------
+Epoch 18/500
+-------------
+（train）
+-------------
+epoch 18 || Epoch_Loss:276.4246200278953, Epoch_FlowLoss:276.39450836181635, Epock_CycleLoss:0.0301112849265337
+-------------
+Epoch 19/500
+-------------
+（train）
+-------------
+epoch 19 || Epoch_Loss:276.4311286078559, Epoch_FlowLoss:276.4039052327474, Epock_CycleLoss:0.027224794375123797
+-------------
+Epoch 20/500
+-------------
+（train）
+-------------
+epoch 20 || Epoch_Loss:276.1856486002605, Epoch_FlowLoss:276.1586250022605, Epock_CycleLoss:0.027022418393581008
+-------------
+Epoch 21/500
+-------------
+（train）
+-------------
+epoch 21 || Epoch_Loss:276.31265626130283, Epoch_FlowLoss:276.2853639390733, Epock_CycleLoss:0.02729106770345459
+-------------
+Epoch 22/500
+-------------
+（train）
+-------------
+epoch 22 || Epoch_Loss:276.1986321343316, Epoch_FlowLoss:276.17035081651477, Epock_CycleLoss:0.02828015262881915
+-------------
+Epoch 23/500
+-------------
+（train）
+-------------
+epoch 23 || Epoch_Loss:276.4129163953993, Epoch_FlowLoss:276.38285488552515, Epock_CycleLoss:0.0300612163350538
+-------------
+Epoch 24/500
+-------------
+（train）
+-------------
+epoch 24 || Epoch_Loss:275.8933077211733, Epoch_FlowLoss:275.8637212117513, Epock_CycleLoss:0.02958492810527483
+-------------
+Epoch 25/500
+-------------
+（train）
+-------------
+epoch 25 || Epoch_Loss:275.8002587777597, Epoch_FlowLoss:275.7714572482639, Epock_CycleLoss:0.028801336918992025
+-------------
+Epoch 26/500
+-------------
+（train）
+-------------
+epoch 26 || Epoch_Loss:275.0805873164424, Epoch_FlowLoss:275.05204914234304, Epock_CycleLoss:0.02853784330741123
+-------------
+Epoch 27/500
+-------------
+（train）
+-------------
+epoch 27 || Epoch_Loss:275.701495135272, Epoch_FlowLoss:275.67247291847514, Epock_CycleLoss:0.02902456642025047
+-------------
+Epoch 28/500
+-------------
+（train）
+-------------
+epoch 28 || Epoch_Loss:275.34640135588467, Epoch_FlowLoss:275.31778264928744, Epock_CycleLoss:0.02861805453344628
+-------------
+Epoch 29/500
+-------------
+（train）
+-------------
+epoch 29 || Epoch_Loss:274.7947387695313, Epoch_FlowLoss:274.765454892759, Epock_CycleLoss:0.029285631659958098
+-------------
+Epoch 30/500
+-------------
+（train）
+-------------
+epoch 30 || Epoch_Loss:275.02513292100696, Epoch_FlowLoss:274.9969075520833, Epock_CycleLoss:0.02822577208280563
+-------------
+Epoch 31/500
+-------------
+（train）
+-------------
+epoch 31 || Epoch_Loss:275.3152601453993, Epoch_FlowLoss:275.28517829047314, Epock_CycleLoss:0.03008177462551329
+-------------
+Epoch 32/500
+-------------
+（train）
+-------------
+epoch 32 || Epoch_Loss:275.0258512143735, Epoch_FlowLoss:274.99802342167607, Epock_CycleLoss:0.02782674006151932
+-------------
+Epoch 33/500
+-------------
+（train）
+-------------
+epoch 33 || Epoch_Loss:274.28715147795504, Epoch_FlowLoss:274.2601518984195, Epock_CycleLoss:0.027000997422469992
+-------------
+Epoch 34/500
+-------------
+（train）
+-------------
+epoch 34 || Epoch_Loss:274.2817128499349, Epoch_FlowLoss:274.2536933333786, Epock_CycleLoss:0.028017397969961177
+-------------
+Epoch 35/500
+-------------
+（train）
+-------------
+epoch 35 || Epoch_Loss:273.93768169261784, Epoch_FlowLoss:273.9098883734809, Epock_CycleLoss:0.027792039568777443
+-------------
+Epoch 36/500
+-------------
+（train）
+-------------
+epoch 36 || Epoch_Loss:274.3358702483001, Epoch_FlowLoss:274.30793366608793, Epock_CycleLoss:0.027936214305184504
+-------------
+Epoch 37/500
+-------------
+（train）
+-------------
+epoch 37 || Epoch_Loss:274.2013450905129, Epoch_FlowLoss:274.1738620334202, Epock_CycleLoss:0.02748548881047302
+-------------
+Epoch 38/500
+-------------
+（train）
+-------------
+epoch 38 || Epoch_Loss:273.7394386574074, Epoch_FlowLoss:273.7104757803458, Epock_CycleLoss:0.028962505843352384
+-------------
+Epoch 39/500
+-------------
+（train）
+-------------
+epoch 39 || Epoch_Loss:273.90266418457037, Epoch_FlowLoss:273.8734390823929, Epock_CycleLoss:0.029226168024319193
+-------------
+Epoch 40/500
+-------------
+（train）
+-------------
+epoch 40 || Epoch_Loss:273.25936748363347, Epoch_FlowLoss:273.23076375325525, Epock_CycleLoss:0.028602629693018067
+-------------
+Epoch 41/500
+-------------
+（train）
+-------------
+epoch 41 || Epoch_Loss:273.1671580561886, Epoch_FlowLoss:273.13839184796365, Epock_CycleLoss:0.028766316568685904
+-------------
+Epoch 42/500
+-------------
+（train）
+-------------
+epoch 42 || Epoch_Loss:273.0814002708152, Epoch_FlowLoss:273.05621959544993, Epock_CycleLoss:0.02518410325326301
+-------------
+Epoch 43/500
+-------------
+（train）
+-------------
+epoch 43 || Epoch_Loss:273.0223756013093, Epoch_FlowLoss:272.99620847348814, Epock_CycleLoss:0.026168845662916145
+-------------
+Epoch 44/500
+-------------
+（train）
+-------------
+epoch 44 || Epoch_Loss:272.5446585196036, Epoch_FlowLoss:272.5187157524956, Epock_CycleLoss:0.025942272541147695
+-------------
+Epoch 45/500
+-------------
+（train）
+-------------
+epoch 45 || Epoch_Loss:272.611004864728, Epoch_FlowLoss:272.5856693409107, Epock_CycleLoss:0.02533838125290694
+-------------
+Epoch 46/500
+-------------
+（train）
+-------------
+epoch 46 || Epoch_Loss:273.0310163144712, Epoch_FlowLoss:273.00477939181854, Epock_CycleLoss:0.026236993191694775
+-------------
+Epoch 47/500
+-------------
+（train）
+-------------
+epoch 47 || Epoch_Loss:272.5077158610026, Epoch_FlowLoss:272.4825365984882, Epock_CycleLoss:0.025177504246433578
+-------------
+Epoch 48/500
+-------------
+（train）
+-------------
+epoch 48 || Epoch_Loss:272.2709333631728, Epoch_FlowLoss:272.2456653736256, Epock_CycleLoss:0.025269791552865944
+-------------
+Epoch 49/500
+-------------
+（train）
+-------------
+epoch 49 || Epoch_Loss:272.4748690569842, Epoch_FlowLoss:272.4490271674262, Epock_CycleLoss:0.0258415586280602
+-------------
+Epoch 50/500
+-------------
+（train）
+-------------
+epoch 50 || Epoch_Loss:273.70885213216144, Epoch_FlowLoss:273.6849797566732, Epock_CycleLoss:0.02387108760713427
+-------------
+Epoch 51/500
+-------------
+（train）
+-------------
+epoch 51 || Epoch_Loss:272.7564406218352, Epoch_FlowLoss:272.73190364131216, Epock_CycleLoss:0.024535550632410575
+-------------
+Epoch 52/500
+-------------
+（train）
+-------------
+epoch 52 || Epoch_Loss:272.3971667819552, Epoch_FlowLoss:272.3716230039243, Epock_CycleLoss:0.025542565724915922
+-------------
+Epoch 53/500
+-------------
+（train）
+-------------
+epoch 53 || Epoch_Loss:272.0671706023039, Epoch_FlowLoss:272.04161580403644, Epock_CycleLoss:0.025555120436129748
+-------------
+Epoch 54/500
+-------------
+（train）
+-------------
+epoch 54 || Epoch_Loss:272.1443447536892, Epoch_FlowLoss:272.1180188214337, Epock_CycleLoss:0.026326568176349
+-------------
+Epoch 55/500
+-------------
+（train）
+-------------
+epoch 55 || Epoch_Loss:272.8919796413845, Epoch_FlowLoss:272.8676430031106, Epock_CycleLoss:0.024338078512637706
+-------------
+Epoch 56/500
+-------------
+（train）
+-------------
+epoch 56 || Epoch_Loss:272.58076166223594, Epoch_FlowLoss:272.5552633780021, Epock_CycleLoss:0.02549836515552467
+-------------
+Epoch 57/500
+-------------
+（train）
+-------------
+epoch 57 || Epoch_Loss:272.3560943603516, Epoch_FlowLoss:272.33005947536896, Epock_CycleLoss:0.026034000950555008
+-------------
+Epoch 58/500
+-------------
+（train）
+-------------
+epoch 58 || Epoch_Loss:272.1592415703668, Epoch_FlowLoss:272.1332572654442, Epock_CycleLoss:0.025983655825257298
+-------------
+Epoch 59/500
+-------------
+（train）
+-------------
+epoch 59 || Epoch_Loss:272.25927564832904, Epoch_FlowLoss:272.2340076587818, Epock_CycleLoss:0.02527001155195413
+-------------
+Epoch 60/500
+-------------
+（train）
+-------------
+epoch 60 || Epoch_Loss:272.11648248743126, Epoch_FlowLoss:272.09065161810986, Epock_CycleLoss:0.025826871671058512
+-------------
+Epoch 61/500
+-------------
+（train）
+-------------
+epoch 61 || Epoch_Loss:271.6703516642253, Epoch_FlowLoss:271.643239904333, Epock_CycleLoss:0.027110207480964835
+-------------
+Epoch 62/500
+-------------
+（train）
+-------------
+epoch 62 || Epoch_Loss:271.95840397587534, Epoch_FlowLoss:271.93229449236827, Epock_CycleLoss:0.026107774426539738
+-------------
+Epoch 63/500
+-------------
+（train）
+-------------
+epoch 63 || Epoch_Loss:271.65956228750724, Epoch_FlowLoss:271.6332535920319, Epock_CycleLoss:0.026308666569767176
+-------------
+Epoch 64/500
+-------------
+（train）
+-------------
+epoch 64 || Epoch_Loss:271.63587301748765, Epoch_FlowLoss:271.6085770218461, Epock_CycleLoss:0.027298085046587168
+-------------
+Epoch 65/500
+-------------
+（train）
+-------------
+epoch 65 || Epoch_Loss:271.65275545473446, Epoch_FlowLoss:271.6260630289713, Epock_CycleLoss:0.026692279166093576
+-------------
+Epoch 66/500
+-------------
+（train）
+-------------
+epoch 66 || Epoch_Loss:271.60564846462677, Epoch_FlowLoss:271.5785160771122, Epock_CycleLoss:0.027132587093445987
+-------------
+Epoch 67/500
+-------------
+（train）
+-------------
+epoch 67 || Epoch_Loss:271.4393287941261, Epoch_FlowLoss:271.4120438187211, Epock_CycleLoss:0.027285829876308086
+-------------
+Epoch 68/500
+-------------
+（train）
+-------------
+epoch 68 || Epoch_Loss:271.4309893007632, Epoch_FlowLoss:271.4033265290438, Epock_CycleLoss:0.027664328476896993
+-------------
+Epoch 69/500
+-------------
+（train）
+-------------
+epoch 69 || Epoch_Loss:271.63721155237266, Epoch_FlowLoss:271.61070307978883, Epock_CycleLoss:0.026509714761266
+-------------
+Epoch 70/500
+-------------
+（train）
+-------------
+epoch 70 || Epoch_Loss:271.77678510877826, Epoch_FlowLoss:271.75341542561847, Epock_CycleLoss:0.023369888154168926
+-------------
+Epoch 71/500
+-------------
+（train）
+-------------
+epoch 71 || Epoch_Loss:271.68522502757884, Epoch_FlowLoss:271.6615080656829, Epock_CycleLoss:0.02371906778878636
+-------------
+Epoch 72/500
+-------------
+（train）
+-------------
+epoch 72 || Epoch_Loss:271.4255506727431, Epoch_FlowLoss:271.4035500420464, Epock_CycleLoss:0.02200103485611854
+-------------
+Epoch 73/500
+-------------
+（train）
+-------------
+epoch 73 || Epoch_Loss:271.02741721824356, Epoch_FlowLoss:271.00559008563005, Epock_CycleLoss:0.02182735095697421
+-------------
+Epoch 74/500
+-------------
+（train）
+-------------
+epoch 74 || Epoch_Loss:271.06794738769537, Epoch_FlowLoss:271.0455853497541, Epock_CycleLoss:0.022362221135861348
+-------------
+Epoch 75/500
+-------------
+（train）
+-------------
+epoch 75 || Epoch_Loss:273.65445002803096, Epoch_FlowLoss:273.6359764381691, Epock_CycleLoss:0.018475017303393945
+-------------
+Epoch 76/500
+-------------
+（train）
+-------------
+epoch 76 || Epoch_Loss:271.49293659351486, Epoch_FlowLoss:271.4747175993743, Epock_CycleLoss:0.018220369462613708
+-------------
+Epoch 77/500
+-------------
+（train）
+-------------
+epoch 77 || Epoch_Loss:272.1930282027633, Epoch_FlowLoss:272.172528302228, Epock_CycleLoss:0.020500697333503654
+-------------
+Epoch 78/500
+-------------
+（train）
+-------------
+epoch 78 || Epoch_Loss:271.3655302259657, Epoch_FlowLoss:271.3462696781865, Epock_CycleLoss:0.01925841944844082
+-------------
+Epoch 79/500
+-------------
+（train）
+-------------
+epoch 79 || Epoch_Loss:271.50731884991677, Epoch_FlowLoss:271.4873459427445, Epock_CycleLoss:0.019973018241149408
+-------------
+Epoch 80/500
+-------------
+（train）
+-------------
+epoch 80 || Epoch_Loss:271.1302312215169, Epoch_FlowLoss:271.11016845703114, Epock_CycleLoss:0.020061294651693765
+-------------
+Epoch 81/500
+-------------
+（train）
+-------------
+epoch 81 || Epoch_Loss:270.8493869922779, Epoch_FlowLoss:270.8280877007379, Epock_CycleLoss:0.02129769635697206
+-------------
+Epoch 82/500
+-------------
+（train）
+-------------
+epoch 82 || Epoch_Loss:271.61837457727495, Epoch_FlowLoss:271.59595065646704, Epock_CycleLoss:0.02242416371073988
+-------------
+Epoch 83/500
+-------------
+（train）
+-------------
+epoch 83 || Epoch_Loss:270.8820877075196, Epoch_FlowLoss:270.8598039415148, Epock_CycleLoss:0.02228100639250543
+-------------
+Epoch 84/500
+-------------
+（train）
+-------------
+epoch 84 || Epoch_Loss:271.1074566311307, Epoch_FlowLoss:271.0856651023582, Epock_CycleLoss:0.021793025718243035
+-------------
+Epoch 85/500
+-------------
+（train）
+-------------
+epoch 85 || Epoch_Loss:270.9687856038411, Epoch_FlowLoss:270.9467999493635, Epock_CycleLoss:0.021986255560208244
+-------------
+Epoch 86/500
+-------------
+（train）
+-------------
+epoch 86 || Epoch_Loss:270.7827377319336, Epoch_FlowLoss:270.7606941505715, Epock_CycleLoss:0.022043995835162977
+-------------
+Epoch 87/500
+-------------
+（train）
+-------------
+epoch 87 || Epoch_Loss:270.9691371211299, Epoch_FlowLoss:270.94498302318436, Epock_CycleLoss:0.024153664225229517
+-------------
+Epoch 88/500
+-------------
+（train）
+-------------
+epoch 88 || Epoch_Loss:270.54284300627535, Epoch_FlowLoss:270.5174391004774, Epock_CycleLoss:0.025403198130704737
+-------------
+Epoch 89/500
+-------------
+（train）
+-------------
+epoch 89 || Epoch_Loss:271.08562328197337, Epoch_FlowLoss:271.0582521226671, Epock_CycleLoss:0.02737182813386122
+-------------
+Epoch 90/500
+-------------
+（train）
+-------------
+epoch 90 || Epoch_Loss:272.2266376636646, Epoch_FlowLoss:272.20503800003615, Epock_CycleLoss:0.021598158335244217
+-------------
+Epoch 91/500
+-------------
+（train）
+-------------
+epoch 91 || Epoch_Loss:271.4301712601273, Epoch_FlowLoss:271.4097340901693, Epock_CycleLoss:0.02043602220645105
+-------------
+Epoch 92/500
+-------------
+（train）
+-------------
+epoch 92 || Epoch_Loss:271.52225466127743, Epoch_FlowLoss:271.5033761483652, Epock_CycleLoss:0.018877733464318293
+-------------
+Epoch 93/500
+-------------
+（train）
+-------------
+epoch 93 || Epoch_Loss:270.821496186433, Epoch_FlowLoss:270.7988456443505, Epock_CycleLoss:0.022651199872295056
+-------------
+Epoch 94/500
+-------------
+（train）
+-------------
+epoch 94 || Epoch_Loss:270.53538965295866, Epoch_FlowLoss:270.50784499556937, Epock_CycleLoss:0.027540941688197623
+-------------
+Epoch 95/500
+-------------
+（train）
+-------------
+epoch 95 || Epoch_Loss:270.54709512216067, Epoch_FlowLoss:270.52050272623705, Epock_CycleLoss:0.026592690428649937
+-------------
+Epoch 96/500
+-------------
+（train）
+-------------
+epoch 96 || Epoch_Loss:270.7297275684498, Epoch_FlowLoss:270.69871238425924, Epock_CycleLoss:0.031016452168976815
+-------------
+Epoch 97/500
+-------------
+（train）
+-------------
+epoch 97 || Epoch_Loss:270.5252165617766, Epoch_FlowLoss:270.49531866002957, Epock_CycleLoss:0.029895886778831485
+-------------
+Epoch 98/500
+-------------
+（train）
+-------------
+epoch 98 || Epoch_Loss:270.4090313381618, Epoch_FlowLoss:270.37740806297023, Epock_CycleLoss:0.0316249484334279
+-------------
+Epoch 99/500
+-------------
+（train）
+-------------
+epoch 99 || Epoch_Loss:270.9998759516963, Epoch_FlowLoss:270.9683108859592, Epock_CycleLoss:0.031566782475069714
+-------------
+Epoch 100/500
+-------------
+（train）
+-------------
+epoch 100 || Epoch_Loss:270.6287132545754, Epoch_FlowLoss:270.6018727620442, Epock_CycleLoss:0.026842251695968496
+-------------
+Epoch 101/500
+-------------
+（train）
+-------------
+epoch 101 || Epoch_Loss:270.8994835747613, Epoch_FlowLoss:270.867111771195, Epock_CycleLoss:0.032371026567286916
+-------------
+Epoch 102/500
+-------------
+（train）
+-------------
+epoch 102 || Epoch_Loss:270.3621210168909, Epoch_FlowLoss:270.3315243191189, Epock_CycleLoss:0.030599665310647752
+-------------
+Epoch 103/500
+-------------
+（train）
+-------------
+epoch 103 || Epoch_Loss:270.76275182653353, Epoch_FlowLoss:270.73076431839553, Epock_CycleLoss:0.03198723281147304
+-------------
+Epoch 104/500
+-------------
+（train）
+-------------
+epoch 104 || Epoch_Loss:270.44344810203273, Epoch_FlowLoss:270.4096408420139, Epock_CycleLoss:0.03380646584210572
+-------------
+Epoch 105/500
+-------------
+（train）
+-------------
+epoch 105 || Epoch_Loss:270.4668641266999, Epoch_FlowLoss:270.43509024160875, Epock_CycleLoss:0.031775505523438816
+-------------
+Epoch 106/500
+-------------
+（train）
+-------------
+epoch 106 || Epoch_Loss:271.03736594871236, Epoch_FlowLoss:271.0032701845523, Epock_CycleLoss:0.03409547676090841
+-------------
+Epoch 107/500
+-------------
+（train）
+-------------
+epoch 107 || Epoch_Loss:271.0396657873083, Epoch_FlowLoss:271.0106139006438, Epock_CycleLoss:0.02905340133993714
+-------------
+Epoch 108/500
+-------------
+（train）
+-------------
+epoch 108 || Epoch_Loss:270.4069360803675, Epoch_FlowLoss:270.3725789388021, Epock_CycleLoss:0.03435504671048235
+-------------
+Epoch 109/500
+-------------
+（train）
+-------------
+epoch 109 || Epoch_Loss:270.8563865379051, Epoch_FlowLoss:270.8244131582755, Epock_CycleLoss:0.03197532657671858
+-------------
+Epoch 110/500
+-------------
+（train）
+-------------
+epoch 110 || Epoch_Loss:270.37740212899666, Epoch_FlowLoss:270.3422365541812, Epock_CycleLoss:0.03516577122112116
+-------------
+Epoch 111/500
+-------------
+（train）
+-------------
+epoch 111 || Epoch_Loss:270.7964519924588, Epoch_FlowLoss:270.76370069715705, Epock_CycleLoss:0.03274981098042594
+-------------
+Epoch 112/500
+-------------
+（train）
+-------------
+epoch 112 || Epoch_Loss:270.209260446054, Epoch_FlowLoss:270.17729413067855, Epock_CycleLoss:0.031966658860996915
+-------------
+Epoch 113/500
+-------------
+（train）
+-------------
+epoch 113 || Epoch_Loss:270.6496265552662, Epoch_FlowLoss:270.61473366066264, Epock_CycleLoss:0.03489305796446624
+-------------
+Epoch 114/500
+-------------
+（train）
+-------------
+epoch 114 || Epoch_Loss:270.41123877631287, Epoch_FlowLoss:270.3807486074943, Epock_CycleLoss:0.030490891042130965
+-------------
+Epoch 115/500
+-------------
+（train）
+-------------
+epoch 115 || Epoch_Loss:270.38559129503045, Epoch_FlowLoss:270.3525232385706, Epock_CycleLoss:0.03307282621109927
+-------------
+Epoch 116/500
+-------------
+（train）
+-------------
+epoch 116 || Epoch_Loss:270.3385767053675, Epoch_FlowLoss:270.30735072383175, Epock_CycleLoss:0.031227614385662256
+-------------
+Epoch 117/500
+-------------
+（train）
+-------------
+epoch 117 || Epoch_Loss:271.87911676477495, Epoch_FlowLoss:271.8478594179506, Epock_CycleLoss:0.031259272695967455
+-------------
+Epoch 118/500
+-------------
+（train）
+-------------
+epoch 118 || Epoch_Loss:270.588011847602, Epoch_FlowLoss:270.5578907154225, Epock_CycleLoss:0.030120607879426747
+-------------
+Epoch 119/500
+-------------
+（train）
+-------------
+epoch 119 || Epoch_Loss:270.2237958554868, Epoch_FlowLoss:270.1918696650752, Epock_CycleLoss:0.03192682681536233
+-------------
+Epoch 120/500
+-------------
+（train）
+-------------
+epoch 120 || Epoch_Loss:270.29106705277064, Epoch_FlowLoss:270.2596028645833, Epock_CycleLoss:0.031462196398664405
+-------------
+Epoch 121/500
+-------------
+（train）
+-------------
+epoch 121 || Epoch_Loss:270.1766216136792, Epoch_FlowLoss:270.13943071718563, Epock_CycleLoss:0.03718917941053708
+-------------
+Epoch 122/500
+-------------
+（train）
+-------------
+epoch 122 || Epoch_Loss:270.3353977909794, Epoch_FlowLoss:270.30518312807436, Epock_CycleLoss:0.03021332869927088
+-------------
+Epoch 123/500
+-------------
+（train）
+-------------
+epoch 123 || Epoch_Loss:270.3363124706127, Epoch_FlowLoss:270.3021401299371, Epock_CycleLoss:0.03417281013120103
+-------------
+Epoch 124/500
+-------------
+（train）
+-------------
+epoch 124 || Epoch_Loss:270.1537447328921, Epoch_FlowLoss:270.11751528139473, Epock_CycleLoss:0.036228391721292774
+-------------
+Epoch 125/500
+-------------
+（train）
+-------------
+epoch 125 || Epoch_Loss:270.1889504326715, Epoch_FlowLoss:270.1552570484303, Epock_CycleLoss:0.033691345403591796
+-------------
+Epoch 126/500
+-------------
+（train）
+-------------
+epoch 126 || Epoch_Loss:270.31699512622976, Epoch_FlowLoss:270.28042856852215, Epock_CycleLoss:0.036567679502897805
+-------------
+Epoch 127/500
+-------------
+（train）
+-------------
+epoch 127 || Epoch_Loss:270.6467528166594, Epoch_FlowLoss:270.61561047589345, Epock_CycleLoss:0.03114192449936161
+-------------
+Epoch 128/500
+-------------
+（train）
+-------------
+epoch 128 || Epoch_Loss:270.3678950557002, Epoch_FlowLoss:270.33378742359304, Epock_CycleLoss:0.03410500281110958
+-------------
+Epoch 129/500
+-------------
+（train）
+-------------
+epoch 129 || Epoch_Loss:270.3853629783348, Epoch_FlowLoss:270.3532706366646, Epock_CycleLoss:0.03209274289784608
+-------------
+Epoch 130/500
+-------------
+（train）
+-------------
+epoch 130 || Epoch_Loss:270.17650095621735, Epoch_FlowLoss:270.1416569462529, Epock_CycleLoss:0.03484282911651664
+-------------
+Epoch 131/500
+-------------
+（train）
+-------------
+epoch 131 || Epoch_Loss:270.1003663804796, Epoch_FlowLoss:270.0640332257306, Epock_CycleLoss:0.03632988311626294
+-------------
+Epoch 132/500
+-------------
+（train）
+-------------
+epoch 132 || Epoch_Loss:270.211097434715, Epoch_FlowLoss:270.1806482385706, Epock_CycleLoss:0.030449060343757817
+-------------
+Epoch 133/500
+-------------
+（train）
+-------------
+epoch 133 || Epoch_Loss:270.42843232331455, Epoch_FlowLoss:270.3934461805556, Epock_CycleLoss:0.03498690258021708
+-------------
+Epoch 134/500
+-------------
+（train）
+-------------
+epoch 134 || Epoch_Loss:270.3350677490235, Epoch_FlowLoss:270.30226304795997, Epock_CycleLoss:0.0328057004759709
+-------------
+Epoch 135/500
+-------------
+（train）
+-------------
+epoch 135 || Epoch_Loss:270.14508678295, Epoch_FlowLoss:270.1102874190719, Epock_CycleLoss:0.034799934744283
+-------------
+Epoch 136/500
+-------------
+（train）
+-------------
+epoch 136 || Epoch_Loss:270.24092285721395, Epoch_FlowLoss:270.2075271606446, Epock_CycleLoss:0.033395099764068924
+-------------
+Epoch 137/500
+-------------
+（train）
+-------------
+epoch 137 || Epoch_Loss:270.4443588256836, Epoch_FlowLoss:270.41010369194873, Epock_CycleLoss:0.03425386651522584
+-------------
+Epoch 138/500
+-------------
+（train）
+-------------
+epoch 138 || Epoch_Loss:270.275225604022, Epoch_FlowLoss:270.2458908646195, Epock_CycleLoss:0.029335186782258535
+-------------
+Epoch 139/500
+-------------
+（train）
+-------------
+epoch 139 || Epoch_Loss:270.16546461317273, Epoch_FlowLoss:270.1305835865162, Epock_CycleLoss:0.03488121305902799
+-------------
+Epoch 140/500
+-------------
+（train）
+-------------
+epoch 140 || Epoch_Loss:270.2369754932545, Epoch_FlowLoss:270.2021184850622, Epock_CycleLoss:0.03485830497272589
+-------------
+Epoch 141/500
+-------------
+（train）
+-------------
+epoch 141 || Epoch_Loss:270.2925104211878, Epoch_FlowLoss:270.26008040816697, Epock_CycleLoss:0.03243083782770015
+-------------
+Epoch 142/500
+-------------
+（train）
+-------------
+epoch 142 || Epoch_Loss:270.24039543999567, Epoch_FlowLoss:270.2071335404007, Epock_CycleLoss:0.03325867908144439
+-------------
+Epoch 143/500
+-------------
+（train）
+-------------
+epoch 143 || Epoch_Loss:269.91475875289353, Epoch_FlowLoss:269.88395182291663, Epock_CycleLoss:0.03080497799372231
+-------------
+Epoch 144/500
+-------------
+（train）
+-------------
+epoch 144 || Epoch_Loss:273.42966574209703, Epoch_FlowLoss:273.3977333351417, Epock_CycleLoss:0.03193263050720648
+-------------
+Epoch 145/500
+-------------
+（train）
+-------------
+epoch 145 || Epoch_Loss:272.30569740577977, Epoch_FlowLoss:272.29150390625, Epock_CycleLoss:0.014189536441807394
+-------------
+Epoch 146/500
+-------------
+（train）
+-------------
+epoch 146 || Epoch_Loss:271.41898967601634, Epoch_FlowLoss:271.40266870569303, Epock_CycleLoss:0.016321801166567538
+-------------
+Epoch 147/500
+-------------
+（train）
+-------------
+epoch 147 || Epoch_Loss:270.4837397822627, Epoch_FlowLoss:270.4654394079137, Epock_CycleLoss:0.01830133730200706
+-------------
+Epoch 148/500
+-------------
+（train）
+-------------
+epoch 148 || Epoch_Loss:270.51416863335504, Epoch_FlowLoss:270.49419318305127, Epock_CycleLoss:0.019975840010576777
+-------------
+Epoch 149/500
+-------------
+（train）
+-------------
+epoch 149 || Epoch_Loss:270.2893885859737, Epoch_FlowLoss:270.26742497196915, Epock_CycleLoss:0.0219651612073735
+-------------
+Epoch 150/500
+-------------
+（train）
+-------------
+epoch 150 || Epoch_Loss:270.013493290654, Epoch_FlowLoss:269.9891165274161, Epock_CycleLoss:0.024377654617031414
+-------------
+Epoch 151/500
+-------------
+（train）
+-------------
+epoch 151 || Epoch_Loss:270.129729659469, Epoch_FlowLoss:270.1044359560366, Epock_CycleLoss:0.025293229078804998
+-------------
+Epoch 152/500
+-------------
+（train）
+-------------
+epoch 152 || Epoch_Loss:269.8556074919524, Epoch_FlowLoss:269.8302810103805, Epock_CycleLoss:0.025328185133360052
+-------------
+Epoch 153/500
+-------------
+（train）
+-------------
+epoch 153 || Epoch_Loss:270.1533129656757, Epoch_FlowLoss:270.1261644716616, Epock_CycleLoss:0.027145848988934802
+-------------
+Epoch 154/500
+-------------
+（train）
+-------------
+epoch 154 || Epoch_Loss:270.27467854817706, Epoch_FlowLoss:270.24874086733223, Epock_CycleLoss:0.025935489822317057
+-------------
+Epoch 155/500
+-------------
+（train）
+-------------
+epoch 155 || Epoch_Loss:269.898486384639, Epoch_FlowLoss:269.87312769006803, Epock_CycleLoss:0.025358859587598735
+-------------
+Epoch 156/500
+-------------
+（train）
+-------------
+epoch 156 || Epoch_Loss:269.927705835413, Epoch_FlowLoss:269.89888141773366, Epock_CycleLoss:0.02882283774239045
+-------------
+Epoch 157/500
+-------------
+（train）
+-------------
+epoch 157 || Epoch_Loss:270.3883197925709, Epoch_FlowLoss:270.3641278302228, Epock_CycleLoss:0.024192312732338912
+-------------
+Epoch 158/500
+-------------
+（train）
+-------------
+epoch 158 || Epoch_Loss:269.9293749773943, Epoch_FlowLoss:269.9005652533637, Epock_CycleLoss:0.02880999356232308
+-------------
+Epoch 159/500
+-------------
+（train）
+-------------
+epoch 159 || Epoch_Loss:269.871795936867, Epoch_FlowLoss:269.8446214463976, Epock_CycleLoss:0.027175681251618598
+-------------
+Epoch 160/500
+-------------
+（train）
+-------------
+epoch 160 || Epoch_Loss:269.7775946723091, Epoch_FlowLoss:269.749430903682, Epock_CycleLoss:0.02816341582823683
+-------------
+Epoch 161/500
+-------------
+（train）
+-------------
+epoch 161 || Epoch_Loss:269.641520747432, Epoch_FlowLoss:269.61358077437785, Epock_CycleLoss:0.027941473656230505
+-------------
+Epoch 162/500
+-------------
+（train）
+-------------
+epoch 162 || Epoch_Loss:269.67151811387805, Epoch_FlowLoss:269.64318395543984, Epock_CycleLoss:0.02833419327658636
+-------------
+Epoch 163/500
+-------------
+（train）
+-------------
+epoch 163 || Epoch_Loss:269.9133498580367, Epoch_FlowLoss:269.8833742494936, Epock_CycleLoss:0.029975878074765205
+-------------
+Epoch 164/500
+-------------
+（train）
+-------------
+epoch 164 || Epoch_Loss:270.0647088510019, Epoch_FlowLoss:270.0390873661747, Epock_CycleLoss:0.025619761949336087
+-------------
+Epoch 165/500
+-------------
+（train）
+-------------
+epoch 165 || Epoch_Loss:269.84355898256655, Epoch_FlowLoss:269.8140778718171, Epock_CycleLoss:0.029484635149991067
+-------------
+Epoch 166/500
+-------------
+（train）
+-------------
+epoch 166 || Epoch_Loss:269.8868806627062, Epoch_FlowLoss:269.85924445258246, Epock_CycleLoss:0.02763411609662903
+-------------
+Epoch 167/500
+-------------
+（train）
+-------------
+epoch 167 || Epoch_Loss:269.6739682798032, Epoch_FlowLoss:269.64504665798614, Epock_CycleLoss:0.028923220104641385
+-------------
+Epoch 168/500
+-------------
+（train）
+-------------
+epoch 168 || Epoch_Loss:269.9259909170645, Epoch_FlowLoss:269.897708468967, Epock_CycleLoss:0.02828185991556556
+-------------
+Epoch 169/500
+-------------
+（train）
+-------------
+epoch 169 || Epoch_Loss:269.7500243010345, Epoch_FlowLoss:269.7223657678675, Epock_CycleLoss:0.0276576751774108
+-------------
+Epoch 170/500
+-------------
+（train）
+-------------
+epoch 170 || Epoch_Loss:269.6562098750362, Epoch_FlowLoss:269.62587822808166, Epock_CycleLoss:0.0303320274170902
+-------------
+Epoch 171/500
+-------------
+（train）
+-------------
+epoch 171 || Epoch_Loss:269.74701775444885, Epoch_FlowLoss:269.71877175790297, Epock_CycleLoss:0.028245092852524033
+-------------
+Epoch 172/500
+-------------
+（train）
+-------------
+epoch 172 || Epoch_Loss:270.12956718162246, Epoch_FlowLoss:270.09998180248124, Epock_CycleLoss:0.029584977706825288
+-------------
+Epoch 173/500
+-------------
+（train）
+-------------
+epoch 173 || Epoch_Loss:269.97348446316187, Epoch_FlowLoss:269.94845044171365, Epock_CycleLoss:0.025034841288019114
+-------------
+Epoch 174/500
+-------------
+（train）
+-------------
+epoch 174 || Epoch_Loss:269.8442583437319, Epoch_FlowLoss:269.8132440072518, Epock_CycleLoss:0.031012646095068364
+-------------
+Epoch 175/500
+-------------
+（train）
+-------------
+epoch 175 || Epoch_Loss:270.0120708324291, Epoch_FlowLoss:269.98410486291954, Epock_CycleLoss:0.027968204338793403
+-------------
+Epoch 176/500
+-------------
+（train）
+-------------
+epoch 176 || Epoch_Loss:269.9056616889106, Epoch_FlowLoss:269.87661291051796, Epock_CycleLoss:0.02904647064429743
+-------------
+Epoch 177/500
+-------------
+（train）
+-------------
+epoch 177 || Epoch_Loss:269.65988639548965, Epoch_FlowLoss:269.6312459309896, Epock_CycleLoss:0.02863833018475108
+-------------
+Epoch 178/500
+-------------
+（train）
+-------------
+epoch 178 || Epoch_Loss:269.91173624109337, Epoch_FlowLoss:269.88290970413766, Epock_CycleLoss:0.02882407074449239
+-------------
+Epoch 179/500
+-------------
+（train）
+-------------
+epoch 179 || Epoch_Loss:269.79581253616897, Epoch_FlowLoss:269.76902205855754, Epock_CycleLoss:0.026792825889532218
+-------------
+Epoch 180/500
+-------------
+（train）
+-------------
+epoch 180 || Epoch_Loss:270.49347432454425, Epoch_FlowLoss:270.4652048746745, Epock_CycleLoss:0.028268172785087867
+-------------
+Epoch 181/500
+-------------
+（train）
+-------------
+epoch 181 || Epoch_Loss:271.7949379814996, Epoch_FlowLoss:271.7756856282552, Epock_CycleLoss:0.019252031696615397
+-------------
+Epoch 182/500
+-------------
+（train）
+-------------
+epoch 182 || Epoch_Loss:270.5630806816948, Epoch_FlowLoss:270.5401498300058, Epock_CycleLoss:0.022928953929631807
+-------------
+Epoch 183/500
+-------------
+（train）
+-------------
+epoch 183 || Epoch_Loss:270.05039949770327, Epoch_FlowLoss:270.02502300121165, Epock_CycleLoss:0.025377350134982
+-------------
+Epoch 184/500
+-------------
+（train）
+-------------
+epoch 184 || Epoch_Loss:269.58429576732493, Epoch_FlowLoss:269.55618229618784, Epock_CycleLoss:0.02811458210150401
+-------------
+Epoch 185/500
+-------------
+（train）
+-------------
+epoch 185 || Epoch_Loss:269.6319820262767, Epoch_FlowLoss:269.6023686726888, Epock_CycleLoss:0.029612341205830922
+-------------
+Epoch 186/500
+-------------
+（train）
+-------------
+epoch 186 || Epoch_Loss:269.7317773324472, Epoch_FlowLoss:269.7009743584527, Epock_CycleLoss:0.0308009319835239
+-------------
+Epoch 187/500
+-------------
+（train）
+-------------
+epoch 187 || Epoch_Loss:269.80083578604234, Epoch_FlowLoss:269.7730749624747, Epock_CycleLoss:0.02776206774568116
+-------------
+Epoch 188/500
+-------------
+（train）
+-------------
+epoch 188 || Epoch_Loss:269.73914958812566, Epoch_FlowLoss:269.7095557318794, Epock_CycleLoss:0.02959336071378655
+-------------
+Epoch 189/500
+-------------
+（train）
+-------------
+epoch 189 || Epoch_Loss:269.54992082383905, Epoch_FlowLoss:269.5204241717304, Epock_CycleLoss:0.029497366536546634
+-------------
+Epoch 190/500
+-------------
+（train）
+-------------
+epoch 190 || Epoch_Loss:269.76333081280745, Epoch_FlowLoss:269.7334340413412, Epock_CycleLoss:0.029895704998462287
+-------------
+Epoch 191/500
+-------------
+（train）
+-------------
+epoch 191 || Epoch_Loss:269.59828581633394, Epoch_FlowLoss:269.5670431631583, Epock_CycleLoss:0.031243601468978106
+-------------
+Epoch 192/500
+-------------
+（train）
+-------------
+epoch 192 || Epoch_Loss:269.5901525991934, Epoch_FlowLoss:269.55976641619645, Epock_CycleLoss:0.030386362362790992
+-------------
+Epoch 193/500
+-------------
+（train）
+-------------
+epoch 193 || Epoch_Loss:269.66939657705797, Epoch_FlowLoss:269.6384904649522, Epock_CycleLoss:0.030905918873570578
+-------------
+Epoch 194/500
+-------------
+（train）
+-------------
+epoch 194 || Epoch_Loss:269.7250660083912, Epoch_FlowLoss:269.69661571361394, Epock_CycleLoss:0.028450419953851797
+-------------
+Epoch 195/500
+-------------
+（train）
+-------------
+epoch 195 || Epoch_Loss:269.60954793294275, Epoch_FlowLoss:269.58041212293836, Epock_CycleLoss:0.029138593899982943
+-------------
+Epoch 196/500
+-------------
+（train）
+-------------
+epoch 196 || Epoch_Loss:269.48257502803096, Epoch_FlowLoss:269.4529311568648, Epock_CycleLoss:0.02964496391790885
+-------------
+Epoch 197/500
+-------------
+（train）
+-------------
+epoch 197 || Epoch_Loss:269.61719258626295, Epoch_FlowLoss:269.5862082022208, Epock_CycleLoss:0.03098559027744664
+-------------
+Epoch 198/500
+-------------
+（train）
+-------------
+epoch 198 || Epoch_Loss:269.6321032488788, Epoch_FlowLoss:269.6045238353588, Epock_CycleLoss:0.027580596575582466
+-------------
+Epoch 199/500
+-------------
+（train）
+-------------
+epoch 199 || Epoch_Loss:269.8417689005534, Epoch_FlowLoss:269.81201821786385, Epock_CycleLoss:0.029752256141768563
+-------------
+Epoch 200/500
+-------------
+（train）
+-------------
+epoch 200 || Epoch_Loss:269.64009574607564, Epoch_FlowLoss:269.6126121238426, Epock_CycleLoss:0.02748407099258016
+-------------
+Epoch 201/500
+-------------
+（train）
+-------------
+epoch 201 || Epoch_Loss:269.54472803186485, Epoch_FlowLoss:269.5156911214193, Epock_CycleLoss:0.029036196776562273
+-------------
+Epoch 202/500
+-------------
+（train）
+-------------
+epoch 202 || Epoch_Loss:269.8122654667606, Epoch_FlowLoss:269.7834246600115, Epock_CycleLoss:0.028838251475934627
+-------------
+Epoch 203/500
+-------------
+（train）
+-------------
+epoch 203 || Epoch_Loss:269.73318594473386, Epoch_FlowLoss:269.70249119511357, Epock_CycleLoss:0.030694887180019306
+-------------
+Epoch 204/500
+-------------
+（train）
+-------------
+epoch 204 || Epoch_Loss:269.86237730803316, Epoch_FlowLoss:269.83421184398514, Epock_CycleLoss:0.0281645556980813
+-------------
+Epoch 205/500
+-------------
+（train）
+-------------
+epoch 205 || Epoch_Loss:269.75243208143445, Epoch_FlowLoss:269.72429233127167, Epock_CycleLoss:0.028138141527220058
+-------------
+Epoch 206/500
+-------------
+（train）
+-------------
+epoch 206 || Epoch_Loss:269.4745760317202, Epoch_FlowLoss:269.44442099112047, Epock_CycleLoss:0.030156049877405174
+-------------
+Epoch 207/500
+-------------
+（train）
+-------------
+epoch 207 || Epoch_Loss:269.9570891768844, Epoch_FlowLoss:269.9306674533421, Epock_CycleLoss:0.026422961718506284
+-------------
+Epoch 208/500
+-------------
+（train）
+-------------
+epoch 208 || Epoch_Loss:269.4077213428638, Epoch_FlowLoss:269.38062964545355, Epock_CycleLoss:0.027093956660893228
+-------------
+Epoch 209/500
+-------------
+（train）
+-------------
+epoch 209 || Epoch_Loss:269.6221954910843, Epoch_FlowLoss:269.5924168339481, Epock_CycleLoss:0.029777872272663642
+-------------
+Epoch 210/500
+-------------
+（train）
+-------------
+epoch 210 || Epoch_Loss:269.4597608778212, Epoch_FlowLoss:269.43000341344765, Epock_CycleLoss:0.029755652847665334
+-------------
+Epoch 211/500
+-------------
+（train）
+-------------
+epoch 211 || Epoch_Loss:269.44585192645036, Epoch_FlowLoss:269.41558414035376, Epock_CycleLoss:0.03026799895559196
+-------------
+Epoch 212/500
+-------------
+（train）
+-------------
+epoch 212 || Epoch_Loss:269.3363898948387, Epoch_FlowLoss:269.3064422607422, Epock_CycleLoss:0.02994893587849759
+-------------
+Epoch 213/500
+-------------
+（train）
+-------------
+epoch 213 || Epoch_Loss:269.86383763066044, Epoch_FlowLoss:269.83520507812494, Epock_CycleLoss:0.02863123340325223
+-------------
+Epoch 214/500
+-------------
+（train）
+-------------
+epoch 214 || Epoch_Loss:269.4313976146557, Epoch_FlowLoss:269.40341016981347, Epock_CycleLoss:0.02798641452358829
+-------------
+Epoch 215/500
+-------------
+（train）
+-------------
+epoch 215 || Epoch_Loss:269.5715628729926, Epoch_FlowLoss:269.54015491626876, Epock_CycleLoss:0.0314104248666101
+-------------
+Epoch 216/500
+-------------
+（train）
+-------------
+epoch 216 || Epoch_Loss:269.45280852141207, Epoch_FlowLoss:269.42222425672736, Epock_CycleLoss:0.030586758352540155
+-------------
+Epoch 217/500
+-------------
+（train）
+-------------
+epoch 217 || Epoch_Loss:269.5136899594907, Epoch_FlowLoss:269.4825295342339, Epock_CycleLoss:0.031158664160304595
+-------------
+Epoch 218/500
+-------------
+（train）
+-------------
+epoch 218 || Epoch_Loss:269.40393066406256, Epoch_FlowLoss:269.3735512627496, Epock_CycleLoss:0.030378964626126815
+-------------
+Epoch 219/500
+-------------
+（train）
+-------------
+epoch 219 || Epoch_Loss:269.2747960973669, Epoch_FlowLoss:269.246602376302, Epock_CycleLoss:0.028191809956398275
+-------------
+Epoch 220/500
+-------------
+（train）
+-------------
+epoch 220 || Epoch_Loss:269.7275099577728, Epoch_FlowLoss:269.69655750415944, Epock_CycleLoss:0.03095580237331214
+-------------
+Epoch 221/500
+-------------
+（train）
+-------------
+epoch 221 || Epoch_Loss:269.97509624339915, Epoch_FlowLoss:269.9449366816768, Epock_CycleLoss:0.030159630778211145
+-------------
+Epoch 222/500
+-------------
+（train）
+-------------
+epoch 222 || Epoch_Loss:269.59324419939963, Epoch_FlowLoss:269.5635093406395, Epock_CycleLoss:0.029737699914861613
+-------------
+Epoch 223/500
+-------------
+（train）
+-------------
+epoch 223 || Epoch_Loss:269.7737830833152, Epoch_FlowLoss:269.74463625307436, Epock_CycleLoss:0.029145709204453012
+-------------
+Epoch 224/500
+-------------
+（train）
+-------------
+epoch 224 || Epoch_Loss:269.36984055130574, Epoch_FlowLoss:269.3397061383283, Epock_CycleLoss:0.030135937311031206
+-------------
+Epoch 225/500
+-------------
+（train）
+-------------
+epoch 225 || Epoch_Loss:269.36468279803245, Epoch_FlowLoss:269.3366394042968, Epock_CycleLoss:0.028040966915863535
+-------------
+Epoch 226/500
+-------------
+（train）
+-------------
+epoch 226 || Epoch_Loss:269.3307204069914, Epoch_FlowLoss:269.29877584951896, Epock_CycleLoss:0.03194462373438809
+-------------
+Epoch 227/500
+-------------
+（train）
+-------------
+epoch 227 || Epoch_Loss:269.65063730875653, Epoch_FlowLoss:269.6222539831091, Epock_CycleLoss:0.028382902413054748
+-------------
+Epoch 228/500
+-------------
+（train）
+-------------
+epoch 228 || Epoch_Loss:269.6094592059101, Epoch_FlowLoss:269.57716284857855, Epock_CycleLoss:0.03229429414150891
+-------------
+Epoch 229/500
+-------------
+（train）
+-------------
+epoch 229 || Epoch_Loss:269.70324650517216, Epoch_FlowLoss:269.6757041083442, Epock_CycleLoss:0.027542252093553543
+-------------
+Epoch 230/500
+-------------
+（train）
+-------------
+epoch 230 || Epoch_Loss:269.62971383553963, Epoch_FlowLoss:269.60096599437577, Epock_CycleLoss:0.028746335732716108
+-------------
+Epoch 231/500
+-------------
+（train）
+-------------
+epoch 231 || Epoch_Loss:269.68842937328196, Epoch_FlowLoss:269.6577041060836, Epock_CycleLoss:0.03072588745918538
+-------------
+Epoch 232/500
+-------------
+（train）
+-------------
+epoch 232 || Epoch_Loss:269.4370928163881, Epoch_FlowLoss:269.40747013798466, Epock_CycleLoss:0.02962100864560515
+-------------
+Epoch 233/500
+-------------
+（train）
+-------------
+epoch 233 || Epoch_Loss:269.6465304339374, Epoch_FlowLoss:269.61611486364296, Epock_CycleLoss:0.030418379094313695
+-------------
+Epoch 234/500
+-------------
+（train）
+-------------
+epoch 234 || Epoch_Loss:269.59635981806997, Epoch_FlowLoss:269.565475181297, Epock_CycleLoss:0.03088630542710976
+-------------
+Epoch 235/500
+-------------
+（train）
+-------------
+epoch 235 || Epoch_Loss:269.43740957754625, Epoch_FlowLoss:269.4074260570385, Epock_CycleLoss:0.029981891590136065
+-------------
+Epoch 236/500
+-------------
+（train）
+-------------
+epoch 236 || Epoch_Loss:269.5584007545753, Epoch_FlowLoss:269.5279620135272, Epock_CycleLoss:0.030436863156932375
+-------------
+Epoch 237/500
+-------------
+（train）
+-------------
+epoch 237 || Epoch_Loss:269.3311846697772, Epoch_FlowLoss:269.30128535517935, Epock_CycleLoss:0.02990013981858889
+-------------
+Epoch 238/500
+-------------
+（train）
+-------------
+epoch 238 || Epoch_Loss:269.74255794949005, Epoch_FlowLoss:269.71417349356193, Epock_CycleLoss:0.02838362832726152
+-------------
+Epoch 239/500
+-------------
+（train）
+-------------
+epoch 239 || Epoch_Loss:269.9649612991898, Epoch_FlowLoss:269.93415719491463, Epock_CycleLoss:0.030808326270845208
+-------------
+Epoch 240/500
+-------------
+（train）
+-------------
+epoch 240 || Epoch_Loss:269.45052365903507, Epoch_FlowLoss:269.42078880027486, Epock_CycleLoss:0.02973354538833653
+-------------
+Epoch 241/500
+-------------
+（train）
+-------------
+epoch 241 || Epoch_Loss:269.39113503915297, Epoch_FlowLoss:269.36097010859737, Epock_CycleLoss:0.030163653539838617
+-------------
+Epoch 242/500
+-------------
+（train）
+-------------
+epoch 242 || Epoch_Loss:269.3270611233182, Epoch_FlowLoss:269.29440222846137, Epock_CycleLoss:0.03265654626819823
+-------------
+Epoch 243/500
+-------------
+（train）
+-------------
+epoch 243 || Epoch_Loss:269.2044409292716, Epoch_FlowLoss:269.17220221625445, Epock_CycleLoss:0.03224060560266177
+-------------
+Epoch 244/500
+-------------
+（train）
+-------------
+epoch 244 || Epoch_Loss:269.30224807174113, Epoch_FlowLoss:269.27184945565676, Epock_CycleLoss:0.030396547858361843
+-------------
+Epoch 245/500
+-------------
+（train）
+-------------
+epoch 245 || Epoch_Loss:269.46036162199795, Epoch_FlowLoss:269.4302379466869, Epock_CycleLoss:0.030125483870506283
+-------------
+Epoch 246/500
+-------------
+（train）
+-------------
+epoch 246 || Epoch_Loss:270.3570760091146, Epoch_FlowLoss:270.3302165843822, Epock_CycleLoss:0.026861671289360074
+-------------
+Epoch 247/500
+-------------
+（train）
+-------------
+epoch 247 || Epoch_Loss:269.5009923864294, Epoch_FlowLoss:269.4703092221861, Epock_CycleLoss:0.030683927651908673
+-------------
+Epoch 248/500
+-------------
+（train）
+-------------
+epoch 248 || Epoch_Loss:269.410191571271, Epoch_FlowLoss:269.38080229582613, Epock_CycleLoss:0.02939085572682045
+-------------
+Epoch 249/500
+-------------
+（train）
+-------------
+epoch 249 || Epoch_Loss:269.483942385073, Epoch_FlowLoss:269.45122867160376, Epock_CycleLoss:0.03271527222737118
+-------------
+Epoch 250/500
+-------------
+（train）
+-------------
+epoch 250 || Epoch_Loss:269.7577000370732, Epoch_FlowLoss:269.728185583044, Epock_CycleLoss:0.029515130307387418
+-------------
+Epoch 251/500
+-------------
+（train）
+-------------
+epoch 251 || Epoch_Loss:269.525506761339, Epoch_FlowLoss:269.4960072835286, Epock_CycleLoss:0.02949914274116357
+-------------
+Epoch 252/500
+-------------
+（train）
+-------------
+epoch 252 || Epoch_Loss:269.4956645259152, Epoch_FlowLoss:269.4660720825195, Epock_CycleLoss:0.02959061807228459
+-------------
+Epoch 253/500
+-------------
+（train）
+-------------
+epoch 253 || Epoch_Loss:269.29203202989373, Epoch_FlowLoss:269.26286202889906, Epock_CycleLoss:0.029170147936653203
+-------------
+Epoch 254/500
+-------------
+（train）
+-------------
+epoch 254 || Epoch_Loss:269.6664965594256, Epoch_FlowLoss:269.6364474826389, Epock_CycleLoss:0.03005011296934552
+-------------
+Epoch 255/500
+-------------
+（train）
+-------------
+epoch 255 || Epoch_Loss:269.28141134756584, Epoch_FlowLoss:269.25013337311924, Epock_CycleLoss:0.031276244670152664
+-------------
+Epoch 256/500
+-------------
+（train）
+-------------
+epoch 256 || Epoch_Loss:269.7676775896991, Epoch_FlowLoss:269.7379608154297, Epock_CycleLoss:0.02971582997728277
+-------------
+Epoch 257/500
+-------------
+（train）
+-------------
+epoch 257 || Epoch_Loss:269.5792490641276, Epoch_FlowLoss:269.55082080982345, Epock_CycleLoss:0.028428682574519405
+-------------
+Epoch 258/500
+-------------
+（train）
+-------------
+epoch 258 || Epoch_Loss:269.25630640100553, Epoch_FlowLoss:269.2247718528466, Epock_CycleLoss:0.03153513778966886
+-------------
+Epoch 259/500
+-------------
+（train）
+-------------
+epoch 259 || Epoch_Loss:269.8115511293764, Epoch_FlowLoss:269.7832836574978, Epock_CycleLoss:0.028265736790166956
+-------------
+Epoch 260/500
+-------------
+（train）
+-------------
+epoch 260 || Epoch_Loss:269.51765611436633, Epoch_FlowLoss:269.4880498250326, Epock_CycleLoss:0.029605203549619073
+-------------
+Epoch 261/500
+-------------
+（train）
+-------------
+epoch 261 || Epoch_Loss:269.3086067482277, Epoch_FlowLoss:269.27929348415796, Epock_CycleLoss:0.02931085891193814
+-------------
+Epoch 262/500
+-------------
+（train）
+-------------
+epoch 262 || Epoch_Loss:269.2896745469836, Epoch_FlowLoss:269.25796395760995, Epock_CycleLoss:0.03171007369679432
+-------------
+Epoch 263/500
+-------------
+（train）
+-------------
+epoch 263 || Epoch_Loss:269.4107948585793, Epoch_FlowLoss:269.38070848253045, Epock_CycleLoss:0.030086426409306352
+-------------
+Epoch 264/500
+-------------
+（train）
+-------------
+epoch 264 || Epoch_Loss:269.3792292277018, Epoch_FlowLoss:269.34971166540083, Epock_CycleLoss:0.029515674544705287
+-------------
+Epoch 265/500
+-------------
+（train）
+-------------
+epoch 265 || Epoch_Loss:269.1494262130172, Epoch_FlowLoss:269.11775207519526, Epock_CycleLoss:0.031673063351600264
+-------------
+Epoch 266/500
+-------------
+（train）
+-------------
+epoch 266 || Epoch_Loss:269.3673971670645, Epoch_FlowLoss:269.33680075186265, Epock_CycleLoss:0.030595754652663516
+-------------
+Epoch 267/500
+-------------
+（train）
+-------------
+epoch 267 || Epoch_Loss:269.64316361038766, Epoch_FlowLoss:269.6135398017036, Epock_CycleLoss:0.029624999190370243
+-------------
+Epoch 268/500
+-------------
+（train）
+-------------
+epoch 268 || Epoch_Loss:269.47755234329793, Epoch_FlowLoss:269.4456205014829, Epock_CycleLoss:0.031935578350115706
+-------------
+Epoch 269/500
+-------------
+（train）
+-------------
+epoch 269 || Epoch_Loss:269.3272631609881, Epoch_FlowLoss:269.29613890471285, Epock_CycleLoss:0.03112392244791543
+-------------
+Epoch 270/500
+-------------
+（train）
+-------------
+epoch 270 || Epoch_Loss:269.4934443721065, Epoch_FlowLoss:269.46356681541164, Epock_CycleLoss:0.02987780484060447
+-------------
+Epoch 271/500
+-------------
+（train）
+-------------
+epoch 271 || Epoch_Loss:269.42637464735236, Epoch_FlowLoss:269.3956284699617, Epock_CycleLoss:0.03074556423558129
+-------------
+Epoch 272/500
+-------------
+（train）
+-------------
+epoch 272 || Epoch_Loss:269.5060679117839, Epoch_FlowLoss:269.4767761230469, Epock_CycleLoss:0.02929344173106882
+-------------
+Epoch 273/500
+-------------
+（train）
+-------------
+epoch 273 || Epoch_Loss:269.5085822211372, Epoch_FlowLoss:269.4782355979637, Epock_CycleLoss:0.030348718304325038
+-------------
+Epoch 274/500
+-------------
+（train）
+-------------
+epoch 274 || Epoch_Loss:269.4266476101346, Epoch_FlowLoss:269.39615970187725, Epock_CycleLoss:0.03048524295014364
+-------------
+Epoch 275/500
+-------------
+（train）
+-------------
+epoch 275 || Epoch_Loss:269.47329514114944, Epoch_FlowLoss:269.443684330693, Epock_CycleLoss:0.029613429542492943
+-------------
+Epoch 276/500
+-------------
+（train）
+-------------
+epoch 276 || Epoch_Loss:269.6282501220703, Epoch_FlowLoss:269.5979699028863, Epock_CycleLoss:0.030283174132583322
+-------------
+Epoch 277/500
+-------------
+（train）
+-------------
+epoch 277 || Epoch_Loss:269.5228166933413, Epoch_FlowLoss:269.49259214048027, Epock_CycleLoss:0.030226344173705136
+-------------
+Epoch 278/500
+-------------
+（train）
+-------------
+epoch 278 || Epoch_Loss:269.53533229121456, Epoch_FlowLoss:269.50489807128906, Epock_CycleLoss:0.030435531641598092
+-------------
+Epoch 279/500
+-------------
+（train）
+-------------
+epoch 279 || Epoch_Loss:269.47741614447705, Epoch_FlowLoss:269.4489757396557, Epock_CycleLoss:0.02843665745523241
+-------------
+Epoch 280/500
+-------------
+（train）
+-------------
+epoch 280 || Epoch_Loss:269.43866418909147, Epoch_FlowLoss:269.4060293126989, Epock_CycleLoss:0.03263538513608553
+-------------
+Epoch 281/500
+-------------
+（train）
+-------------
+epoch 281 || Epoch_Loss:269.4031261867947, Epoch_FlowLoss:269.3718109130859, Epock_CycleLoss:0.03131542410011645
+-------------
+Epoch 282/500
+-------------
+（train）
+-------------
+epoch 282 || Epoch_Loss:269.5154989737052, Epoch_FlowLoss:269.4828802038122, Epock_CycleLoss:0.03261978482758558
+-------------
+Epoch 283/500
+-------------
+（train）
+-------------
+epoch 283 || Epoch_Loss:269.33912206579146, Epoch_FlowLoss:269.3106531213831, Epock_CycleLoss:0.028469920848254802
+-------------
+Epoch 284/500
+-------------
+（train）
+-------------
+epoch 284 || Epoch_Loss:269.5453754001194, Epoch_FlowLoss:269.51471851490163, Epock_CycleLoss:0.03065714674691359
+-------------
+Epoch 285/500
+-------------
+（train）
+-------------
+epoch 285 || Epoch_Loss:269.3912602177373, Epoch_FlowLoss:269.3592207166884, Epock_CycleLoss:0.03203953071324914
+-------------
+Epoch 286/500
+-------------
+（train）
+-------------
+epoch 286 || Epoch_Loss:269.4629121003328, Epoch_FlowLoss:269.43316961217806, Epock_CycleLoss:0.029743834226219748
+-------------
+Epoch 287/500
+-------------
+（train）
+-------------
+epoch 287 || Epoch_Loss:269.5962507459853, Epoch_FlowLoss:269.56529235839844, Epock_CycleLoss:0.0309552777627552
+-------------
+Epoch 288/500
+-------------
+（train）
+-------------
+epoch 288 || Epoch_Loss:269.4280754371926, Epoch_FlowLoss:269.3966024893301, Epock_CycleLoss:0.0314722500603508
+-------------
+Epoch 289/500
+-------------
+（train）
+-------------
+epoch 289 || Epoch_Loss:269.50904902705435, Epoch_FlowLoss:269.4779657434534, Epock_CycleLoss:0.031083664270462816
+-------------
+Epoch 290/500
+-------------
+（train）
+-------------
+epoch 290 || Epoch_Loss:269.48322098343465, Epoch_FlowLoss:269.45279608832465, Epock_CycleLoss:0.030426451384469314
+-------------
+Epoch 291/500
+-------------
+（train）
+-------------
+epoch 291 || Epoch_Loss:269.4066489890769, Epoch_FlowLoss:269.37560187445746, Epock_CycleLoss:0.03104749584087619
+-------------
+Epoch 292/500
+-------------
+（train）
+-------------
+epoch 292 || Epoch_Loss:269.58492448594836, Epoch_FlowLoss:269.5560449670862, Epock_CycleLoss:0.028881123082505327
+-------------
+Epoch 293/500
+-------------
+（train）
+-------------
+epoch 293 || Epoch_Loss:269.6853691383644, Epoch_FlowLoss:269.6544932612667, Epock_CycleLoss:0.030873609430812025
+-------------
+Epoch 294/500
+-------------
+（train）
+-------------
+epoch 294 || Epoch_Loss:269.9216966982241, Epoch_FlowLoss:269.89291325321904, Epock_CycleLoss:0.028782578116213833
+-------------
+Epoch 295/500
+-------------
+（train）
+-------------
+epoch 295 || Epoch_Loss:269.60966717755355, Epoch_FlowLoss:269.5801739162869, Epock_CycleLoss:0.029492035025247818
+-------------
+Epoch 296/500
+-------------
+（train）
+-------------
+epoch 296 || Epoch_Loss:269.4063130131475, Epoch_FlowLoss:269.3754651104962, Epock_CycleLoss:0.030847699829825655
+-------------
+Epoch 297/500
+-------------
+（train）
+-------------
+epoch 297 || Epoch_Loss:269.2643684104637, Epoch_FlowLoss:269.2337773640951, Epock_CycleLoss:0.030590162371043804
+-------------
+Epoch 298/500
+-------------
+（train）
+-------------
+epoch 298 || Epoch_Loss:269.2707824707032, Epoch_FlowLoss:269.23874296965425, Epock_CycleLoss:0.03203855986120524
+-------------
+Epoch 299/500
+-------------
+（train）
+-------------
+epoch 299 || Epoch_Loss:269.2028952704535, Epoch_FlowLoss:269.17370661982784, Epock_CycleLoss:0.029187024122586957
+-------------
+Epoch 300/500
+-------------
+（train）
+-------------
+epoch 300 || Epoch_Loss:269.6124784681532, Epoch_FlowLoss:269.5821934452763, Epock_CycleLoss:0.030284786458920545
+-------------
+Epoch 301/500
+-------------
+（train）
+-------------
+epoch 301 || Epoch_Loss:269.4055229469581, Epoch_FlowLoss:269.37577678539134, Epock_CycleLoss:0.029747554273517048
+-------------
+Epoch 302/500
+-------------
+（train）
+-------------
+epoch 302 || Epoch_Loss:269.5250278049045, Epoch_FlowLoss:269.49213776765043, Epock_CycleLoss:0.032890318168534174
+-------------
+Epoch 303/500
+-------------
+（train）
+-------------
+epoch 303 || Epoch_Loss:269.227545844184, Epoch_FlowLoss:269.19871464482065, Epock_CycleLoss:0.02883287519216537
+-------------
+Epoch 304/500
+-------------
+（train）
+-------------
+epoch 304 || Epoch_Loss:269.26656313295723, Epoch_FlowLoss:269.2343888459382, Epock_CycleLoss:0.032175093958223315
+-------------
+Epoch 305/500
+-------------
+（train）
+-------------
+epoch 305 || Epoch_Loss:269.43851386176215, Epoch_FlowLoss:269.40657608597377, Epock_CycleLoss:0.03193822475495162
+-------------
+Epoch 306/500
+-------------
+（train）
+-------------
+epoch 306 || Epoch_Loss:269.3173870510525, Epoch_FlowLoss:269.28896868670427, Epock_CycleLoss:0.028419696553437797
+-------------
+Epoch 307/500
+-------------
+（train）
+-------------
+epoch 307 || Epoch_Loss:269.522100660536, Epoch_FlowLoss:269.48924001057946, Epock_CycleLoss:0.0328602477632187
+-------------
+Epoch 308/500
+-------------
+（train）
+-------------
+epoch 308 || Epoch_Loss:270.02173699273, Epoch_FlowLoss:269.99597026683665, Epock_CycleLoss:0.025765810817204138
+-------------
+Epoch 309/500
+-------------
+（train）
+-------------
+epoch 309 || Epoch_Loss:269.8110605875652, Epoch_FlowLoss:269.78194907859523, Epock_CycleLoss:0.029112810751906155
+-------------
+Epoch 310/500
+-------------
+（train）
+-------------
+epoch 310 || Epoch_Loss:269.2425172593858, Epoch_FlowLoss:269.2114390620479, Epock_CycleLoss:0.031081333342525684
+-------------
+Epoch 311/500
+-------------
+（train）
+-------------
+epoch 311 || Epoch_Loss:269.3603218926324, Epoch_FlowLoss:269.32912981951677, Epock_CycleLoss:0.031192597898620146
+-------------
+Epoch 312/500
+-------------
+（train）
+-------------
+epoch 312 || Epoch_Loss:269.5146738688151, Epoch_FlowLoss:269.48499891493054, Epock_CycleLoss:0.029674187095628836
+-------------
+Epoch 313/500
+-------------
+（train）
+-------------
+epoch 313 || Epoch_Loss:269.7598628291377, Epoch_FlowLoss:269.7286591706452, Epock_CycleLoss:0.031204690880797532
+-------------
+Epoch 314/500
+-------------
+（train）
+-------------
+epoch 314 || Epoch_Loss:269.62474738227, Epoch_FlowLoss:269.5957816795066, Epock_CycleLoss:0.02896586157105587
+-------------
+Epoch 315/500
+-------------
+（train）
+-------------
+epoch 315 || Epoch_Loss:269.4415175826461, Epoch_FlowLoss:269.4112209743924, Epock_CycleLoss:0.030297439614379848
+-------------
+Epoch 316/500
+-------------
+（train）
+-------------
+epoch 316 || Epoch_Loss:269.381182635272, Epoch_FlowLoss:269.35009370026756, Epock_CycleLoss:0.0310886640239645
+-------------
+Epoch 317/500
+-------------
+（train）
+-------------
+epoch 317 || Epoch_Loss:269.42437376799404, Epoch_FlowLoss:269.39605119493274, Epock_CycleLoss:0.028320516908058414
+-------------
+Epoch 318/500
+-------------
+（train）
+-------------
+epoch 318 || Epoch_Loss:269.6433766682942, Epoch_FlowLoss:269.61146375868054, Epock_CycleLoss:0.03191318525070394
+-------------
+Epoch 319/500
+-------------
+（train）
+-------------
+epoch 319 || Epoch_Loss:269.4063782868562, Epoch_FlowLoss:269.37512517858437, Epock_CycleLoss:0.03125154206322299
+-------------
+Epoch 320/500
+-------------
+（train）
+-------------
+epoch 320 || Epoch_Loss:269.38619090892655, Epoch_FlowLoss:269.3542650010851, Epock_CycleLoss:0.0319276332717251
+-------------
+Epoch 321/500
+-------------
+（train）
+-------------
+epoch 321 || Epoch_Loss:269.4893431486907, Epoch_FlowLoss:269.45883291739, Epock_CycleLoss:0.030511741974839454
+-------------
+Epoch 322/500
+-------------
+（train）
+-------------
+epoch 322 || Epoch_Loss:269.29801573576754, Epoch_FlowLoss:269.26630514639396, Epock_CycleLoss:0.0317094110780292
+-------------
+Epoch 323/500
+-------------
+（train）
+-------------
+epoch 323 || Epoch_Loss:269.16912530969694, Epoch_FlowLoss:269.14093413176363, Epock_CycleLoss:0.02818823936912749
+-------------
+Epoch 324/500
+-------------
+（train）
+-------------
+epoch 324 || Epoch_Loss:269.40682135687933, Epoch_FlowLoss:269.3760850694444, Epock_CycleLoss:0.03073533924503459
+-------------
+Epoch 325/500
+-------------
+（train）
+-------------
+epoch 325 || Epoch_Loss:269.68770825421365, Epoch_FlowLoss:269.6565789116753, Epock_CycleLoss:0.031128714757936975
+-------------
+Epoch 326/500
+-------------
+（train）
+-------------
+epoch 326 || Epoch_Loss:269.64509299949367, Epoch_FlowLoss:269.61431093569155, Epock_CycleLoss:0.030782013372690587
+-------------
+Epoch 327/500
+-------------
+（train）
+-------------
+epoch 327 || Epoch_Loss:269.5339194403754, Epoch_FlowLoss:269.5050890887225, Epock_CycleLoss:0.028828746535711814
+-------------
+Epoch 328/500
+-------------
+（train）
+-------------
+epoch 328 || Epoch_Loss:269.4492831759983, Epoch_FlowLoss:269.4168735080295, Epock_CycleLoss:0.03240697968889166
+-------------
+Epoch 329/500
+-------------
+（train）
+-------------
+epoch 329 || Epoch_Loss:269.608298972801, Epoch_FlowLoss:269.5775830304181, Epock_CycleLoss:0.030715913132384972
+-------------
+Epoch 330/500
+-------------
+（train）
+-------------
+epoch 330 || Epoch_Loss:269.41201386628325, Epoch_FlowLoss:269.37898339165577, Epock_CycleLoss:0.0330264522107663
+-------------
+Epoch 331/500
+-------------
+（train）
+-------------
+epoch 331 || Epoch_Loss:269.4450740107783, Epoch_FlowLoss:269.4163973772967, Epock_CycleLoss:0.028676176374709164
+-------------
+Epoch 332/500
+-------------
+（train）
+-------------
+epoch 332 || Epoch_Loss:269.44605339898004, Epoch_FlowLoss:269.41544822410305, Epock_CycleLoss:0.03060516432203628
+-------------
+Epoch 333/500
+-------------
+（train）
+-------------
+epoch 333 || Epoch_Loss:269.44783104790577, Epoch_FlowLoss:269.41626287389676, Epock_CycleLoss:0.03156622416443295
+-------------
+Epoch 334/500
+-------------
+（train）
+-------------
+epoch 334 || Epoch_Loss:269.35719581886576, Epoch_FlowLoss:269.32624308268237, Epock_CycleLoss:0.030951233511721646
+-------------
+Epoch 335/500
+-------------
+（train）
+-------------
+epoch 335 || Epoch_Loss:269.3975420351383, Epoch_FlowLoss:269.3667862503617, Epock_CycleLoss:0.030756224912625772
+-------------
+Epoch 336/500
+-------------
+（train）
+-------------
+epoch 336 || Epoch_Loss:269.2528327659324, Epoch_FlowLoss:269.2212467900029, Epock_CycleLoss:0.03158380091190338
+-------------
+Epoch 337/500
+-------------
+（train）
+-------------
+epoch 337 || Epoch_Loss:269.29408546730326, Epoch_FlowLoss:269.26398270218453, Epock_CycleLoss:0.030102857147102
+-------------
+Epoch 338/500
+-------------
+（train）
+-------------
+epoch 338 || Epoch_Loss:269.3658481174045, Epoch_FlowLoss:269.3347659640842, Epock_CycleLoss:0.031081634642625294
+-------------
+Epoch 339/500
+-------------
+（train）
+-------------
+epoch 339 || Epoch_Loss:269.28902576587814, Epoch_FlowLoss:269.2588337085865, Epock_CycleLoss:0.030193234069479838
+-------------
+Epoch 340/500
+-------------
+（train）
+-------------
+epoch 340 || Epoch_Loss:269.45394162778507, Epoch_FlowLoss:269.42186991373705, Epock_CycleLoss:0.0320737268085833
+-------------
+Epoch 341/500
+-------------
+（train）
+-------------
+epoch 341 || Epoch_Loss:269.67848205566406, Epoch_FlowLoss:269.6478356255424, Epock_CycleLoss:0.030647136339986773
+-------------
+Epoch 342/500
+-------------
+（train）
+-------------
+epoch 342 || Epoch_Loss:269.24778464988424, Epoch_FlowLoss:269.2181176079644, Epock_CycleLoss:0.029667572083848497
+-------------
+Epoch 343/500
+-------------
+（train）
+-------------
+epoch 343 || Epoch_Loss:269.4055170129846, Epoch_FlowLoss:269.37359393084495, Epock_CycleLoss:0.03192644597341617
+-------------
+Epoch 344/500
+-------------
+（train）
+-------------
+epoch 344 || Epoch_Loss:269.19513391565397, Epoch_FlowLoss:269.1629387184425, Epock_CycleLoss:0.0321935702253271
+-------------
+Epoch 345/500
+-------------
+（train）
+-------------
+epoch 345 || Epoch_Loss:269.3888628924335, Epoch_FlowLoss:269.3585244637949, Epock_CycleLoss:0.030340732385714848
+-------------
+Epoch 346/500
+-------------
+（train）
+-------------
+epoch 346 || Epoch_Loss:269.3295805189345, Epoch_FlowLoss:269.2981440226238, Epock_CycleLoss:0.031433748357273916
+-------------
+Epoch 347/500
+-------------
+（train）
+-------------
+epoch 347 || Epoch_Loss:269.33647607873985, Epoch_FlowLoss:269.3079178421586, Epock_CycleLoss:0.028559485312413282
+-------------
+Epoch 348/500
+-------------
+（train）
+-------------
+epoch 348 || Epoch_Loss:269.72595186586733, Epoch_FlowLoss:269.69549758345994, Epock_CycleLoss:0.030452793946972603
+-------------
+Epoch 349/500
+-------------
+（train）
+-------------
+epoch 349 || Epoch_Loss:269.5802411679868, Epoch_FlowLoss:269.55001265914353, Epock_CycleLoss:0.03022875374665967
+-------------
+Epoch 350/500
+-------------
+（train）
+-------------
+epoch 350 || Epoch_Loss:269.74132000958474, Epoch_FlowLoss:269.71174762867116, Epock_CycleLoss:0.029572703634147293
+-------------
+Epoch 351/500
+-------------
+（train）
+-------------
+epoch 351 || Epoch_Loss:269.6490876939561, Epoch_FlowLoss:269.62058229799624, Epock_CycleLoss:0.02850466456126284
+-------------
+Epoch 352/500
+-------------
+（train）
+-------------
+epoch 352 || Epoch_Loss:269.34960711443864, Epoch_FlowLoss:269.3211938363535, Epock_CycleLoss:0.028414576486856847
+-------------
+Epoch 353/500
+-------------
+（train）
+-------------
+epoch 353 || Epoch_Loss:269.4617182413737, Epoch_FlowLoss:269.4304730450666, Epock_CycleLoss:0.031243956061425035
+-------------
+Epoch 354/500
+-------------
+（train）
+-------------
+epoch 354 || Epoch_Loss:269.3137602629485, Epoch_FlowLoss:269.2832703766999, Epock_CycleLoss:0.030489338147971366
+-------------
+Epoch 355/500
+-------------
+（train）
+-------------
+epoch 355 || Epoch_Loss:269.4029730337637, Epoch_FlowLoss:269.37081287525314, Epock_CycleLoss:0.03215985972848203
+-------------
+Epoch 356/500
+-------------
+（train）
+-------------
+epoch 356 || Epoch_Loss:269.61485036214196, Epoch_FlowLoss:269.58739782262734, Epock_CycleLoss:0.027450991449532686
+-------------
+Epoch 357/500
+-------------
+（train）
+-------------
+epoch 357 || Epoch_Loss:269.5410481205693, Epoch_FlowLoss:269.5102595576533, Epock_CycleLoss:0.03078939593224614
+-------------
+Epoch 358/500
+-------------
+（train）
+-------------
+epoch 358 || Epoch_Loss:269.3821603280527, Epoch_FlowLoss:269.3534966927987, Epock_CycleLoss:0.02866177598911302
+-------------
+Epoch 359/500
+-------------
+（train）
+-------------
+epoch 359 || Epoch_Loss:269.44876296431926, Epoch_FlowLoss:269.4177514535409, Epock_CycleLoss:0.031011029181105123
+-------------
+Epoch 360/500
+-------------
+（train）
+-------------
+epoch 360 || Epoch_Loss:269.4132518061885, Epoch_FlowLoss:269.3817816840277, Epock_CycleLoss:0.031468013232504886
+-------------
+Epoch 361/500
+-------------
+（train）
+-------------
+epoch 361 || Epoch_Loss:269.5463499846281, Epoch_FlowLoss:269.5148530183016, Epock_CycleLoss:0.03149830004959195
+-------------
+Epoch 362/500
+-------------
+（train）
+-------------
+epoch 362 || Epoch_Loss:269.6762130172164, Epoch_FlowLoss:269.6435767279731, Epock_CycleLoss:0.03263410843080944
+-------------
+Epoch 363/500
+-------------
+（train）
+-------------
+epoch 363 || Epoch_Loss:269.49371987802016, Epoch_FlowLoss:269.4644622802734, Epock_CycleLoss:0.02925559954234848
+-------------
+Epoch 364/500
+-------------
+（train）
+-------------
+epoch 364 || Epoch_Loss:269.62038082546655, Epoch_FlowLoss:269.58943006727435, Epock_CycleLoss:0.030953023237762632
+-------------
+Epoch 365/500
+-------------
+（train）
+-------------
+epoch 365 || Epoch_Loss:269.62630858244717, Epoch_FlowLoss:269.5952202125832, Epock_CycleLoss:0.031089563060689863
+-------------
+Epoch 366/500
+-------------
+（train）
+-------------
+epoch 366 || Epoch_Loss:269.40422962330007, Epoch_FlowLoss:269.375900833695, Epock_CycleLoss:0.028329362540885254
+-------------
+Epoch 367/500
+-------------
+（train）
+-------------
+epoch 367 || Epoch_Loss:269.76290724012586, Epoch_FlowLoss:269.7313040274161, Epock_CycleLoss:0.03160050856294455
+-------------
+Epoch 368/500
+-------------
+（train）
+-------------
+epoch 368 || Epoch_Loss:269.58426298918545, Epoch_FlowLoss:269.5539683589229, Epock_CycleLoss:0.03029430650726513
+-------------
+Epoch 369/500
+-------------
+（train）
+-------------
+epoch 369 || Epoch_Loss:269.26991328486685, Epoch_FlowLoss:269.2389000786675, Epock_CycleLoss:0.03101318032929191
+-------------
+Epoch 370/500
+-------------
+（train）
+-------------
+epoch 370 || Epoch_Loss:269.4614382143374, Epoch_FlowLoss:269.4299152515553, Epock_CycleLoss:0.03152257383421615
+-------------
+Epoch 371/500
+-------------
+（train）
+-------------
+epoch 371 || Epoch_Loss:269.31862612123837, Epoch_FlowLoss:269.2871995148835, Epock_CycleLoss:0.031427916346324816
+-------------
+Epoch 372/500
+-------------
+（train）
+-------------
+epoch 372 || Epoch_Loss:269.59196754738133, Epoch_FlowLoss:269.56140193232784, Epock_CycleLoss:0.030566201924725814
+-------------
+Epoch 373/500
+-------------
+（train）
+-------------
+epoch 373 || Epoch_Loss:269.1482057924624, Epoch_FlowLoss:269.11906376591435, Epock_CycleLoss:0.029141403389749708
+-------------
+Epoch 374/500
+-------------
+（train）
+-------------
+epoch 374 || Epoch_Loss:269.816695884422, Epoch_FlowLoss:269.7858536331742, Epock_CycleLoss:0.030844580658056113
+-------------
+Epoch 375/500
+-------------
+（train）
+-------------
+epoch 375 || Epoch_Loss:269.19638174551494, Epoch_FlowLoss:269.1647381252712, Epock_CycleLoss:0.03164566515220536
+-------------
+Epoch 376/500
+-------------
+（train）
+-------------
+epoch 376 || Epoch_Loss:270.01972424542464, Epoch_FlowLoss:269.9928046332465, Epock_CycleLoss:0.02691845423369496
+-------------
+Epoch 377/500
+-------------
+（train）
+-------------
+epoch 377 || Epoch_Loss:269.4494046811704, Epoch_FlowLoss:269.41815185546875, Epock_CycleLoss:0.031249753096037444
+-------------
+Epoch 378/500
+-------------
+（train）
+-------------
+epoch 378 || Epoch_Loss:269.21344983136214, Epoch_FlowLoss:269.1828019883897, Epock_CycleLoss:0.030647684302594923
+-------------
+Epoch 379/500
+-------------
+（train）
+-------------
+epoch 379 || Epoch_Loss:269.17798275417755, Epoch_FlowLoss:269.1476539329246, Epock_CycleLoss:0.030330584487981267
+-------------
+Epoch 380/500
+-------------
+（train）
+-------------
+epoch 380 || Epoch_Loss:269.45773287172676, Epoch_FlowLoss:269.42632576271336, Epock_CycleLoss:0.03140858836747982
+-------------
+Epoch 381/500
+-------------
+（train）
+-------------
+epoch 381 || Epoch_Loss:269.4215192441587, Epoch_FlowLoss:269.39086744520404, Epock_CycleLoss:0.030653717134285854
+-------------
+Epoch 382/500
+-------------
+（train）
+-------------
+epoch 382 || Epoch_Loss:269.3258124457465, Epoch_FlowLoss:269.29495719627096, Epock_CycleLoss:0.030856105257515552
+-------------
+Epoch 383/500
+-------------
+（train）
+-------------
+epoch 383 || Epoch_Loss:269.34514928747103, Epoch_FlowLoss:269.3135635941117, Epock_CycleLoss:0.031586015734959526
+-------------
+Epoch 384/500
+-------------
+（train）
+-------------
+epoch 384 || Epoch_Loss:269.3293177286784, Epoch_FlowLoss:269.30171147099253, Epock_CycleLoss:0.027607021163459176
+-------------
+Epoch 385/500
+-------------
+（train）
+-------------
+epoch 385 || Epoch_Loss:269.388782925076, Epoch_FlowLoss:269.35582676640263, Epock_CycleLoss:0.03295512587107993
+-------------
+Epoch 386/500
+-------------
+（train）
+-------------
+epoch 386 || Epoch_Loss:269.4200306645145, Epoch_FlowLoss:269.3884887695312, Epock_CycleLoss:0.031540902952353164
+-------------
+Epoch 387/500
+-------------
+（train）
+-------------
+epoch 387 || Epoch_Loss:269.3032000506366, Epoch_FlowLoss:269.27367881492336, Epock_CycleLoss:0.02951963790864856
+-------------
+Epoch 388/500
+-------------
+（train）
+-------------
+epoch 388 || Epoch_Loss:269.301053930212, Epoch_FlowLoss:269.2707499751338, Epock_CycleLoss:0.030304511802064046
+-------------
+Epoch 389/500
+-------------
+（train）
+-------------
+epoch 389 || Epoch_Loss:269.41429788094985, Epoch_FlowLoss:269.38493997079354, Epock_CycleLoss:0.029355296589158204
+-------------
+Epoch 390/500
+-------------
+（train）
+-------------
+epoch 390 || Epoch_Loss:269.3860439724392, Epoch_FlowLoss:269.35333591037323, Epock_CycleLoss:0.03270569912813328
+-------------
+Epoch 391/500
+-------------
+（train）
+-------------
+epoch 391 || Epoch_Loss:269.55958246301725, Epoch_FlowLoss:269.5310437237775, Epock_CycleLoss:0.028536865625668456
+-------------
+Epoch 392/500
+-------------
+（train）
+-------------
+epoch 392 || Epoch_Loss:269.8827797218605, Epoch_FlowLoss:269.85433875189887, Epock_CycleLoss:0.028440405511193798
+-------------
+Epoch 393/500
+-------------
+（train）
+-------------
+epoch 393 || Epoch_Loss:269.3194402058919, Epoch_FlowLoss:269.29014078776044, Epock_CycleLoss:0.029302174846331276
+-------------
+Epoch 394/500
+-------------
+（train）
+-------------
+epoch 394 || Epoch_Loss:269.47777303059894, Epoch_FlowLoss:269.4466462311921, Epock_CycleLoss:0.03112519146115691
+-------------
+Epoch 395/500
+-------------
+（train）
+-------------
+epoch 395 || Epoch_Loss:269.32949574788415, Epoch_FlowLoss:269.30010195131666, Epock_CycleLoss:0.029393444320669877
+-------------
+Epoch 396/500
+-------------
+（train）
+-------------
+epoch 396 || Epoch_Loss:269.32773307517726, Epoch_FlowLoss:269.295903523763, Epock_CycleLoss:0.031830754407026145
+-------------
+Epoch 397/500
+-------------
+（train）
+-------------
+epoch 397 || Epoch_Loss:269.76015783239285, Epoch_FlowLoss:269.7300641095197, Epock_CycleLoss:0.03009213589959674
+-------------
+Epoch 398/500
+-------------
+（train）
+-------------
+epoch 398 || Epoch_Loss:269.81835796214915, Epoch_FlowLoss:269.79075396502463, Epock_CycleLoss:0.027606316807645342
+-------------
+Epoch 399/500
+-------------
+（train）
+-------------
+epoch 399 || Epoch_Loss:269.5542907714844, Epoch_FlowLoss:269.5251942387334, Epock_CycleLoss:0.02909640153801
+-------------
+Epoch 400/500
+-------------
+（train）
+-------------
+epoch 400 || Epoch_Loss:269.30949684425633, Epoch_FlowLoss:269.2805944372106, Epock_CycleLoss:0.028904898713032406
+-------------
+Epoch 401/500
+-------------
+（train）
+-------------
+epoch 401 || Epoch_Loss:270.161057083695, Epoch_FlowLoss:270.1313239203559, Epock_CycleLoss:0.029733353466899308
+-------------
+Epoch 402/500
+-------------
+（train）
+-------------
+epoch 402 || Epoch_Loss:269.49422285291877, Epoch_FlowLoss:269.463703861943, Epock_CycleLoss:0.030521017671735203
+-------------
+Epoch 403/500
+-------------
+（train）
+-------------
+epoch 403 || Epoch_Loss:269.36434258355035, Epoch_FlowLoss:269.3344528763383, Epock_CycleLoss:0.02988954095376862
+-------------
+Epoch 404/500
+-------------
+（train）
+-------------
+epoch 404 || Epoch_Loss:269.4031778971354, Epoch_FlowLoss:269.3735617178458, Epock_CycleLoss:0.029614619565782725
+-------------
+Epoch 405/500
+-------------
+（train）
+-------------
+epoch 405 || Epoch_Loss:269.54020012749555, Epoch_FlowLoss:269.5085344667788, Epock_CycleLoss:0.03166494670289534
+-------------
+Epoch 406/500
+-------------
+（train）
+-------------
+epoch 406 || Epoch_Loss:269.4883874963831, Epoch_FlowLoss:269.4568995723018, Epock_CycleLoss:0.03148819402688079
+-------------
+Epoch 407/500
+-------------
+（train）
+-------------
+epoch 407 || Epoch_Loss:269.7354439629449, Epoch_FlowLoss:269.70577098705155, Epock_CycleLoss:0.029673379087061795
+-------------
+Epoch 408/500
+-------------
+（train）
+-------------
+epoch 408 || Epoch_Loss:269.6017812093098, Epoch_FlowLoss:269.5747364185474, Epock_CycleLoss:0.027046745401565677
+-------------
+Epoch 409/500
+-------------
+（train）
+-------------
+epoch 409 || Epoch_Loss:269.25601733172385, Epoch_FlowLoss:269.22629801432294, Epock_CycleLoss:0.029720059285561245
+-------------
+Epoch 410/500
+-------------
+（train）
+-------------
+epoch 410 || Epoch_Loss:269.284216704192, Epoch_FlowLoss:269.25623688874424, Epock_CycleLoss:0.02797756944265631
+-------------
+Epoch 411/500
+-------------
+（train）
+-------------
+epoch 411 || Epoch_Loss:269.2700291386357, Epoch_FlowLoss:269.2371317545573, Epock_CycleLoss:0.03289834023625762
+-------------
+Epoch 412/500
+-------------
+（train）
+-------------
+epoch 412 || Epoch_Loss:269.5430560641818, Epoch_FlowLoss:269.51436247649013, Epock_CycleLoss:0.028692871884063435
+-------------
+Epoch 413/500
+-------------
+（train）
+-------------
+epoch 413 || Epoch_Loss:269.2779399730542, Epoch_FlowLoss:269.2476196289063, Epock_CycleLoss:0.030320907011628147
+-------------
+Epoch 414/500
+-------------
+（train）
+-------------
+epoch 414 || Epoch_Loss:269.1964636908637, Epoch_FlowLoss:269.16808064778644, Epock_CycleLoss:0.02838304638862609
+-------------
+Epoch 415/500
+-------------
+（train）
+-------------
+epoch 415 || Epoch_Loss:269.9421581692166, Epoch_FlowLoss:269.91217973497174, Epock_CycleLoss:0.02997860740180369
+-------------
+Epoch 416/500
+-------------
+（train）
+-------------
+epoch 416 || Epoch_Loss:269.73791306107137, Epoch_FlowLoss:269.70867241753473, Epock_CycleLoss:0.029238533711543786
+-------------
+Epoch 417/500
+-------------
+（train）
+-------------
+epoch 417 || Epoch_Loss:269.3537433765553, Epoch_FlowLoss:269.3226470947266, Epock_CycleLoss:0.03109464408070953
+-------------
+Epoch 418/500
+-------------
+（train）
+-------------
+epoch 418 || Epoch_Loss:269.2412620827004, Epoch_FlowLoss:269.2098292598017, Epock_CycleLoss:0.03143026224440999
+-------------
+Epoch 419/500
+-------------
+（train）
+-------------
+epoch 419 || Epoch_Loss:269.29008088288487, Epoch_FlowLoss:269.2590066415292, Epock_CycleLoss:0.031074936881109516
+-------------
+Epoch 420/500
+-------------
+（train）
+-------------
+epoch 420 || Epoch_Loss:269.18595603660305, Epoch_FlowLoss:269.15493887442136, Epock_CycleLoss:0.031019629979575122
+-------------
+Epoch 421/500
+-------------
+（train）
+-------------
+epoch 421 || Epoch_Loss:269.2572809855143, Epoch_FlowLoss:269.2268411141855, Epock_CycleLoss:0.030438786993424102
+-------------
+Epoch 422/500
+-------------
+（train）
+-------------
+epoch 422 || Epoch_Loss:269.34397125244135, Epoch_FlowLoss:269.3133929217303, Epock_CycleLoss:0.030577739114286722
+-------------
+Epoch 423/500
+-------------
+（train）
+-------------
+epoch 423 || Epoch_Loss:269.2610965304904, Epoch_FlowLoss:269.2303805881076, Epock_CycleLoss:0.030716844661920165
+-------------
+Epoch 424/500
+-------------
+（train）
+-------------
+epoch 424 || Epoch_Loss:269.2519935325341, Epoch_FlowLoss:269.22026683666087, Epock_CycleLoss:0.03172693918976519
+-------------
+Epoch 425/500
+-------------
+（train）
+-------------
+epoch 425 || Epoch_Loss:269.3511578595196, Epoch_FlowLoss:269.320101985225, Epock_CycleLoss:0.031052012513909075
+-------------
+Epoch 426/500
+-------------
+（train）
+-------------
+epoch 426 || Epoch_Loss:269.3969062522606, Epoch_FlowLoss:269.36505013925057, Epock_CycleLoss:0.031858136256535836
+-------------
+Epoch 427/500
+-------------
+（train）
+-------------
+epoch 427 || Epoch_Loss:269.4019487169053, Epoch_FlowLoss:269.3730335942021, Epock_CycleLoss:0.02891382485352181
+-------------
+Epoch 428/500
+-------------
+（train）
+-------------
+epoch 428 || Epoch_Loss:269.5401133784541, Epoch_FlowLoss:269.51049748173466, Epock_CycleLoss:0.02961717725352005
+-------------
+Epoch 429/500
+-------------
+（train）
+-------------
+epoch 429 || Epoch_Loss:269.4753197564019, Epoch_FlowLoss:269.44485417118784, Epock_CycleLoss:0.03046183005251267
+-------------
+Epoch 430/500
+-------------
+（train）
+-------------
+epoch 430 || Epoch_Loss:269.23430887858075, Epoch_FlowLoss:269.20472717285156, Epock_CycleLoss:0.029579264836178884
+-------------
+Epoch 431/500
+-------------
+（train）
+-------------
+epoch 431 || Epoch_Loss:269.326872366446, Epoch_FlowLoss:269.2955830891927, Epock_CycleLoss:0.031288034800026156
+-------------
+Epoch 432/500
+-------------
+（train）
+-------------
+epoch 432 || Epoch_Loss:269.26038558394816, Epoch_FlowLoss:269.22881062825525, Epock_CycleLoss:0.031575770910691324
+-------------
+Epoch 433/500
+-------------
+（train）
+-------------
+epoch 433 || Epoch_Loss:269.21103611698857, Epoch_FlowLoss:269.18145864981193, Epock_CycleLoss:0.029578513017407167
+-------------
+Epoch 434/500
+-------------
+（train）
+-------------
+epoch 434 || Epoch_Loss:269.2278216326678, Epoch_FlowLoss:269.1973939118563, Epock_CycleLoss:0.030430483493815972
+-------------
+Epoch 435/500
+-------------
+（train）
+-------------
+epoch 435 || Epoch_Loss:269.7262050487377, Epoch_FlowLoss:269.6943845395688, Epock_CycleLoss:0.03182097207064981
+-------------
+Epoch 436/500
+-------------
+（train）
+-------------
+epoch 436 || Epoch_Loss:269.6514674999096, Epoch_FlowLoss:269.6236224704319, Epock_CycleLoss:0.02784712405668365
+-------------
+Epoch 437/500
+-------------
+（train）
+-------------
+epoch 437 || Epoch_Loss:269.18363189697277, Epoch_FlowLoss:269.15285802770546, Epock_CycleLoss:0.030774082988500595
+-------------
+Epoch 438/500
+-------------
+（train）
+-------------
+epoch 438 || Epoch_Loss:269.3537278351961, Epoch_FlowLoss:269.32277481644246, Epock_CycleLoss:0.030953138859735593
+-------------
+Epoch 439/500
+-------------
+（train）
+-------------
+epoch 439 || Epoch_Loss:269.222789340549, Epoch_FlowLoss:269.19083997938367, Epock_CycleLoss:0.03194878291752603
+-------------
+Epoch 440/500
+-------------
+（train）
+-------------
+epoch 440 || Epoch_Loss:269.324866965965, Epoch_FlowLoss:269.29453249330874, Epock_CycleLoss:0.030337549056167954
+-------------
+Epoch 441/500
+-------------
+（train）
+-------------
+epoch 441 || Epoch_Loss:269.2150932594582, Epoch_FlowLoss:269.18360109682436, Epock_CycleLoss:0.03149144034142847
+-------------
+Epoch 442/500
+-------------
+（train）
+-------------
+epoch 442 || Epoch_Loss:269.2897799456561, Epoch_FlowLoss:269.26009058069303, Epock_CycleLoss:0.029687327712222385
+-------------
+Epoch 443/500
+-------------
+（train）
+-------------
+epoch 443 || Epoch_Loss:269.6292620058413, Epoch_FlowLoss:269.598913969817, Epock_CycleLoss:0.0303485108608449
+-------------
+Epoch 444/500
+-------------
+（train）
+-------------
+epoch 444 || Epoch_Loss:269.1792254977755, Epoch_FlowLoss:269.14797125922314, Epock_CycleLoss:0.031254198195205786
+-------------
+Epoch 445/500
+-------------
+（train）
+-------------
+epoch 445 || Epoch_Loss:269.0477215802228, Epoch_FlowLoss:269.01728368688515, Epock_CycleLoss:0.03043724568905654
+-------------
+Epoch 446/500
+-------------
+（train）
+-------------
+epoch 446 || Epoch_Loss:269.2343721742983, Epoch_FlowLoss:269.2024796097367, Epock_CycleLoss:0.0318930853434183
+-------------
+Epoch 447/500
+-------------
+（train）
+-------------
+epoch 447 || Epoch_Loss:269.22836642795136, Epoch_FlowLoss:269.1972328468605, Epock_CycleLoss:0.03113504709606921
+-------------
+Epoch 448/500
+-------------
+（train）
+-------------
+epoch 448 || Epoch_Loss:269.2135006939923, Epoch_FlowLoss:269.1824281480577, Epock_CycleLoss:0.03107145511441761
+-------------
+Epoch 449/500
+-------------
+（train）
+-------------
+epoch 449 || Epoch_Loss:269.12960787172665, Epoch_FlowLoss:269.0972425672743, Epock_CycleLoss:0.03236089591626768
+-------------
+Epoch 450/500
+-------------
+（train）
+-------------
+epoch 450 || Epoch_Loss:269.2279502020942, Epoch_FlowLoss:269.19818200005426, Epock_CycleLoss:0.029770276888653083
+-------------
+Epoch 451/500
+-------------
+（train）
+-------------
+epoch 451 || Epoch_Loss:269.30848128707316, Epoch_FlowLoss:269.27630671748403, Epock_CycleLoss:0.0321744455507508
+-------------
+Epoch 452/500
+-------------
+（train）
+-------------
+epoch 452 || Epoch_Loss:269.2251739501953, Epoch_FlowLoss:269.1963865492079, Epock_CycleLoss:0.028786949813365936
+-------------
+Epoch 453/500
+-------------
+（train）
+-------------
+epoch 453 || Epoch_Loss:269.44882597746675, Epoch_FlowLoss:269.4185180664062, Epock_CycleLoss:0.030309477338084468
+-------------
+Epoch 454/500
+-------------
+（train）
+-------------
+epoch 454 || Epoch_Loss:269.54803297254773, Epoch_FlowLoss:269.5175035264756, Epock_CycleLoss:0.03053007612901705
+-------------
+Epoch 455/500
+-------------
+（train）
+-------------
+epoch 455 || Epoch_Loss:273.7168584752966, Epoch_FlowLoss:273.69400759096504, Epock_CycleLoss:0.022849541778365772
+-------------
+Epoch 456/500
+-------------
+（train）
+-------------
+epoch 456 || Epoch_Loss:272.08730090105973, Epoch_FlowLoss:272.07334108705874, Epock_CycleLoss:0.013959463651257536
+-------------
+Epoch 457/500
+-------------
+（train）
+-------------
+epoch 457 || Epoch_Loss:270.81990842466, Epoch_FlowLoss:270.80157922815397, Epock_CycleLoss:0.018328236105541386
+-------------
+Epoch 458/500
+-------------
+（train）
+-------------
+epoch 458 || Epoch_Loss:270.0221532185872, Epoch_FlowLoss:269.99870017722805, Epock_CycleLoss:0.023453211066899477
+-------------
+Epoch 459/500
+-------------
+（train）
+-------------
+epoch 459 || Epoch_Loss:269.52756867585356, Epoch_FlowLoss:269.49798951325596, Epock_CycleLoss:0.029579095680404587
+-------------
+Epoch 460/500
+-------------
+（train）
+-------------
+epoch 460 || Epoch_Loss:269.37270100911456, Epoch_FlowLoss:269.34368585657194, Epock_CycleLoss:0.02901857518763454
+-------------
+Epoch 461/500
+-------------
+（train）
+-------------
+epoch 461 || Epoch_Loss:269.36335923936633, Epoch_FlowLoss:269.33344636140043, Epock_CycleLoss:0.029911724436614256
+-------------
+Epoch 462/500
+-------------
+（train）
+-------------
+epoch 462 || Epoch_Loss:269.4365293714735, Epoch_FlowLoss:269.40760294596356, Epock_CycleLoss:0.02892541895724005
+-------------
+Epoch 463/500
+-------------
+（train）
+-------------
+epoch 463 || Epoch_Loss:269.41265586570455, Epoch_FlowLoss:269.3829820421007, Epock_CycleLoss:0.029674079959039337
+-------------
+Epoch 464/500
+-------------
+（train）
+-------------
+epoch 464 || Epoch_Loss:269.89377085367835, Epoch_FlowLoss:269.86554859302663, Epock_CycleLoss:0.02822221781092661
+-------------
+Epoch 465/500
+-------------
+（train）
+-------------
+epoch 465 || Epoch_Loss:269.3581446894893, Epoch_FlowLoss:269.3278023048684, Epock_CycleLoss:0.030340754806443493
+-------------
+Epoch 466/500
+-------------
+（train）
+-------------
+epoch 466 || Epoch_Loss:269.432753668891, Epoch_FlowLoss:269.40341921205874, Epock_CycleLoss:0.029334409438349585
+-------------
+Epoch 467/500
+-------------
+（train）
+-------------
+epoch 467 || Epoch_Loss:269.4342252943251, Epoch_FlowLoss:269.4040044148763, Epock_CycleLoss:0.030220399438231082
+-------------
+Epoch 468/500
+-------------
+（train）
+-------------
+epoch 468 || Epoch_Loss:269.653805202908, Epoch_FlowLoss:269.62415652804907, Epock_CycleLoss:0.029646113066485628
+-------------
+Epoch 469/500
+-------------
+（train）
+-------------
+epoch 469 || Epoch_Loss:269.5048212122034, Epoch_FlowLoss:269.47283144350405, Epock_CycleLoss:0.03199108296798335
+-------------
+Epoch 470/500
+-------------
+（train）
+-------------
+epoch 470 || Epoch_Loss:269.44413842095275, Epoch_FlowLoss:269.4155315823025, Epock_CycleLoss:0.028607662698185002
+-------------
+Epoch 471/500
+-------------
+（train）
+-------------
+epoch 471 || Epoch_Loss:269.2875674212421, Epoch_FlowLoss:269.25635217737266, Epock_CycleLoss:0.031215948363145195
+-------------
+Epoch 472/500
+-------------
+（train）
+-------------
+epoch 472 || Epoch_Loss:269.4783599288375, Epoch_FlowLoss:269.4459307635272, Epock_CycleLoss:0.03242989112105635
+-------------
+Epoch 473/500
+-------------
+（train）
+-------------
+epoch 473 || Epoch_Loss:269.4299378571687, Epoch_FlowLoss:269.40035530372904, Epock_CycleLoss:0.029581703590574087
+-------------
+Epoch 474/500
+-------------
+（train）
+-------------
+epoch 474 || Epoch_Loss:269.34441658302586, Epoch_FlowLoss:269.3119122540509, Epock_CycleLoss:0.03250569926091918
+-------------
+Epoch 475/500
+-------------
+（train）
+-------------
+epoch 475 || Epoch_Loss:269.4946690312138, Epoch_FlowLoss:269.46413421630854, Epock_CycleLoss:0.03053357803987132
+-------------
+Epoch 476/500
+-------------
+（train）
+-------------
+epoch 476 || Epoch_Loss:269.61669102421513, Epoch_FlowLoss:269.5879228379992, Epock_CycleLoss:0.028768119988618075
+-------------
+Epoch 477/500
+-------------
+（train）
+-------------
+epoch 477 || Epoch_Loss:269.3733082524052, Epoch_FlowLoss:269.3423656887478, Epock_CycleLoss:0.030943275567282127
+-------------
+Epoch 478/500
+-------------
+（train）
+-------------
+epoch 478 || Epoch_Loss:269.29609538890696, Epoch_FlowLoss:269.26687452528216, Epock_CycleLoss:0.029219931026023844
+-------------
+Epoch 479/500
+-------------
+（train）
+-------------
+epoch 479 || Epoch_Loss:269.6034540247034, Epoch_FlowLoss:269.57213564272274, Epock_CycleLoss:0.03132026076868728
+-------------
+Epoch 480/500
+-------------
+（train）
+-------------
+epoch 480 || Epoch_Loss:269.3551223189742, Epoch_FlowLoss:269.32479971426505, Epock_CycleLoss:0.030324951504115703
+-------------
+Epoch 481/500
+-------------
+（train）
+-------------
+epoch 481 || Epoch_Loss:269.3911067821362, Epoch_FlowLoss:269.3589782714843, Epock_CycleLoss:0.032124991080275285
+-------------
+Epoch 482/500
+-------------
+（train）
+-------------
+epoch 482 || Epoch_Loss:269.14200987639254, Epoch_FlowLoss:269.1117954960576, Epock_CycleLoss:0.030212927057787223
+-------------
+Epoch 483/500
+-------------
+（train）
+-------------
+epoch 483 || Epoch_Loss:269.39226659138996, Epoch_FlowLoss:269.3607054816352, Epock_CycleLoss:0.031560422093779954
+-------------
+Epoch 484/500
+-------------
+（train）
+-------------
+epoch 484 || Epoch_Loss:269.25347533049404, Epoch_FlowLoss:269.22184414333765, Epock_CycleLoss:0.031634103472310084
+-------------
+Epoch 485/500
+-------------
+（train）
+-------------
+epoch 485 || Epoch_Loss:269.59902925844546, Epoch_FlowLoss:269.56790641502096, Epock_CycleLoss:0.031121665025474855
+-------------
+Epoch 486/500
+-------------
+（train）
+-------------
+epoch 486 || Epoch_Loss:269.50864240858294, Epoch_FlowLoss:269.48011779785156, Epock_CycleLoss:0.028524512563038756
+-------------
+Epoch 487/500
+-------------
+（train）
+-------------
+epoch 487 || Epoch_Loss:269.2651836253978, Epoch_FlowLoss:269.23261515299475, Epock_CycleLoss:0.03256712043312964
+-------------
+Epoch 488/500
+-------------
+（train）
+-------------
+epoch 488 || Epoch_Loss:269.2563188340928, Epoch_FlowLoss:269.22549042878325, Epock_CycleLoss:0.030829960756279796
+-------------
+Epoch 489/500
+-------------
+（train）
+-------------
+epoch 489 || Epoch_Loss:269.2325399893301, Epoch_FlowLoss:269.19974856906464, Epock_CycleLoss:0.032794686655203506
+-------------
+Epoch 490/500
+-------------
+（train）
+-------------
+epoch 490 || Epoch_Loss:269.395790665238, Epoch_FlowLoss:269.3660572193287, Epock_CycleLoss:0.029730629796783127
+-------------
+Epoch 491/500
+-------------
+（train）
+-------------
+epoch 491 || Epoch_Loss:269.3807534111871, Epoch_FlowLoss:269.3487235175239, Epock_CycleLoss:0.03203043182966886
+-------------
+Epoch 492/500
+-------------
+（train）
+-------------
+epoch 492 || Epoch_Loss:269.23843157732927, Epoch_FlowLoss:269.2075506139685, Epock_CycleLoss:0.030882105162298234
+-------------
+Epoch 493/500
+-------------
+（train）
+-------------
+epoch 493 || Epoch_Loss:269.42270236545136, Epoch_FlowLoss:269.3916111698857, Epock_CycleLoss:0.031090334575209353
+-------------
+Epoch 494/500
+-------------
+（train）
+-------------
+epoch 494 || Epoch_Loss:269.4885364108615, Epoch_FlowLoss:269.4572087040654, Epock_CycleLoss:0.031327239479179744
+-------------
+Epoch 495/500
+-------------
+（train）
+-------------
+epoch 495 || Epoch_Loss:269.4711009837963, Epoch_FlowLoss:269.4406410499855, Epock_CycleLoss:0.030458586497439284
+-------------
+Epoch 496/500
+-------------
+（train）
+-------------
+epoch 496 || Epoch_Loss:269.5822106820566, Epoch_FlowLoss:269.5489694100839, Epock_CycleLoss:0.03324042726308106
+-------------
+Epoch 497/500
+-------------
+（train）
+-------------
+epoch 497 || Epoch_Loss:269.52239594636137, Epoch_FlowLoss:269.4936749493634, Epock_CycleLoss:0.028721566553469063
+-------------
+Epoch 498/500
+-------------
+（train）
+-------------
+epoch 498 || Epoch_Loss:269.3572447035048, Epoch_FlowLoss:269.3258683946399, Epock_CycleLoss:0.03137812039090527
+-------------
+Epoch 499/500
+-------------
+（train）
+-------------
+epoch 499 || Epoch_Loss:269.38100574634694, Epoch_FlowLoss:269.3493787977431, Epock_CycleLoss:0.03162749566965632
+-------------
+Epoch 500/500
+-------------
+（train）
+-------------
+epoch 500 || Epoch_Loss:269.4327392578125, Epoch_FlowLoss:269.4012971100983, Epock_CycleLoss:0.03144335705373023
+Training Done!!
