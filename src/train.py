@@ -1,3 +1,6 @@
+import os
+import numpy as np
+import random
 import torch
 import torch.optim as optim
 import torchvision
@@ -22,7 +25,7 @@ def train():
     args = parser.parse_args()
     train_d_path = args.path
 
-    minibatch_size = 64
+    minibatch_size = 48
     epock_num = args.epoch
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -63,7 +66,7 @@ def train():
         lr=0.001,
         betas=(0.9, 0.999),
         eps=1e-8,
-        weight_decay=0.01)
+        weight_decay=0.5)
 
     # reporter.report()
 
@@ -132,9 +135,8 @@ def train():
         print('-------------')
         print('epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(epock + 1, e_loss, e_floss, e_closs))
         if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num or (epock+1) % 100 == 0:
-            torch.save(
-                CANnet.state_dict(),
-                'CrowdCounting_{}_{}_epoch_{}.pth'.format(args.height, args.width, epock + 1))
+            save_path = os.path.join("models", 'CrowdCounting_{}_{}_epoch_{}.pth'.format(args.height, args.width, epock + 1))
+            torch.save(CANnet.state_dict(), save_path)
 
     print("Training Done!!")
     # reporter.report()
@@ -149,4 +151,9 @@ def train():
 
 
 if __name__ == "__main__":
+    # シード値の固定
+    np.random.seed(0)
+    random.seed(0)
+    torch.manual_seed(0)
+    torch.cuda.manual_seed(0)
     train()

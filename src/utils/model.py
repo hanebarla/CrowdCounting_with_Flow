@@ -10,7 +10,7 @@ class ContextualModule(nn.Module):
         self.scales = []
         self.scales = nn.ModuleList([self._make_scale(features, size) for size in sizes])
         self.bottleneck = nn.Conv2d(features, out_features, kernel_size=1)  # もともとは nn.Conv2d(features*2, out_features, kernel_size=1)
-        self.relu = nn.ReLU()
+        self.relu = nn.LeakyReLU(0.001)
         self.weight_net = nn.Conv2d(features, features, kernel_size=1)
 
     def __make_weight(self, feature, scale_feature):
@@ -77,10 +77,10 @@ class CANNet(nn.Module):
             if isinstance(m, nn.Conv2d):
                 nn.init.normal_(m.weight, std=0.01)
                 if m.bias is not None:
-                    nn.init.constant_(m.bias, 0.01)
+                    nn.init.constant_(m.bias, 0.001)
             elif isinstance(m, nn.BatchNorm2d):
                 nn.init.constant_(m.weight, 0.9)
-                nn.init.constant_(m.bias, 0.01)
+                nn.init.constant_(m.bias, 0.001)
 
 
 def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):
@@ -95,9 +95,9 @@ def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):
         else:
             conv2d = nn.Conv2d(in_channels, v, kernel_size=3, padding=d_rate, dilation=d_rate)
             if batch_norm:
-                layers += [conv2d, nn.BatchNorm2d(v), nn.ReLU(inplace=True)]
+                layers += [conv2d, nn.BatchNorm2d(v), nn.LeakyReLU(0.001, inplace=True)]
             else:
-                layers += [conv2d, nn.ReLU(inplace=True)]
+                layers += [conv2d, nn.LeakyReLU(0.001, inplace=True)]
             in_channels = v
     return nn.Sequential(*layers)
 
