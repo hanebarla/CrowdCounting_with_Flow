@@ -10,7 +10,7 @@ class ContextualModule(nn.Module):
         self.scales = []
         self.scales = nn.ModuleList([self._make_scale(features, size) for size in sizes])
         self.bottleneck = nn.Conv2d(features, out_features, kernel_size=1)  # もともとは nn.Conv2d(features*2, out_features, kernel_size=1)
-        self.relu = nn.LeakyReLU(0.001)
+        self.lrelu = nn.LeakyReLU(0.001)
         self.weight_net = nn.Conv2d(features, features, kernel_size=1)
 
     def __make_weight(self, feature, scale_feature):
@@ -33,7 +33,7 @@ class ContextualModule(nn.Module):
                              multi_scales[3] * weights[3]) /
                             (weights[0] + weights[1] + weights[2] + weights[3])]  # + [feats] エンコーダーだから。
         bottle = self.bottleneck(torch.cat(overall_features, 1))
-        return self.relu(bottle)
+        return self.lrelu(bottle)
 
 
 class CANNet(nn.Module):
@@ -69,7 +69,7 @@ class CANNet(nn.Module):
         x = torch.cat((x1, x2), dim=1)
         x = self.backend(x)
         x = self.output_layer(x)
-        x = nn.ReLU()(x)
+        x = nn.LeakyReLU(0.001)(x)
         return x
 
     def _initialize_weights(self):

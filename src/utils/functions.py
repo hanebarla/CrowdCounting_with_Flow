@@ -51,6 +51,7 @@ class AllLoss():
     def flow_loss(self, output_before_forward, output_after_forward, label):
         est_sum_before = self.sum_flow(output_before_forward)
         est_sum_after = torch.sum(output_after_forward, dim=1, keepdim=True)
+        # print("{}, {}".format(torch.max(est_sum_after), torch.max(est_sum_before)))
 
         res_before = label - est_sum_before
         res_after = label - est_sum_after
@@ -188,13 +189,14 @@ class AllLoss():
 
 def output_to_img(output):
     root = os.getcwd()
-    imgfolder = root + "/images/"
+    imgfolder = os.path.join(root, "images/")
 
+    # d_max = torch.max(output).item()
     output_num = output.detach().cpu().numpy()
     out = output_num[0, 0, :, :]
 
     heatmap = cv2.resize(out, (out.shape[1]*8, out.shape[0]*8))
-    heatmap = np.array(heatmap*255, dtype=np.uint8)
+    heatmap = np.array(heatmap*(255), dtype=np.uint8)
 
     cv2.imwrite(imgfolder+"test.png", heatmap)
 

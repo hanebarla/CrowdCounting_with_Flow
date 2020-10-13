@@ -66,7 +66,7 @@ def train():
         lr=0.001,
         betas=(0.9, 0.999),
         eps=1e-8,
-        weight_decay=0.5)
+        weight_decay=0.05)
 
     # reporter.report()
 
@@ -122,9 +122,13 @@ def train():
             e_loss += loss.item() / int(-(-data_len // minibatch_size))
             e_floss += floss.item() / int(-(-data_len // minibatch_size))
             e_closs += closs.item() / int(-(-data_len // minibatch_size))
+
+            assert not torch.isnan(floss).item(), "Loss Error: is nan !!"
+
             loss.backward()
             optimizer.step()
             bar.next()
+            print(" Floss: {:8f}, Closs: {:8f}".format(floss.item(), closs.item()))
 
             del tm_img, t_img, tp_img
             del tm_person, t_person, tp_person

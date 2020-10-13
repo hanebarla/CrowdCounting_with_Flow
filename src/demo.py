@@ -58,6 +58,7 @@ def demo():
             output_before_forward = CANnet(tm_img, t_img)
 
             output = torch.sum(output_before_forward, dim=1, keepdim=True)
+            print(torch.max(output_before_forward))
             functions.output_to_img(output)
 
 
