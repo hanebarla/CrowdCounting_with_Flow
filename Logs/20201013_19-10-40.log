@@ -1,0 +1,41 @@
+You can use 4 GPUs!
+***Not Using Optical Loss***
+-------------
+Epoch 1/500
+-------------
+（train）
+/home/habara/anaconda3/envs/crowd/lib/python3.6/site-packages/torch/nn/functional.py:3121: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  "See the documentation of nn.Upsample for details.".format(mode))
+ Floss: 518.818237, Closs: 0.617164
+ Floss: 357.121582, Closs: 0.264813
+ Floss: 259.726440, Closs: 0.057438
+ Floss: 330.766479, Closs: 0.013395
+ Floss: 270.636230, Closs: 0.023891
+ Floss: 315.274414, Closs: 0.026088
+ Floss: 266.620789, Closs: 0.035665
+ Floss: 324.574280, Closs: 0.050709
+ Floss: 405.578430, Closs: 0.074371
+ Floss: 310.111328, Closs: 0.118331
+ Floss: 244.063828, Closs: 0.160391
+ Floss: 227.771362, Closs: 0.170359
+ Floss: 243.149323, Closs: 0.151747
+ Floss: 312.680481, Closs: 0.128828
+ Floss: 262.489868, Closs: 0.111599
+ Floss: 286.109375, Closs: 0.102464
+ Floss: 242.654587, Closs: 0.120246
+ Floss: 298.658661, Closs: 0.125863
+ Floss: 261.616913, Closs: 0.147325
+ Floss: 316.355286, Closs: 0.171355
+ Floss: 224.994080, Closs: 0.155736
+ Floss: 316.698700, Closs: 0.108870
+ Floss: 318.126892, Closs: 0.134170
+ Floss: 312.424469, Closs: 0.234474
+ Floss: 275.183411, Closs: 0.277681
+ Floss: 281.510071, Closs: 0.284300
+ Floss: 225.684875, Closs: 0.282930
+Traceback (most recent call last):
+  File "src/train.py", line 168, in <module>
+    train()
+  File "src/train.py", line 131, in train
+    assert not torch.isnan(floss).item(), "Loss Error: is nan !!"
+AssertionError: Loss Error: is nan !!

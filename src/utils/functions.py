@@ -56,6 +56,8 @@ class AllLoss():
         res_before = label - est_sum_before
         res_after = label - est_sum_after
 
+        # print(res_before)
+
         se_before = res_before * res_before
         se_after = res_after * res_after
 

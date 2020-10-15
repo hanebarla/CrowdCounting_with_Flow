@@ -19,7 +19,7 @@ def train():
                                                  In default, path is 'TrainData_Path.csv'
                                                  """)
     parser.add_argument('-p', '--path', default='TrainData_Path.csv')
-    parser.add_argument('-e', '--epoch', type=int, default=50)
+    parser.add_argument('-e', '--epoch', type=int, default=100)
     parser.add_argument('-wd', '--width', type=int, default=640)
     parser.add_argument('-ht', '--height', type=int, default=360)
     args = parser.parse_args()
@@ -35,6 +35,11 @@ def train():
     if torch.cuda.device_count() > 1:
         print("You can use {} GPUs!".format(torch.cuda.device_count()))
         CANnet = torch.nn.DataParallel(CANnet)
+
+    """
+    for p in CANnet.parameters():
+        p.data.clamp_(-0.1, 0.1)
+    """
 
     CANnet.to(device)
     CANnet.train()
@@ -63,10 +68,10 @@ def train():
     """
     optimizer = optim.Adam(
         CANnet.parameters(),
-        lr=0.001,
+        lr=0.0001,
         betas=(0.9, 0.999),
         eps=1e-8,
-        weight_decay=0.05)
+        weight_decay=0.01)
 
     # reporter.report()
 

@@ -75,12 +75,14 @@ class CANNet(nn.Module):
     def _initialize_weights(self):
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                nn.init.normal_(m.weight, std=0.01)
+                nn.init.xavier_uniform_(m.weight)
                 if m.bias is not None:
-                    nn.init.constant_(m.bias, 0.001)
+                    nn.init.constant_(m.bias, 0)
+            """
             elif isinstance(m, nn.BatchNorm2d):
-                nn.init.constant_(m.weight, 0.9)
-                nn.init.constant_(m.bias, 0.001)
+                nn.init.constant_(m.weight, 0)
+                nn.init.constant_(m.bias, 0)
+            """
 
 
 def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):
@@ -105,7 +107,7 @@ def make_layers(cfg, in_channels=3, batch_norm=False, dilation=False):
 if __name__ == "__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
-    can_model = CANNet(load_weights=True)
+    can_model = CANNet()
     can_model.to(device)
     print(can_model)
     # print("\n")
