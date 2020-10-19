@@ -8,8 +8,9 @@ import torch
 
 
 class AllLoss():
-    def __init__(self, optical_loss_on=1, batchsize=1):
+    def __init__(self, device, optical_loss_on=1, batchsize=1):
         # super().__init__()
+        self.device = device
         self.optical_loss_on = optical_loss_on
         if self.optical_loss_on == 0:
             print("***Not Using Optical Loss***")
@@ -68,8 +69,13 @@ class AllLoss():
     def cycle_loss(self, output_before_foward, output_before_back,
                    output_after_foward, output_after_back):
 
-        res_before = output_before_foward - self.back_flow(output_before_back)
-        res_after = output_after_foward - self.back_flow(output_after_back)
+        res_before_all = output_before_foward - self.back_flow(output_before_back)
+        res_after_all = output_after_foward - self.back_flow(output_after_back)
+
+        out_size = res_before_all.size()
+
+        res_before = res_before_all[:, :, 1:(out_size[2]-1), 1:(out_size[3]-1)]
+        res_after = res_after_all[:, :, 1:(out_size[2]-1), 1:(out_size[3]-1)]
 
         se_before = torch.sum(
             (res_before * res_before),
@@ -85,7 +91,6 @@ class AllLoss():
         return closs
 
     def optical_loss(self, before_person_label, flow_label, flow_output):
-        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         indisize = before_person_label.size()
         indicator = torch.where(
             before_person_label > 0.9,
@@ -93,12 +98,12 @@ class AllLoss():
                 indisize[0],
                 indisize[1],
                 indisize[2],
-                indisize[3]).to(device),
+                indisize[3]).to(self.device),
             torch.zeros(
                 indisize[0],
                 indisize[1],
                 indisize[2],
-                indisize[3]).to(device))
+                indisize[3]).to(self.device))
         se = (flow_label - flow_output) * \
             (flow_label - flow_output) / self.bathsize
 

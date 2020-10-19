@@ -69,13 +69,13 @@ class CANNet(nn.Module):
         x = torch.cat((x1, x2), dim=1)
         x = self.backend(x)
         x = self.output_layer(x)
-        x = nn.LeakyReLU(0.001)(x)
+        x = nn.ReLU()(x)
         return x
 
     def _initialize_weights(self):
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                nn.init.xavier_uniform_(m.weight)
+                nn.init.kaiming_uniform_(m.weight)
                 if m.bias is not None:
                     nn.init.constant_(m.bias, 0)
             """

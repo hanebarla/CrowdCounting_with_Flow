@@ -59,7 +59,7 @@ def train():
         Traindataset, batch_size=minibatch_size, shuffle=True, num_workers=8)
     data_len = len(Traindataset)
 
-    criterion = functions.AllLoss(batchsize=minibatch_size, optical_loss_on=0)
+    criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
     """
     optimizer = optim.SGD(
         CANnet.parameters(),
@@ -71,7 +71,7 @@ def train():
         lr=0.0001,
         betas=(0.9, 0.999),
         eps=1e-8,
-        weight_decay=0.01)
+        weight_decay=0.001)
 
     # reporter.report()
 
