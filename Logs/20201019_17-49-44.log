@@ -1,0 +1,2507 @@
+You can use 4 GPUs!
+***Not Using Optical Loss***
+-------------
+Epoch 1/100
+-------------
+（train）
+ Floss: 181964.375000, Closs: 160.848801
+ Floss: 153314.437500, Closs: 123.642204
+ Floss: 125359.609375, Closs: 99.110497
+ Floss: 91702.140625, Closs: 68.495773
+ Floss: 71302.265625, Closs: 53.193245
+ Floss: 57969.386719, Closs: 42.906811
+ Floss: 48138.015625, Closs: 35.472839
+ Floss: 41193.671875, Closs: 30.110304
+ Floss: 34456.707031, Closs: 26.652700
+ Floss: 30417.427734, Closs: 23.381771
+ Floss: 27774.433594, Closs: 21.604752
+ Floss: 24268.078125, Closs: 19.517525
+ Floss: 21080.664062, Closs: 17.507690
+ Floss: 21327.619141, Closs: 17.150026
+ Floss: 16552.878906, Closs: 15.400726
+ Floss: 14661.862305, Closs: 14.518391
+ Floss: 13711.216797, Closs: 13.892711
+ Floss: 12180.845703, Closs: 12.556712
+ Floss: 11061.452148, Closs: 11.531456
+ Floss: 10611.056641, Closs: 10.793440
+ Floss: 9222.822266, Closs: 9.741199
+ Floss: 8493.002930, Closs: 9.090544
+ Floss: 7695.261719, Closs: 8.325511
+ Floss: 6683.445312, Closs: 7.354844
+ Floss: 6177.545898, Closs: 6.499265
+ Floss: 5780.331543, Closs: 6.192117
+ Floss: 5863.970703, Closs: 6.053438
+ Floss: 5085.108887, Closs: 5.580651
+ Floss: 4682.817383, Closs: 5.191122
+ Floss: 4193.457031, Closs: 4.978184
+ Floss: 4213.044922, Closs: 4.786860
+ Floss: 4083.692871, Closs: 4.776589
+ Floss: 3529.653809, Closs: 4.260487
+ Floss: 3368.123047, Closs: 3.994646
+ Floss: 3017.702881, Closs: 3.713588
+ Floss: 712.701843, Closs: 0.749985
+-------------
+epoch 1 || Epoch_Loss:30354.455340915258, Epoch_FlowLoss:30329.189654880094, Epock_CycleLoss:25.26603895922502
+-------------
+Epoch 2/100
+-------------
+（train）
+/home/habara/anaconda3/envs/crowd/lib/python3.6/site-packages/torch/nn/functional.py:3121: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  "See the documentation of nn.Upsample for details.".format(mode))
+ Floss: 2704.277588, Closs: 3.376698
+ Floss: 2429.777344, Closs: 3.156687
+ Floss: 4400.406250, Closs: 4.054388
+ Floss: 2382.670654, Closs: 3.250588
+ Floss: 2173.714355, Closs: 2.940534
+ Floss: 2202.344238, Closs: 2.948713
+ Floss: 1980.377930, Closs: 2.687852
+ Floss: 2106.582275, Closs: 2.692545
+ Floss: 1717.725342, Closs: 2.282825
+ Floss: 1515.266602, Closs: 2.057172
+ Floss: 1433.596436, Closs: 1.949421
+ Floss: 1530.532959, Closs: 1.927814
+ Floss: 1375.878418, Closs: 1.779202
+ Floss: 1212.204956, Closs: 1.594305
+ Floss: 1136.555664, Closs: 1.565570
+ Floss: 1140.367188, Closs: 1.549615
+ Floss: 1044.952881, Closs: 1.451542
+ Floss: 1066.449097, Closs: 1.445844
+ Floss: 1105.262329, Closs: 1.403842
+ Floss: 1009.462097, Closs: 1.385268
+ Floss: 921.767456, Closs: 1.269590
+ Floss: 932.882935, Closs: 1.241269
+ Floss: 867.852234, Closs: 1.190550
+ Floss: 790.920776, Closs: 1.127044
+ Floss: 691.598267, Closs: 1.055632
+ Floss: 675.898438, Closs: 1.085962
+ Floss: 871.900757, Closs: 1.189776
+ Floss: 624.364929, Closs: 0.973948
+ Floss: 2478.755859, Closs: 2.103011
+ Floss: 682.635437, Closs: 0.999300
+ Floss: 606.739197, Closs: 0.950749
+ Floss: 574.507507, Closs: 0.949372
+ Floss: 530.192078, Closs: 0.861291
+ Floss: 566.538513, Closs: 0.935649
+ Floss: 544.382080, Closs: 0.856895
+ Floss: 514.467468, Closs: 0.442695
+-------------
+epoch 2 || Epoch_Loss:1350.1817033555772, Epoch_FlowLoss:1348.4391259087458, Epock_CycleLoss:1.7425877907209923
+-------------
+Epoch 3/100
+-------------
+（train）
+ Floss: 557.388123, Closs: 0.800400
+ Floss: 534.195679, Closs: 0.779460
+ Floss: 446.601196, Closs: 0.673799
+ Floss: 483.763367, Closs: 0.714496
+ Floss: 562.752808, Closs: 0.825102
+ Floss: 441.268555, Closs: 0.679276
+ Floss: 415.280701, Closs: 0.619755
+ Floss: 532.014832, Closs: 0.738988
+ Floss: 463.146454, Closs: 0.678632
+ Floss: 461.316620, Closs: 0.665426
+ Floss: 354.203125, Closs: 0.566741
+ Floss: 417.102966, Closs: 0.641333
+ Floss: 415.366669, Closs: 0.634138
+ Floss: 324.340942, Closs: 0.549660
+ Floss: 350.314880, Closs: 0.551889
+ Floss: 325.114441, Closs: 0.517811
+ Floss: 355.689301, Closs: 0.549759
+ Floss: 332.923523, Closs: 0.557409
+ Floss: 348.567963, Closs: 0.548661
+ Floss: 291.546478, Closs: 0.496666
+ Floss: 333.946869, Closs: 0.506738
+ Floss: 295.447235, Closs: 0.455953
+ Floss: 327.998657, Closs: 0.498057
+ Floss: 305.075043, Closs: 0.522340
+ Floss: 247.352707, Closs: 0.403355
+ Floss: 336.065918, Closs: 0.547514
+ Floss: 259.181885, Closs: 0.428675
+ Floss: 265.089417, Closs: 0.399199
+ Floss: 269.759766, Closs: 0.431120
+ Floss: 251.497299, Closs: 0.386731
+ Floss: 264.206757, Closs: 0.420361
+ Floss: 280.936859, Closs: 0.478140
+ Floss: 371.466431, Closs: 0.649138
+ Floss: 250.022263, Closs: 0.427640
+ Floss: 232.506958, Closs: 0.390611
+ Floss: 1195.274658, Closs: 0.845929
+-------------
+epoch 3 || Epoch_Loss:386.6474537319607, Epoch_FlowLoss:386.07575946384014, Epock_CycleLoss:0.5716917796267403
+-------------
+Epoch 4/100
+-------------
+（train）
+ Floss: 226.669113, Closs: 0.364904
+ Floss: 283.228638, Closs: 0.476353
+ Floss: 267.145691, Closs: 0.428906
+ Floss: 257.436371, Closs: 0.410087
+ Floss: 248.583923, Closs: 0.384602
+ Floss: 208.820419, Closs: 0.337727
+ Floss: 225.008591, Closs: 0.355287
+ Floss: 252.021774, Closs: 0.338006
+ Floss: 245.689987, Closs: 0.348307
+ Floss: 245.364746, Closs: 0.377580
+ Floss: 212.878937, Closs: 0.311290
+ Floss: 251.142548, Closs: 0.409659
+ Floss: 222.252487, Closs: 0.373746
+ Floss: 197.077316, Closs: 0.295818
+ Floss: 249.816208, Closs: 0.382007
+ Floss: 268.607147, Closs: 0.398013
+ Floss: 213.494904, Closs: 0.325261
+ Floss: 236.279877, Closs: 0.369801
+ Floss: 223.499512, Closs: 0.322908
+ Floss: 177.183441, Closs: 0.295014
+ Floss: 221.230927, Closs: 0.382868
+ Floss: 205.133636, Closs: 0.326393
+ Floss: 176.642090, Closs: 0.296887
+ Floss: 213.805542, Closs: 0.370931
+ Floss: 210.532272, Closs: 0.352170
+ Floss: 191.505295, Closs: 0.274409
+ Floss: 201.172287, Closs: 0.325965
+ Floss: 174.702850, Closs: 0.282936
+ Floss: 178.587494, Closs: 0.259886
+ Floss: 208.094482, Closs: 0.330999
+ Floss: 198.118820, Closs: 0.283932
+ Floss: 171.253418, Closs: 0.252400
+ Floss: 167.197144, Closs: 0.281560
+ Floss: 173.837204, Closs: 0.252091
+ Floss: 174.064255, Closs: 0.271304
+ Floss: 446.014343, Closs: 0.398435
+-------------
+epoch 4 || Epoch_Loss:223.23172505696613, Epoch_FlowLoss:222.89149136013467, Epock_CycleLoss:0.3402344899045095
+-------------
+Epoch 5/100
+-------------
+（train）
+ Floss: 177.091980, Closs: 0.264878
+ Floss: 184.306335, Closs: 0.281451
+ Floss: 173.210007, Closs: 0.282465
+ Floss: 164.974289, Closs: 0.251690
+ Floss: 173.519165, Closs: 0.271654
+ Floss: 1013.816589, Closs: 1.108090
+ Floss: 223.335724, Closs: 0.331185
+ Floss: 232.031540, Closs: 0.342623
+ Floss: 224.316437, Closs: 0.334093
+ Floss: 215.460205, Closs: 0.385893
+ Floss: 748.554382, Closs: 0.919185
+ Floss: 175.397919, Closs: 0.271015
+ Floss: 179.930817, Closs: 0.265537
+ Floss: 232.584152, Closs: 0.376063
+ Floss: 190.541000, Closs: 0.296383
+ Floss: 174.412872, Closs: 0.274290
+ Floss: 172.141907, Closs: 0.282199
+ Floss: 166.080643, Closs: 0.246593
+ Floss: 177.416672, Closs: 0.297460
+ Floss: 179.047546, Closs: 0.305262
+ Floss: 170.126465, Closs: 0.278849
+ Floss: 708.585083, Closs: 0.898132
+ Floss: 175.221359, Closs: 0.274425
+ Floss: 206.688965, Closs: 0.275887
+ Floss: 560.115234, Closs: 0.830719
+ Floss: 161.929749, Closs: 0.280388
+ Floss: 163.219925, Closs: 0.267664
+ Floss: 167.389191, Closs: 0.276720
+ Floss: 181.680267, Closs: 0.281855
+ Floss: 512.794373, Closs: 0.711260
+ Floss: 157.139450, Closs: 0.234161
+ Floss: 148.876022, Closs: 0.221481
+ Floss: 174.318588, Closs: 0.271794
+ Floss: 173.956955, Closs: 0.257643
+ Floss: 183.300720, Closs: 0.298912
+ Floss: 28.972042, Closs: 0.052546
+-------------
+epoch 5 || Epoch_Loss:251.8218059009976, Epoch_FlowLoss:251.45790470971005, Epock_CycleLoss:0.36390121632979966
+-------------
+Epoch 6/100
+-------------
+（train）
+ Floss: 176.047043, Closs: 0.285024
+ Floss: 151.615036, Closs: 0.226803
+ Floss: 161.463348, Closs: 0.231779
+ Floss: 145.656113, Closs: 0.222596
+ Floss: 164.800949, Closs: 0.237401
+ Floss: 167.056046, Closs: 0.226475
+ Floss: 161.613297, Closs: 0.230296
+ Floss: 359.291260, Closs: 0.565936
+ Floss: 149.437149, Closs: 0.249513
+ Floss: 168.651642, Closs: 0.255175
+ Floss: 154.504120, Closs: 0.238603
+ Floss: 139.226501, Closs: 0.209086
+ Floss: 143.817535, Closs: 0.229429
+ Floss: 146.862579, Closs: 0.206243
+ Floss: 152.692810, Closs: 0.258101
+ Floss: 143.497025, Closs: 0.204850
+ Floss: 145.602142, Closs: 0.217212
+ Floss: 156.376007, Closs: 0.268992
+ Floss: 135.210846, Closs: 0.202395
+ Floss: 147.029236, Closs: 0.231915
+ Floss: 131.676422, Closs: 0.191201
+ Floss: 149.097092, Closs: 0.234780
+ Floss: 131.061981, Closs: 0.219641
+ Floss: 141.241119, Closs: 0.227560
+ Floss: 128.359314, Closs: 0.193688
+ Floss: 127.935875, Closs: 0.190751
+ Floss: 141.013535, Closs: 0.234935
+ Floss: 352.229370, Closs: 0.552621
+ Floss: 128.834259, Closs: 0.195910
+ Floss: 131.129059, Closs: 0.174957
+ Floss: 130.318268, Closs: 0.189034
+ Floss: 135.355270, Closs: 0.223078
+ Floss: 151.940948, Closs: 0.274629
+ Floss: 141.897919, Closs: 0.242300
+ Floss: 128.226837, Closs: 0.203924
+ Floss: 159.618698, Closs: 0.241098
+-------------
+epoch 6 || Epoch_Loss:158.03262795342343, Epoch_FlowLoss:157.78851805792917, Epock_CycleLoss:0.24410913429326483
+-------------
+Epoch 7/100
+-------------
+（train）
+ Floss: 128.336227, Closs: 0.181535
+ Floss: 123.592728, Closs: 0.196180
+ Floss: 143.496231, Closs: 0.223954
+ Floss: 124.574570, Closs: 0.190698
+ Floss: 146.340302, Closs: 0.229448
+ Floss: 138.082092, Closs: 0.200086
+ Floss: 115.253464, Closs: 0.194099
+ Floss: 135.241241, Closs: 0.213707
+ Floss: 133.344543, Closs: 0.203567
+ Floss: 133.367844, Closs: 0.199693
+ Floss: 123.953461, Closs: 0.197643
+ Floss: 134.336075, Closs: 0.248796
+ Floss: 125.404556, Closs: 0.197272
+ Floss: 112.871445, Closs: 0.186674
+ Floss: 129.362793, Closs: 0.213255
+ Floss: 122.920227, Closs: 0.197094
+ Floss: 146.704147, Closs: 0.218862
+ Floss: 130.091217, Closs: 0.211554
+ Floss: 117.266502, Closs: 0.188756
+ Floss: 118.747887, Closs: 0.220074
+ Floss: 133.272247, Closs: 0.245979
+ Floss: 117.951477, Closs: 0.202483
+ Floss: 109.336151, Closs: 0.202898
+ Floss: 110.231186, Closs: 0.198478
+ Floss: 114.887650, Closs: 0.189575
+ Floss: 114.136711, Closs: 0.190001
+ Floss: 110.725426, Closs: 0.198966
+ Floss: 360.017639, Closs: 0.593043
+ Floss: 127.924698, Closs: 0.229636
+ Floss: 127.221497, Closs: 0.194068
+ Floss: 101.729034, Closs: 0.178253
+ Floss: 129.241791, Closs: 0.211826
+ Floss: 117.564415, Closs: 0.191637
+ Floss: 149.275574, Closs: 0.256840
+ Floss: 123.274551, Closs: 0.214439
+ Floss: 131.988556, Closs: 0.166660
+-------------
+epoch 7 || Epoch_Loss:132.49566290113657, Epoch_FlowLoss:132.2796154022217, Epock_CycleLoss:0.21604800265696317
+-------------
+Epoch 8/100
+-------------
+（train）
+ Floss: 129.062164, Closs: 0.228140
+ Floss: 120.431442, Closs: 0.223585
+ Floss: 126.771027, Closs: 0.231106
+ Floss: 103.060699, Closs: 0.203642
+ Floss: 122.732079, Closs: 0.218312
+ Floss: 135.622528, Closs: 0.232915
+ Floss: 115.084213, Closs: 0.221407
+ Floss: 108.545883, Closs: 0.198294
+ Floss: 117.087967, Closs: 0.215431
+ Floss: 128.547394, Closs: 0.230325
+ Floss: 99.494926, Closs: 0.185792
+ Floss: 108.097717, Closs: 0.186935
+ Floss: 122.291046, Closs: 0.228771
+ Floss: 125.296227, Closs: 0.218507
+ Floss: 119.478569, Closs: 0.243674
+ Floss: 109.245773, Closs: 0.210244
+ Floss: 111.006187, Closs: 0.202450
+ Floss: 118.842308, Closs: 0.244967
+ Floss: 108.392029, Closs: 0.211484
+ Floss: 119.611465, Closs: 0.220733
+ Floss: 102.202393, Closs: 0.203860
+ Floss: 100.660095, Closs: 0.192758
+ Floss: 112.680038, Closs: 0.237595
+ Floss: 114.103043, Closs: 0.206507
+ Floss: 109.494446, Closs: 0.209188
+ Floss: 104.551727, Closs: 0.205024
+ Floss: 106.804497, Closs: 0.223169
+ Floss: 111.800140, Closs: 0.224972
+ Floss: 116.332298, Closs: 0.240234
+ Floss: 115.739281, Closs: 0.222094
+ Floss: 111.725174, Closs: 0.221437
+ Floss: 109.587112, Closs: 0.216239
+ Floss: 106.364532, Closs: 0.212805
+ Floss: 118.339691, Closs: 0.267076
+ Floss: 101.415268, Closs: 0.213203
+ Floss: 373.918793, Closs: 0.540183
+-------------
+epoch 8 || Epoch_Loss:121.46147876315648, Epoch_FlowLoss:121.23389371236165, Epock_CycleLoss:0.22758493241336614
+-------------
+Epoch 9/100
+-------------
+（train）
+ Floss: 104.360870, Closs: 0.208989
+ Floss: 117.273376, Closs: 0.233249
+ Floss: 113.304405, Closs: 0.272242
+ Floss: 104.383499, Closs: 0.221587
+ Floss: 105.942947, Closs: 0.231663
+ Floss: 118.606064, Closs: 0.271281
+ Floss: 117.863976, Closs: 0.265013
+ Floss: 115.484085, Closs: 0.229209
+ Floss: 135.004608, Closs: 0.262014
+ Floss: 125.419243, Closs: 0.253213
+ Floss: 121.873711, Closs: 0.231503
+ Floss: 108.251221, Closs: 0.234693
+ Floss: 117.502090, Closs: 0.257689
+ Floss: 111.019394, Closs: 0.219185
+ Floss: 114.401817, Closs: 0.239172
+ Floss: 114.842590, Closs: 0.231496
+ Floss: 94.541351, Closs: 0.208194
+ Floss: 101.046532, Closs: 0.239961
+ Floss: 106.139732, Closs: 0.238896
+ Floss: 91.301773, Closs: 0.187943
+ Floss: 93.036545, Closs: 0.196373
+ Floss: 109.415588, Closs: 0.222640
+ Floss: 122.998680, Closs: 0.251218
+ Floss: 102.918571, Closs: 0.219539
+ Floss: 101.840378, Closs: 0.217802
+ Floss: 117.571861, Closs: 0.274829
+ Floss: 103.801605, Closs: 0.228035
+ Floss: 102.873009, Closs: 0.224495
+ Floss: 117.016296, Closs: 0.247729
+ Floss: 103.309898, Closs: 0.252491
+ Floss: 105.329056, Closs: 0.274041
+ Floss: 91.947128, Closs: 0.218501
+ Floss: 101.414627, Closs: 0.241413
+ Floss: 93.041893, Closs: 0.209498
+ Floss: 94.251663, Closs: 0.212856
+ Floss: 18.525137, Closs: 0.043397
+-------------
+epoch 9 || Epoch_Loss:106.28131288952298, Epoch_FlowLoss:106.0515339639452, Epock_CycleLoss:0.2297791524065865
+-------------
+Epoch 10/100
+-------------
+（train）
+ Floss: 93.018578, Closs: 0.201993
+ Floss: 115.069992, Closs: 0.247853
+ Floss: 105.963463, Closs: 0.265796
+ Floss: 96.401794, Closs: 0.242576
+ Floss: 87.964500, Closs: 0.199499
+ Floss: 107.964531, Closs: 0.271937
+ Floss: 102.500381, Closs: 0.237281
+ Floss: 112.587364, Closs: 0.256480
+ Floss: 101.223434, Closs: 0.231896
+ Floss: 88.981323, Closs: 0.210110
+ Floss: 106.841187, Closs: 0.288531
+ Floss: 105.468132, Closs: 0.277302
+ Floss: 83.977997, Closs: 0.182956
+ Floss: 92.771172, Closs: 0.216602
+ Floss: 89.310623, Closs: 0.198821
+ Floss: 91.543541, Closs: 0.211668
+ Floss: 96.231262, Closs: 0.223519
+ Floss: 99.970879, Closs: 0.234603
+ Floss: 95.447227, Closs: 0.240744
+ Floss: 108.821251, Closs: 0.268757
+ Floss: 102.115601, Closs: 0.244446
+ Floss: 111.538269, Closs: 0.289049
+ Floss: 102.397675, Closs: 0.258524
+ Floss: 102.267181, Closs: 0.237072
+ Floss: 91.428520, Closs: 0.207237
+ Floss: 98.451752, Closs: 0.246705
+ Floss: 89.586998, Closs: 0.216025
+ Floss: 96.870773, Closs: 0.239011
+ Floss: 114.210403, Closs: 0.290347
+ Floss: 102.120049, Closs: 0.221774
+ Floss: 86.751884, Closs: 0.214900
+ Floss: 86.712730, Closs: 0.221777
+ Floss: 91.695763, Closs: 0.231905
+ Floss: 97.364990, Closs: 0.225949
+ Floss: 96.616165, Closs: 0.236273
+ Floss: 208.283600, Closs: 0.283933
+-------------
+epoch 10 || Epoch_Loss:101.9179121653239, Epoch_FlowLoss:101.67974959479437, Epock_CycleLoss:0.23816260695457456
+-------------
+Epoch 11/100
+-------------
+（train）
+ Floss: 90.234123, Closs: 0.216766
+ Floss: 91.477325, Closs: 0.205376
+ Floss: 86.653915, Closs: 0.218050
+ Floss: 90.499634, Closs: 0.215755
+ Floss: 84.164520, Closs: 0.218587
+ Floss: 92.593811, Closs: 0.227120
+ Floss: 94.690872, Closs: 0.242068
+ Floss: 93.317955, Closs: 0.234280
+ Floss: 94.486259, Closs: 0.265765
+ Floss: 305.356506, Closs: 0.593035
+ Floss: 96.828629, Closs: 0.245783
+ Floss: 107.268250, Closs: 0.259868
+ Floss: 111.642792, Closs: 0.293244
+ Floss: 116.031120, Closs: 0.304752
+ Floss: 128.838684, Closs: 0.328081
+ Floss: 82.514084, Closs: 0.185093
+ Floss: 92.599319, Closs: 0.228058
+ Floss: 95.815796, Closs: 0.233838
+ Floss: 85.989807, Closs: 0.214569
+ Floss: 92.999649, Closs: 0.224547
+ Floss: 102.311020, Closs: 0.279015
+ Floss: 108.753891, Closs: 0.282683
+ Floss: 97.307640, Closs: 0.251368
+ Floss: 94.743454, Closs: 0.250861
+ Floss: 88.372009, Closs: 0.222851
+ Floss: 95.308029, Closs: 0.250453
+ Floss: 107.106247, Closs: 0.272661
+ Floss: 109.619324, Closs: 0.313296
+ Floss: 106.096558, Closs: 0.270110
+ Floss: 99.566513, Closs: 0.301448
+ Floss: 86.947052, Closs: 0.228369
+ Floss: 94.719589, Closs: 0.247853
+ Floss: 87.846375, Closs: 0.239709
+ Floss: 96.500488, Closs: 0.233669
+ Floss: 110.610405, Closs: 0.316428
+ Floss: 15.544233, Closs: 0.044248
+-------------
+epoch 11 || Epoch_Loss:101.23654246330261, Epoch_FlowLoss:100.98210774527655, Epock_CycleLoss:0.25443492571098936
+-------------
+Epoch 12/100
+-------------
+（train）
+ Floss: 81.349159, Closs: 0.228814
+ Floss: 86.880600, Closs: 0.244340
+ Floss: 89.520645, Closs: 0.248938
+ Floss: 94.489029, Closs: 0.249388
+ Floss: 97.240875, Closs: 0.263980
+ Floss: 102.711853, Closs: 0.290939
+ Floss: 88.597313, Closs: 0.244173
+ Floss: 100.314056, Closs: 0.304000
+ Floss: 88.698547, Closs: 0.257712
+ Floss: 92.167496, Closs: 0.267453
+ Floss: 87.964233, Closs: 0.240232
+ Floss: 95.246582, Closs: 0.264399
+ Floss: 85.349335, Closs: 0.258310
+ Floss: 90.545525, Closs: 0.260313
+ Floss: 93.362976, Closs: 0.258259
+ Floss: 84.015808, Closs: 0.229665
+ Floss: 80.780098, Closs: 0.216939
+ Floss: 81.718369, Closs: 0.224490
+ Floss: 83.200638, Closs: 0.207351
+ Floss: 94.330711, Closs: 0.295379
+ Floss: 94.382225, Closs: 0.242795
+ Floss: 90.441742, Closs: 0.281041
+ Floss: 87.647034, Closs: 0.239650
+ Floss: 103.515732, Closs: 0.276512
+ Floss: 245.794739, Closs: 0.557598
+ Floss: 100.329865, Closs: 0.295558
+ Floss: 105.611771, Closs: 0.276277
+ Floss: 91.842682, Closs: 0.249328
+ Floss: 88.287659, Closs: 0.248289
+ Floss: 95.327194, Closs: 0.290470
+ Floss: 95.621735, Closs: 0.267296
+ Floss: 82.259796, Closs: 0.227804
+ Floss: 91.726372, Closs: 0.247029
+ Floss: 91.635010, Closs: 0.279245
+ Floss: 79.447418, Closs: 0.220704
+ Floss: 39.628876, Closs: 0.092996
+-------------
+epoch 12 || Epoch_Loss:94.2036493089464, Epoch_FlowLoss:93.94399155510796, Epock_CycleLoss:0.2596573361919986
+-------------
+Epoch 13/100
+-------------
+（train）
+ Floss: 97.416367, Closs: 0.302744
+ Floss: 89.432846, Closs: 0.293821
+ Floss: 91.990295, Closs: 0.300327
+ Floss: 88.905869, Closs: 0.269701
+ Floss: 92.157883, Closs: 0.256654
+ Floss: 81.600998, Closs: 0.226258
+ Floss: 93.065842, Closs: 0.280867
+ Floss: 79.727539, Closs: 0.229597
+ Floss: 95.345001, Closs: 0.300937
+ Floss: 87.322906, Closs: 0.243719
+ Floss: 101.688507, Closs: 0.345910
+ Floss: 83.394958, Closs: 0.234317
+ Floss: 87.309677, Closs: 0.279769
+ Floss: 75.254173, Closs: 0.213613
+ Floss: 87.225487, Closs: 0.276985
+ Floss: 90.362640, Closs: 0.276294
+ Floss: 83.394180, Closs: 0.250861
+ Floss: 85.778831, Closs: 0.241775
+ Floss: 79.968376, Closs: 0.247511
+ Floss: 87.032829, Closs: 0.262600
+ Floss: 95.338806, Closs: 0.309094
+ Floss: 84.558975, Closs: 0.254031
+ Floss: 82.293335, Closs: 0.275151
+ Floss: 77.331329, Closs: 0.249131
+ Floss: 84.272949, Closs: 0.259521
+ Floss: 84.271240, Closs: 0.226246
+ Floss: 87.157822, Closs: 0.268925
+ Floss: 78.649109, Closs: 0.207146
+ Floss: 82.900902, Closs: 0.243364
+ Floss: 85.787857, Closs: 0.247426
+ Floss: 78.122208, Closs: 0.247461
+ Floss: 86.253815, Closs: 0.280928
+ Floss: 75.967316, Closs: 0.216169
+ Floss: 98.407455, Closs: 0.303902
+ Floss: 96.267174, Closs: 0.305953
+ Floss: 40.854874, Closs: 0.097339
+-------------
+epoch 13 || Epoch_Loss:85.7260120179918, Epoch_FlowLoss:85.46695476108127, Epock_CycleLoss:0.25905687299867464
+-------------
+Epoch 14/100
+-------------
+（train）
+ Floss: 81.935059, Closs: 0.253427
+ Floss: 81.953964, Closs: 0.262418
+ Floss: 84.428879, Closs: 0.282886
+ Floss: 92.411057, Closs: 0.284193
+ Floss: 79.039108, Closs: 0.244274
+ Floss: 86.926758, Closs: 0.269244
+ Floss: 78.733170, Closs: 0.282554
+ Floss: 89.706505, Closs: 0.334280
+ Floss: 85.622864, Closs: 0.261511
+ Floss: 86.792847, Closs: 0.287626
+ Floss: 94.004379, Closs: 0.329671
+ Floss: 73.192383, Closs: 0.256337
+ Floss: 88.630081, Closs: 0.303364
+ Floss: 80.601578, Closs: 0.254227
+ Floss: 91.018051, Closs: 0.334289
+ Floss: 80.787949, Closs: 0.247021
+ Floss: 81.885574, Closs: 0.244215
+ Floss: 76.445580, Closs: 0.246739
+ Floss: 72.521149, Closs: 0.197129
+ Floss: 78.015121, Closs: 0.235997
+ Floss: 86.453979, Closs: 0.266317
+ Floss: 81.567886, Closs: 0.287799
+ Floss: 85.912285, Closs: 0.260691
+ Floss: 77.990189, Closs: 0.267928
+ Floss: 87.611679, Closs: 0.293161
+ Floss: 91.069000, Closs: 0.344565
+ Floss: 80.711334, Closs: 0.261080
+ Floss: 83.566811, Closs: 0.292858
+ Floss: 92.287323, Closs: 0.333323
+ Floss: 77.500595, Closs: 0.250519
+ Floss: 77.460350, Closs: 0.235839
+ Floss: 74.151306, Closs: 0.251321
+ Floss: 78.457695, Closs: 0.254268
+ Floss: 82.689499, Closs: 0.263642
+ Floss: 95.934097, Closs: 0.369567
+ Floss: 69.698555, Closs: 0.154005
+-------------
+epoch 14 || Epoch_Loss:83.26424810621471, Epoch_FlowLoss:82.99207327100963, Epock_CycleLoss:0.27217467212014723
+-------------
+Epoch 15/100
+-------------
+（train）
+ Floss: 86.888939, Closs: 0.280827
+ Floss: 87.222099, Closs: 0.296557
+ Floss: 81.712227, Closs: 0.280605
+ Floss: 84.193420, Closs: 0.290035
+ Floss: 85.175201, Closs: 0.290476
+ Floss: 89.452599, Closs: 0.318796
+ Floss: 79.233818, Closs: 0.264922
+ Floss: 86.372025, Closs: 0.323631
+ Floss: 82.563095, Closs: 0.279641
+ Floss: 92.775505, Closs: 0.357714
+ Floss: 77.911484, Closs: 0.258861
+ Floss: 86.040878, Closs: 0.298073
+ Floss: 75.519272, Closs: 0.253948
+ Floss: 80.634323, Closs: 0.267513
+ Floss: 74.914490, Closs: 0.253495
+ Floss: 85.709244, Closs: 0.320051
+ Floss: 78.129433, Closs: 0.266660
+ Floss: 70.224411, Closs: 0.233053
+ Floss: 73.163567, Closs: 0.254682
+ Floss: 81.953278, Closs: 0.274587
+ Floss: 76.201889, Closs: 0.273196
+ Floss: 70.123383, Closs: 0.209902
+ Floss: 79.254181, Closs: 0.270661
+ Floss: 90.558044, Closs: 0.318426
+ Floss: 79.665215, Closs: 0.281700
+ Floss: 76.828308, Closs: 0.268926
+ Floss: 82.557167, Closs: 0.296889
+ Floss: 86.935410, Closs: 0.292235
+ Floss: 79.788742, Closs: 0.286913
+ Floss: 79.422165, Closs: 0.295191
+ Floss: 86.414276, Closs: 0.341744
+ Floss: 83.943375, Closs: 0.233270
+ Floss: 79.316826, Closs: 0.262406
+ Floss: 94.014969, Closs: 0.346509
+ Floss: 90.256798, Closs: 0.305838
+ Floss: 101.633896, Closs: 0.176593
+-------------
+epoch 15 || Epoch_Loss:82.96745745340982, Epoch_FlowLoss:82.68622080485027, Epock_CycleLoss:0.2812368066774475
+-------------
+Epoch 16/100
+-------------
+（train）
+ Floss: 79.779419, Closs: 0.266813
+ Floss: 101.888786, Closs: 0.383821
+ Floss: 80.300003, Closs: 0.252626
+ Floss: 74.777946, Closs: 0.227305
+ Floss: 74.670250, Closs: 0.255679
+ Floss: 86.039024, Closs: 0.289994
+ Floss: 89.548569, Closs: 0.323274
+ Floss: 78.558258, Closs: 0.258463
+ Floss: 74.833092, Closs: 0.272075
+ Floss: 73.812820, Closs: 0.260038
+ Floss: 84.625549, Closs: 0.290835
+ Floss: 73.714371, Closs: 0.252256
+ Floss: 68.545143, Closs: 0.223302
+ Floss: 86.461021, Closs: 0.336135
+ Floss: 79.382874, Closs: 0.281085
+ Floss: 82.150497, Closs: 0.299934
+ Floss: 83.569916, Closs: 0.289474
+ Floss: 77.551285, Closs: 0.277180
+ Floss: 71.800316, Closs: 0.262018
+ Floss: 77.612640, Closs: 0.285859
+ Floss: 76.487366, Closs: 0.298499
+ Floss: 90.918564, Closs: 0.394368
+ Floss: 77.014877, Closs: 0.294256
+ Floss: 70.116699, Closs: 0.239266
+ Floss: 78.751389, Closs: 0.310797
+ Floss: 75.927292, Closs: 0.318637
+ Floss: 81.740013, Closs: 0.313162
+ Floss: 73.393364, Closs: 0.250558
+ Floss: 85.090134, Closs: 0.317731
+ Floss: 76.364403, Closs: 0.259695
+ Floss: 85.392349, Closs: 0.325131
+ Floss: 76.339386, Closs: 0.259206
+ Floss: 77.436218, Closs: 0.303319
+ Floss: 75.955811, Closs: 0.272166
+ Floss: 85.991905, Closs: 0.313814
+ Floss: 96.238327, Closs: 0.197925
+-------------
+epoch 16 || Epoch_Loss:80.36212709214954, Epoch_FlowLoss:80.07721879747179, Epock_CycleLoss:0.28490820237331915
+-------------
+Epoch 17/100
+-------------
+（train）
+ Floss: 71.960602, Closs: 0.229564
+ Floss: 77.026779, Closs: 0.259407
+ Floss: 73.651016, Closs: 0.225842
+ Floss: 80.692673, Closs: 0.295113
+ Floss: 69.372856, Closs: 0.231521
+ Floss: 69.954491, Closs: 0.240814
+ Floss: 80.837311, Closs: 0.301802
+ Floss: 98.794785, Closs: 0.394400
+ Floss: 71.772522, Closs: 0.230467
+ Floss: 79.370438, Closs: 0.299211
+ Floss: 81.740158, Closs: 0.326231
+ Floss: 75.888054, Closs: 0.289678
+ Floss: 76.375092, Closs: 0.256918
+ Floss: 270.951630, Closs: 0.673461
+ Floss: 80.867424, Closs: 0.255290
+ Floss: 78.246239, Closs: 0.222389
+ Floss: 78.214317, Closs: 0.239175
+ Floss: 88.072807, Closs: 0.331010
+ Floss: 86.511414, Closs: 0.341689
+ Floss: 83.627129, Closs: 0.298883
+ Floss: 82.539551, Closs: 0.310527
+ Floss: 84.760498, Closs: 0.328525
+ Floss: 82.620430, Closs: 0.338501
+ Floss: 81.317215, Closs: 0.327743
+ Floss: 78.077904, Closs: 0.293222
+ Floss: 71.353104, Closs: 0.235725
+ Floss: 88.018372, Closs: 0.327283
+ Floss: 73.359322, Closs: 0.226659
+ Floss: 78.774307, Closs: 0.262922
+ Floss: 93.900085, Closs: 0.372476
+ Floss: 81.467613, Closs: 0.330405
+ Floss: 71.072899, Closs: 0.250066
+ Floss: 75.318817, Closs: 0.273105
+ Floss: 85.039207, Closs: 0.320626
+ Floss: 73.958206, Closs: 0.291532
+ Floss: 31.052465, Closs: 0.096804
+-------------
+epoch 17 || Epoch_Loss:83.8079645368788, Epoch_FlowLoss:83.51549249225194, Epock_CycleLoss:0.2924718724356758
+-------------
+Epoch 18/100
+-------------
+（train）
+ Floss: 69.595642, Closs: 0.272458
+ Floss: 78.594193, Closs: 0.324939
+ Floss: 81.460114, Closs: 0.334006
+ Floss: 71.958313, Closs: 0.294722
+ Floss: 75.095490, Closs: 0.315326
+ Floss: 60.072460, Closs: 0.194848
+ Floss: 74.018814, Closs: 0.273028
+ Floss: 155.854553, Closs: 0.488703
+ Floss: 72.779449, Closs: 0.264795
+ Floss: 96.409119, Closs: 0.381651
+ Floss: 78.243866, Closs: 0.267348
+ Floss: 72.542526, Closs: 0.256483
+ Floss: 76.516495, Closs: 0.276060
+ Floss: 84.722763, Closs: 0.293290
+ Floss: 68.587822, Closs: 0.245590
+ Floss: 74.087830, Closs: 0.289271
+ Floss: 66.378571, Closs: 0.213029
+ Floss: 64.707527, Closs: 0.226935
+ Floss: 76.164062, Closs: 0.286623
+ Floss: 71.248840, Closs: 0.276531
+ Floss: 186.324142, Closs: 0.561628
+ Floss: 72.656822, Closs: 0.254581
+ Floss: 75.996742, Closs: 0.213375
+ Floss: 76.241623, Closs: 0.255747
+ Floss: 96.063927, Closs: 0.331555
+ Floss: 85.411583, Closs: 0.362224
+ Floss: 79.129166, Closs: 0.325958
+ Floss: 86.144547, Closs: 0.357777
+ Floss: 78.319489, Closs: 0.319146
+ Floss: 78.783562, Closs: 0.335235
+ Floss: 75.192017, Closs: 0.315053
+ Floss: 76.791885, Closs: 0.309223
+ Floss: 72.843781, Closs: 0.309762
+ Floss: 75.201530, Closs: 0.288204
+ Floss: 73.182854, Closs: 0.282496
+ Floss: 17.102911, Closs: 0.061889
+-------------
+epoch 18 || Epoch_Loss:80.14123625225491, Epoch_FlowLoss:79.84513966242473, Epock_CycleLoss:0.2960968219364683
+-------------
+Epoch 19/100
+-------------
+（train）
+ Floss: 75.216141, Closs: 0.279071
+ Floss: 79.729492, Closs: 0.305726
+ Floss: 75.817154, Closs: 0.294526
+ Floss: 73.225800, Closs: 0.277297
+ Floss: 65.622589, Closs: 0.244559
+ Floss: 70.805634, Closs: 0.284627
+ Floss: 79.654022, Closs: 0.353466
+ Floss: 71.195450, Closs: 0.281280
+ Floss: 71.991348, Closs: 0.279845
+ Floss: 139.400055, Closs: 0.509210
+ Floss: 66.830650, Closs: 0.241875
+ Floss: 84.834312, Closs: 0.360260
+ Floss: 76.439842, Closs: 0.265268
+ Floss: 71.061508, Closs: 0.253488
+ Floss: 77.599640, Closs: 0.302458
+ Floss: 73.314041, Closs: 0.285747
+ Floss: 74.241486, Closs: 0.319347
+ Floss: 73.648590, Closs: 0.281393
+ Floss: 68.197029, Closs: 0.269577
+ Floss: 75.901474, Closs: 0.325086
+ Floss: 68.374222, Closs: 0.267752
+ Floss: 82.029724, Closs: 0.345936
+ Floss: 74.097542, Closs: 0.311718
+ Floss: 76.317245, Closs: 0.350771
+ Floss: 63.784527, Closs: 0.253541
+ Floss: 75.521194, Closs: 0.315658
+ Floss: 76.306725, Closs: 0.300569
+ Floss: 70.319664, Closs: 0.263792
+ Floss: 73.390671, Closs: 0.311727
+ Floss: 72.605988, Closs: 0.333696
+ Floss: 78.236435, Closs: 0.308466
+ Floss: 73.114456, Closs: 0.329461
+ Floss: 70.804123, Closs: 0.314019
+ Floss: 64.613205, Closs: 0.242363
+ Floss: 74.705803, Closs: 0.320356
+ Floss: 78.911278, Closs: 0.246676
+-------------
+epoch 19 || Epoch_Loss:75.79693518744574, Epoch_FlowLoss:75.49608495500352, Epock_CycleLoss:0.3008501732514964
+-------------
+Epoch 20/100
+-------------
+（train）
+ Floss: 76.916161, Closs: 0.304847
+ Floss: 66.751907, Closs: 0.260425
+ Floss: 73.147438, Closs: 0.300672
+ Floss: 73.359741, Closs: 0.306072
+ Floss: 64.225937, Closs: 0.239701
+ Floss: 65.276459, Closs: 0.244137
+ Floss: 70.707657, Closs: 0.288947
+ Floss: 66.601532, Closs: 0.269851
+ Floss: 62.973831, Closs: 0.237051
+ Floss: 70.091232, Closs: 0.296048
+ Floss: 70.432335, Closs: 0.306988
+ Floss: 74.323105, Closs: 0.336368
+ Floss: 69.392761, Closs: 0.289928
+ Floss: 74.611664, Closs: 0.352955
+ Floss: 63.869698, Closs: 0.232295
+ Floss: 72.488159, Closs: 0.327833
+ Floss: 80.473099, Closs: 0.364665
+ Floss: 63.717003, Closs: 0.228001
+ Floss: 73.375992, Closs: 0.348670
+ Floss: 64.916794, Closs: 0.282730
+ Floss: 70.352592, Closs: 0.306427
+ Floss: 67.681511, Closs: 0.294409
+ Floss: 82.440872, Closs: 0.389835
+ Floss: 71.772530, Closs: 0.304714
+ Floss: 71.460571, Closs: 0.327844
+ Floss: 71.741226, Closs: 0.352943
+ Floss: 75.176239, Closs: 0.337972
+ Floss: 74.060623, Closs: 0.326883
+ Floss: 69.626205, Closs: 0.282538
+ Floss: 72.979851, Closs: 0.374580
+ Floss: 75.238213, Closs: 0.351487
+ Floss: 66.421417, Closs: 0.309054
+ Floss: 78.798553, Closs: 0.374753
+ Floss: 66.606827, Closs: 0.272506
+ Floss: 68.743057, Closs: 0.302067
+ Floss: 30.602301, Closs: 0.098914
+-------------
+epoch 20 || Epoch_Loss:70.06056096818712, Epoch_FlowLoss:69.75986369450887, Epock_CycleLoss:0.3006974591149225
+-------------
+Epoch 21/100
+-------------
+（train）
+ Floss: 64.391350, Closs: 0.241720
+ Floss: 83.955612, Closs: 0.338443
+ Floss: 63.954071, Closs: 0.272962
+ Floss: 72.015190, Closs: 0.328002
+ Floss: 66.270317, Closs: 0.291737
+ Floss: 69.583389, Closs: 0.303074
+ Floss: 67.448639, Closs: 0.292247
+ Floss: 72.417404, Closs: 0.315120
+ Floss: 79.428604, Closs: 0.361356
+ Floss: 66.223892, Closs: 0.264033
+ Floss: 66.491638, Closs: 0.280739
+ Floss: 66.686981, Closs: 0.291597
+ Floss: 68.164055, Closs: 0.305834
+ Floss: 70.753265, Closs: 0.315604
+ Floss: 68.415062, Closs: 0.286948
+ Floss: 63.759045, Closs: 0.284710
+ Floss: 79.168304, Closs: 0.354373
+ Floss: 70.295761, Closs: 0.300849
+ Floss: 70.497368, Closs: 0.352301
+ Floss: 74.806732, Closs: 0.347474
+ Floss: 66.949966, Closs: 0.288818
+ Floss: 71.642601, Closs: 0.347982
+ Floss: 66.278618, Closs: 0.303434
+ Floss: 62.538231, Closs: 0.256526
+ Floss: 68.692009, Closs: 0.329765
+ Floss: 76.048943, Closs: 0.389292
+ Floss: 75.489662, Closs: 0.364090
+ Floss: 78.095795, Closs: 0.386208
+ Floss: 72.555138, Closs: 0.349466
+ Floss: 62.737488, Closs: 0.270030
+ Floss: 66.122681, Closs: 0.294037
+ Floss: 77.639305, Closs: 0.367198
+ Floss: 72.617638, Closs: 0.335780
+ Floss: 72.179672, Closs: 0.368530
+ Floss: 65.398926, Closs: 0.308175
+ Floss: 53.660530, Closs: 0.156433
+-------------
+epoch 21 || Epoch_Loss:70.12829907735188, Epoch_FlowLoss:69.81594117482501, Epock_CycleLoss:0.31235800021224547
+-------------
+Epoch 22/100
+-------------
+（train）
+ Floss: 68.645042, Closs: 0.296009
+ Floss: 78.011841, Closs: 0.395153
+ Floss: 60.623028, Closs: 0.229361
+ Floss: 72.653778, Closs: 0.341886
+ Floss: 78.345276, Closs: 0.393806
+ Floss: 73.761482, Closs: 0.349205
+ Floss: 74.171425, Closs: 0.346798
+ Floss: 63.573151, Closs: 0.273226
+ Floss: 69.803329, Closs: 0.283495
+ Floss: 72.723724, Closs: 0.320343
+ Floss: 71.416122, Closs: 0.339529
+ Floss: 66.294647, Closs: 0.303541
+ Floss: 58.827812, Closs: 0.247609
+ Floss: 65.796532, Closs: 0.291989
+ Floss: 70.778961, Closs: 0.352427
+ Floss: 63.827938, Closs: 0.290765
+ Floss: 66.538467, Closs: 0.294658
+ Floss: 64.841118, Closs: 0.280301
+ Floss: 73.559601, Closs: 0.392889
+ Floss: 70.253296, Closs: 0.351050
+ Floss: 77.727875, Closs: 0.431508
+ Floss: 63.392952, Closs: 0.296856
+ Floss: 64.800743, Closs: 0.314595
+ Floss: 68.630997, Closs: 0.318769
+ Floss: 70.406723, Closs: 0.343998
+ Floss: 68.900635, Closs: 0.336498
+ Floss: 77.862991, Closs: 0.401577
+ Floss: 70.513458, Closs: 0.350519
+ Floss: 67.967972, Closs: 0.335257
+ Floss: 65.864807, Closs: 0.284830
+ Floss: 63.368847, Closs: 0.303852
+ Floss: 59.036617, Closs: 0.246393
+ Floss: 64.006424, Closs: 0.280562
+ Floss: 71.502594, Closs: 0.365417
+ Floss: 60.730278, Closs: 0.277475
+ Floss: 31.883419, Closs: 0.122654
+-------------
+epoch 22 || Epoch_Loss:67.8452419704861, Epoch_FlowLoss:67.52899731530084, Epock_CycleLoss:0.31624441097180056
+-------------
+Epoch 23/100
+-------------
+（train）
+ Floss: 61.486504, Closs: 0.282062
+ Floss: 62.717499, Closs: 0.287007
+ Floss: 62.726944, Closs: 0.248197
+ Floss: 66.930969, Closs: 0.294272
+ Floss: 68.773819, Closs: 0.348860
+ Floss: 63.685665, Closs: 0.300459
+ Floss: 70.783401, Closs: 0.376915
+ Floss: 79.366714, Closs: 0.433220
+ Floss: 59.506828, Closs: 0.257735
+ Floss: 73.748413, Closs: 0.345496
+ Floss: 73.413788, Closs: 0.341801
+ Floss: 65.920097, Closs: 0.287965
+ Floss: 62.623383, Closs: 0.268632
+ Floss: 65.829117, Closs: 0.307554
+ Floss: 66.069901, Closs: 0.334000
+ Floss: 62.649803, Closs: 0.293362
+ Floss: 77.550362, Closs: 0.388947
+ Floss: 63.042007, Closs: 0.319137
+ Floss: 80.319412, Closs: 0.426962
+ Floss: 65.343689, Closs: 0.347010
+ Floss: 73.410538, Closs: 0.412571
+ Floss: 71.556625, Closs: 0.394642
+ Floss: 69.185753, Closs: 0.359261
+ Floss: 69.116547, Closs: 0.309210
+ Floss: 70.983215, Closs: 0.376129
+ Floss: 58.993942, Closs: 0.259446
+ Floss: 59.947033, Closs: 0.272604
+ Floss: 78.979279, Closs: 0.392507
+ Floss: 63.062126, Closs: 0.275586
+ Floss: 61.153595, Closs: 0.293706
+ Floss: 58.467724, Closs: 0.263939
+ Floss: 67.561882, Closs: 0.333529
+ Floss: 69.770538, Closs: 0.372246
+ Floss: 62.116264, Closs: 0.285714
+ Floss: 74.738579, Closs: 0.395615
+ Floss: 70.997009, Closs: 0.140764
+-------------
+epoch 23 || Epoch_Loss:67.8932230207655, Epoch_FlowLoss:67.57024902767606, Epock_CycleLoss:0.3229740030235715
+-------------
+Epoch 24/100
+-------------
+（train）
+ Floss: 65.835999, Closs: 0.319342
+ Floss: 70.432190, Closs: 0.355274
+ Floss: 73.223396, Closs: 0.354244
+ Floss: 68.620850, Closs: 0.332452
+ Floss: 72.471603, Closs: 0.400896
+ Floss: 63.001877, Closs: 0.290831
+ Floss: 66.461449, Closs: 0.323297
+ Floss: 64.833672, Closs: 0.337617
+ Floss: 67.026138, Closs: 0.328244
+ Floss: 73.263718, Closs: 0.362197
+ Floss: 66.992271, Closs: 0.305832
+ Floss: 70.518669, Closs: 0.349884
+ Floss: 57.382439, Closs: 0.254717
+ Floss: 70.675026, Closs: 0.365000
+ Floss: 65.138878, Closs: 0.302212
+ Floss: 56.612774, Closs: 0.233487
+ Floss: 68.313721, Closs: 0.305062
+ Floss: 66.819550, Closs: 0.319900
+ Floss: 63.093117, Closs: 0.289121
+ Floss: 62.971413, Closs: 0.307554
+ Floss: 67.355751, Closs: 0.348994
+ Floss: 65.992874, Closs: 0.362842
+ Floss: 68.543304, Closs: 0.345911
+ Floss: 64.832321, Closs: 0.318283
+ Floss: 72.327690, Closs: 0.359869
+ Floss: 74.820473, Closs: 0.412701
+ Floss: 65.336533, Closs: 0.336525
+ Floss: 65.928604, Closs: 0.356952
+ Floss: 60.940811, Closs: 0.298747
+ Floss: 63.811378, Closs: 0.318983
+ Floss: 65.149384, Closs: 0.325838
+ Floss: 65.294098, Closs: 0.326471
+ Floss: 70.568291, Closs: 0.348654
+ Floss: 66.735077, Closs: 0.370885
+ Floss: 56.682659, Closs: 0.283836
+ Floss: 59.922970, Closs: 0.170795
+-------------
+epoch 24 || Epoch_Loss:66.65706698099771, Epoch_FlowLoss:66.33141570621068, Epock_CycleLoss:0.3256513654357857
+-------------
+Epoch 25/100
+-------------
+（train）
+ Floss: 67.043396, Closs: 0.318670
+ Floss: 71.631821, Closs: 0.323007
+ Floss: 56.350639, Closs: 0.253992
+ Floss: 69.546440, Closs: 0.389232
+ Floss: 70.073532, Closs: 0.364714
+ Floss: 65.803581, Closs: 0.362946
+ Floss: 65.410172, Closs: 0.332206
+ Floss: 73.785370, Closs: 0.403450
+ Floss: 75.836395, Closs: 0.442772
+ Floss: 67.000076, Closs: 0.344108
+ Floss: 69.242508, Closs: 0.395737
+ Floss: 69.396706, Closs: 0.349692
+ Floss: 70.671127, Closs: 0.405170
+ Floss: 62.817596, Closs: 0.331634
+ Floss: 62.876640, Closs: 0.295555
+ Floss: 68.834946, Closs: 0.359130
+ Floss: 61.381634, Closs: 0.320387
+ Floss: 66.683777, Closs: 0.357145
+ Floss: 61.865353, Closs: 0.308982
+ Floss: 62.153206, Closs: 0.336892
+ Floss: 54.743542, Closs: 0.273687
+ Floss: 169.300476, Closs: 0.609623
+ Floss: 76.321152, Closs: 0.308268
+ Floss: 65.423401, Closs: 0.211661
+ Floss: 62.876400, Closs: 0.233363
+ Floss: 74.939041, Closs: 0.319640
+ Floss: 65.448822, Closs: 0.262753
+ Floss: 64.580338, Closs: 0.285780
+ Floss: 70.417587, Closs: 0.352017
+ Floss: 73.446625, Closs: 0.333510
+ Floss: 65.703934, Closs: 0.304560
+ Floss: 69.269661, Closs: 0.349759
+ Floss: 60.707031, Closs: 0.305214
+ Floss: 69.706993, Closs: 0.379640
+ Floss: 62.954155, Closs: 0.312674
+ Floss: 11.479186, Closs: 0.050017
+-------------
+epoch 25 || Epoch_Loss:68.54474592208862, Epoch_FlowLoss:68.21453494495815, Epock_CycleLoss:0.3302108454000618
+-------------
+Epoch 26/100
+-------------
+（train）
+ Floss: 65.908234, Closs: 0.280481
+ Floss: 73.465271, Closs: 0.347728
+ Floss: 64.958275, Closs: 0.334064
+ Floss: 73.060181, Closs: 0.424877
+ Floss: 126.754166, Closs: 0.534199
+ Floss: 64.860611, Closs: 0.301805
+ Floss: 65.990173, Closs: 0.294974
+ Floss: 77.917816, Closs: 0.320308
+ Floss: 57.394043, Closs: 0.260089
+ Floss: 62.605255, Closs: 0.306650
+ Floss: 63.043388, Closs: 0.300785
+ Floss: 66.534775, Closs: 0.353436
+ Floss: 59.557137, Closs: 0.296785
+ Floss: 66.711166, Closs: 0.344550
+ Floss: 63.127224, Closs: 0.311070
+ Floss: 65.939804, Closs: 0.336067
+ Floss: 68.871231, Closs: 0.356415
+ Floss: 121.710167, Closs: 0.652982
+ Floss: 65.727676, Closs: 0.317437
+ Floss: 73.725525, Closs: 0.327099
+ Floss: 62.416885, Closs: 0.287384
+ Floss: 61.048134, Closs: 0.277527
+ Floss: 70.622314, Closs: 0.351605
+ Floss: 63.983765, Closs: 0.275260
+ Floss: 62.052391, Closs: 0.307818
+ Floss: 61.342613, Closs: 0.322176
+ Floss: 64.615967, Closs: 0.333120
+ Floss: 66.294693, Closs: 0.342004
+ Floss: 70.080582, Closs: 0.390330
+ Floss: 69.833252, Closs: 0.386130
+ Floss: 59.056145, Closs: 0.327503
+ Floss: 64.549980, Closs: 0.346143
+ Floss: 59.339325, Closs: 0.294353
+ Floss: 73.266464, Closs: 0.380566
+ Floss: 66.643082, Closs: 0.356719
+ Floss: 38.421822, Closs: 0.164432
+-------------
+epoch 26 || Epoch_Loss:68.71040036943224, Epoch_FlowLoss:68.37304253048367, Epock_CycleLoss:0.3373575053281254
+-------------
+Epoch 27/100
+-------------
+（train）
+ Floss: 66.596313, Closs: 0.376809
+ Floss: 67.438248, Closs: 0.345929
+ Floss: 61.931683, Closs: 0.317420
+ Floss: 58.093182, Closs: 0.295404
+ Floss: 63.171127, Closs: 0.329554
+ Floss: 62.220516, Closs: 0.323022
+ Floss: 60.054405, Closs: 0.330061
+ Floss: 64.776421, Closs: 0.349668
+ Floss: 59.024811, Closs: 0.300346
+ Floss: 67.248672, Closs: 0.383018
+ Floss: 59.087227, Closs: 0.312166
+ Floss: 61.020294, Closs: 0.329246
+ Floss: 67.596893, Closs: 0.383213
+ Floss: 61.865692, Closs: 0.335816
+ Floss: 62.957928, Closs: 0.376306
+ Floss: 57.752758, Closs: 0.299328
+ Floss: 58.645615, Closs: 0.310966
+ Floss: 61.901241, Closs: 0.324347
+ Floss: 68.296829, Closs: 0.401859
+ Floss: 55.540829, Closs: 0.262124
+ Floss: 59.967480, Closs: 0.337189
+ Floss: 62.818707, Closs: 0.336891
+ Floss: 66.020813, Closs: 0.371558
+ Floss: 61.417847, Closs: 0.367567
+ Floss: 59.734993, Closs: 0.306709
+ Floss: 57.953045, Closs: 0.300644
+ Floss: 59.951904, Closs: 0.335757
+ Floss: 55.549591, Closs: 0.290717
+ Floss: 73.068985, Closs: 0.388339
+ Floss: 63.399284, Closs: 0.368263
+ Floss: 67.816711, Closs: 0.410767
+ Floss: 57.599007, Closs: 0.312638
+ Floss: 59.057171, Closs: 0.313235
+ Floss: 66.287781, Closs: 0.361559
+ Floss: 60.447678, Closs: 0.351739
+ Floss: 11.383423, Closs: 0.063499
+-------------
+epoch 27 || Epoch_Loss:61.099965837266716, Epoch_FlowLoss:60.7693084081014, Epock_CycleLoss:0.3306576094279686
+-------------
+Epoch 28/100
+-------------
+（train）
+ Floss: 55.884274, Closs: 0.301466
+ Floss: 53.042629, Closs: 0.271419
+ Floss: 63.397415, Closs: 0.381963
+ Floss: 58.992275, Closs: 0.324683
+ Floss: 60.236992, Closs: 0.297031
+ Floss: 63.519547, Closs: 0.342210
+ Floss: 66.939865, Closs: 0.394639
+ Floss: 56.189632, Closs: 0.291349
+ Floss: 54.328503, Closs: 0.299458
+ Floss: 60.662376, Closs: 0.355614
+ Floss: 58.315125, Closs: 0.321734
+ Floss: 67.947571, Closs: 0.421966
+ Floss: 51.924816, Closs: 0.255166
+ Floss: 55.759808, Closs: 0.295782
+ Floss: 59.011806, Closs: 0.339897
+ Floss: 69.569778, Closs: 0.400639
+ Floss: 60.439541, Closs: 0.363564
+ Floss: 62.522926, Closs: 0.365549
+ Floss: 62.875378, Closs: 0.371091
+ Floss: 64.153503, Closs: 0.348159
+ Floss: 68.549820, Closs: 0.421455
+ Floss: 63.183514, Closs: 0.351675
+ Floss: 62.613258, Closs: 0.364093
+ Floss: 68.085236, Closs: 0.428492
+ Floss: 59.908234, Closs: 0.346711
+ Floss: 63.429108, Closs: 0.339223
+ Floss: 57.576809, Closs: 0.327920
+ Floss: 59.247498, Closs: 0.352809
+ Floss: 62.503883, Closs: 0.371100
+ Floss: 59.488045, Closs: 0.369390
+ Floss: 58.753143, Closs: 0.345030
+ Floss: 56.373348, Closs: 0.319345
+ Floss: 58.806198, Closs: 0.309202
+ Floss: 111.861877, Closs: 0.564076
+ Floss: 62.133240, Closs: 0.310122
+ Floss: 22.204512, Closs: 0.084204
+-------------
+epoch 28 || Epoch_Loss:61.46610260009766, Epoch_FlowLoss:61.12309673097399, Epock_CycleLoss:0.3430061652842496
+-------------
+Epoch 29/100
+-------------
+（train）
+ Floss: 66.685593, Closs: 0.361713
+ Floss: 60.688019, Closs: 0.315096
+ Floss: 61.820198, Closs: 0.331474
+ Floss: 61.041641, Closs: 0.346133
+ Floss: 66.271072, Closs: 0.417331
+ Floss: 66.448929, Closs: 0.392242
+ Floss: 62.962952, Closs: 0.389493
+ Floss: 74.485397, Closs: 0.457727
+ Floss: 61.882072, Closs: 0.376500
+ Floss: 55.986366, Closs: 0.295981
+ Floss: 55.451302, Closs: 0.300997
+ Floss: 66.559082, Closs: 0.363612
+ Floss: 57.558716, Closs: 0.301133
+ Floss: 55.999420, Closs: 0.303683
+ Floss: 64.286118, Closs: 0.372019
+ Floss: 54.735939, Closs: 0.309832
+ Floss: 59.705338, Closs: 0.354924
+ Floss: 60.367413, Closs: 0.338017
+ Floss: 54.330620, Closs: 0.294136
+ Floss: 56.614250, Closs: 0.304697
+ Floss: 56.507942, Closs: 0.318989
+ Floss: 62.117493, Closs: 0.334932
+ Floss: 59.837639, Closs: 0.341326
+ Floss: 62.573479, Closs: 0.376109
+ Floss: 72.857414, Closs: 0.481092
+ Floss: 64.559067, Closs: 0.383993
+ Floss: 57.024643, Closs: 0.333665
+ Floss: 64.039848, Closs: 0.382748
+ Floss: 62.464672, Closs: 0.375988
+ Floss: 63.560707, Closs: 0.406274
+ Floss: 56.973015, Closs: 0.315346
+ Floss: 54.984131, Closs: 0.304479
+ Floss: 48.940277, Closs: 0.232272
+ Floss: 50.381950, Closs: 0.267786
+ Floss: 54.719910, Closs: 0.325283
+ Floss: 71.159691, Closs: 0.236222
+-------------
+epoch 29 || Epoch_Loss:61.08126523759631, Epoch_FlowLoss:60.738397598266594, Epock_CycleLoss:0.3428679303162628
+-------------
+Epoch 30/100
+-------------
+（train）
+ Floss: 62.547211, Closs: 0.316021
+ Floss: 59.335720, Closs: 0.286753
+ Floss: 62.275986, Closs: 0.322518
+ Floss: 64.046921, Closs: 0.360046
+ Floss: 78.418770, Closs: 0.460024
+ Floss: 59.407024, Closs: 0.347563
+ Floss: 61.591820, Closs: 0.351111
+ Floss: 67.662277, Closs: 0.382688
+ Floss: 64.373291, Closs: 0.381524
+ Floss: 62.773346, Closs: 0.383772
+ Floss: 60.129974, Closs: 0.353870
+ Floss: 60.795330, Closs: 0.343791
+ Floss: 52.676769, Closs: 0.277004
+ Floss: 58.141655, Closs: 0.307556
+ Floss: 58.013016, Closs: 0.294201
+ Floss: 61.196991, Closs: 0.357370
+ Floss: 69.699677, Closs: 0.407119
+ Floss: 58.695290, Closs: 0.329149
+ Floss: 54.300629, Closs: 0.300092
+ Floss: 55.404919, Closs: 0.333365
+ Floss: 56.237946, Closs: 0.301853
+ Floss: 59.844597, Closs: 0.329511
+ Floss: 62.871307, Closs: 0.331160
+ Floss: 59.272675, Closs: 0.312052
+ Floss: 59.395897, Closs: 0.350430
+ Floss: 64.084076, Closs: 0.391985
+ Floss: 62.250061, Closs: 0.421462
+ Floss: 60.837639, Closs: 0.378275
+ Floss: 52.764267, Closs: 0.303034
+ Floss: 58.424114, Closs: 0.345666
+ Floss: 65.706635, Closs: 0.399538
+ Floss: 51.638298, Closs: 0.274338
+ Floss: 93.519066, Closs: 0.539193
+ Floss: 59.784019, Closs: 0.353833
+ Floss: 69.581619, Closs: 0.425124
+ Floss: 46.336967, Closs: 0.158246
+-------------
+epoch 30 || Epoch_Loss:61.84852875603571, Epoch_FlowLoss:61.50099436442057, Epock_CycleLoss:0.34753427075015164
+-------------
+Epoch 31/100
+-------------
+（train）
+ Floss: 70.393669, Closs: 0.347314
+ Floss: 64.719147, Closs: 0.337594
+ Floss: 64.735481, Closs: 0.394877
+ Floss: 59.235687, Closs: 0.348958
+ Floss: 60.915428, Closs: 0.369246
+ Floss: 65.757187, Closs: 0.414582
+ Floss: 61.279354, Closs: 0.370796
+ Floss: 95.532867, Closs: 0.518998
+ Floss: 50.653160, Closs: 0.270316
+ Floss: 66.046295, Closs: 0.353360
+ Floss: 56.158134, Closs: 0.290547
+ Floss: 58.466469, Closs: 0.293356
+ Floss: 57.293266, Closs: 0.324453
+ Floss: 64.476051, Closs: 0.387851
+ Floss: 56.878002, Closs: 0.333742
+ Floss: 60.214096, Closs: 0.359425
+ Floss: 61.107693, Closs: 0.368865
+ Floss: 62.165611, Closs: 0.364674
+ Floss: 61.295250, Closs: 0.389841
+ Floss: 54.516708, Closs: 0.320825
+ Floss: 60.196316, Closs: 0.364568
+ Floss: 57.524609, Closs: 0.328381
+ Floss: 60.468460, Closs: 0.340608
+ Floss: 62.532806, Closs: 0.380587
+ Floss: 62.162411, Closs: 0.389389
+ Floss: 61.835949, Closs: 0.395007
+ Floss: 64.083298, Closs: 0.418368
+ Floss: 53.363190, Closs: 0.323231
+ Floss: 58.827194, Closs: 0.373724
+ Floss: 55.619843, Closs: 0.292480
+ Floss: 57.946754, Closs: 0.337287
+ Floss: 50.367966, Closs: 0.268840
+ Floss: 58.116165, Closs: 0.357227
+ Floss: 51.082542, Closs: 0.267868
+ Floss: 56.476440, Closs: 0.340094
+ Floss: 10.353465, Closs: 0.045800
+-------------
+epoch 31 || Epoch_Loss:59.588334507412384, Epoch_FlowLoss:59.244360155529435, Epock_CycleLoss:0.343974390377601
+-------------
+Epoch 32/100
+-------------
+（train）
+ Floss: 63.446198, Closs: 0.412432
+ Floss: 58.886398, Closs: 0.376049
+ Floss: 54.983913, Closs: 0.307945
+ Floss: 52.678116, Closs: 0.299859
+ Floss: 54.897423, Closs: 0.324643
+ Floss: 47.499031, Closs: 0.255933
+ Floss: 54.906670, Closs: 0.303836
+ Floss: 55.340816, Closs: 0.334648
+ Floss: 54.136227, Closs: 0.336442
+ Floss: 58.781628, Closs: 0.383521
+ Floss: 62.576347, Closs: 0.412977
+ Floss: 57.510754, Closs: 0.365800
+ Floss: 58.537773, Closs: 0.367356
+ Floss: 55.388641, Closs: 0.328436
+ Floss: 53.771179, Closs: 0.318836
+ Floss: 56.790497, Closs: 0.320464
+ Floss: 65.007179, Closs: 0.414651
+ Floss: 60.666039, Closs: 0.382421
+ Floss: 58.763451, Closs: 0.378185
+ Floss: 62.708649, Closs: 0.399309
+ Floss: 57.914154, Closs: 0.368110
+ Floss: 58.295925, Closs: 0.365775
+ Floss: 63.791191, Closs: 0.411960
+ Floss: 57.476406, Closs: 0.381950
+ Floss: 64.921127, Closs: 0.423467
+ Floss: 53.849182, Closs: 0.319834
+ Floss: 55.645264, Closs: 0.348348
+ Floss: 66.475151, Closs: 0.486487
+ Floss: 58.432930, Closs: 0.347506
+ Floss: 52.945995, Closs: 0.316417
+ Floss: 60.239319, Closs: 0.383880
+ Floss: 60.088589, Closs: 0.357481
+ Floss: 88.494034, Closs: 0.505022
+ Floss: 61.124504, Closs: 0.362036
+ Floss: 54.617462, Closs: 0.306578
+ Floss: 39.384674, Closs: 0.149918
+-------------
+epoch 32 || Epoch_Loss:58.71753745608861, Epoch_FlowLoss:58.3603565427992, Epock_CycleLoss:0.3571808971464634
+-------------
+Epoch 33/100
+-------------
+（train）
+ Floss: 61.794342, Closs: 0.330096
+ Floss: 56.063835, Closs: 0.295836
+ Floss: 61.499931, Closs: 0.370860
+ Floss: 57.555672, Closs: 0.345390
+ Floss: 61.914654, Closs: 0.392456
+ Floss: 59.268139, Closs: 0.390365
+ Floss: 60.847900, Closs: 0.382668
+ Floss: 53.664715, Closs: 0.316657
+ Floss: 56.259258, Closs: 0.331457
+ Floss: 68.524734, Closs: 0.398674
+ Floss: 52.257126, Closs: 0.295813
+ Floss: 57.114120, Closs: 0.354035
+ Floss: 60.038403, Closs: 0.388554
+ Floss: 57.178482, Closs: 0.340502
+ Floss: 62.338989, Closs: 0.395859
+ Floss: 45.541058, Closs: 0.220363
+ Floss: 56.821808, Closs: 0.356722
+ Floss: 66.812057, Closs: 0.462330
+ Floss: 59.967632, Closs: 0.387698
+ Floss: 60.199261, Closs: 0.412660
+ Floss: 54.465904, Closs: 0.342209
+ Floss: 95.655174, Closs: 0.567711
+ Floss: 53.871185, Closs: 0.293616
+ Floss: 66.909424, Closs: 0.348128
+ Floss: 52.229584, Closs: 0.287699
+ Floss: 55.098431, Closs: 0.344319
+ Floss: 61.820450, Closs: 0.376526
+ Floss: 66.099838, Closs: 0.445174
+ Floss: 55.281731, Closs: 0.326910
+ Floss: 57.706703, Closs: 0.336681
+ Floss: 58.131592, Closs: 0.356927
+ Floss: 54.401608, Closs: 0.329663
+ Floss: 66.039787, Closs: 0.450700
+ Floss: 48.625633, Closs: 0.284156
+ Floss: 62.113853, Closs: 0.426320
+ Floss: 14.577431, Closs: 0.058175
+-------------
+epoch 33 || Epoch_Loss:58.650954590903375, Epoch_FlowLoss:58.2969568040636, Epock_CycleLoss:0.3539974838495254
+-------------
+Epoch 34/100
+-------------
+（train）
+ Floss: 65.480194, Closs: 0.452388
+ Floss: 53.586075, Closs: 0.341928
+ Floss: 57.575661, Closs: 0.350491
+ Floss: 54.210186, Closs: 0.342482
+ Floss: 56.178070, Closs: 0.339750
+ Floss: 56.081879, Closs: 0.308497
+ Floss: 51.017818, Closs: 0.303619
+ Floss: 62.675323, Closs: 0.419949
+ Floss: 54.577496, Closs: 0.342659
+ Floss: 60.490196, Closs: 0.354265
+ Floss: 54.117050, Closs: 0.347582
+ Floss: 56.097607, Closs: 0.356793
+ Floss: 61.335766, Closs: 0.410882
+ Floss: 49.488567, Closs: 0.300610
+ Floss: 65.878571, Closs: 0.450288
+ Floss: 53.480209, Closs: 0.335349
+ Floss: 56.999733, Closs: 0.373753
+ Floss: 57.210796, Closs: 0.363626
+ Floss: 55.690884, Closs: 0.374119
+ Floss: 47.942986, Closs: 0.291590
+ Floss: 60.576088, Closs: 0.413419
+ Floss: 59.715248, Closs: 0.374513
+ Floss: 61.481789, Closs: 0.385132
+ Floss: 79.819298, Closs: 0.481294
+ Floss: 54.795906, Closs: 0.332001
+ Floss: 56.873878, Closs: 0.315531
+ Floss: 58.935913, Closs: 0.327050
+ Floss: 63.295738, Closs: 0.385963
+ Floss: 58.416862, Closs: 0.377585
+ Floss: 49.733364, Closs: 0.305791
+ Floss: 55.484428, Closs: 0.338665
+ Floss: 57.160126, Closs: 0.348166
+ Floss: 64.217209, Closs: 0.404440
+ Floss: 57.729687, Closs: 0.395755
+ Floss: 55.905499, Closs: 0.390278
+ Floss: 18.431608, Closs: 0.101060
+-------------
+epoch 34 || Epoch_Loss:57.09791564941407, Epoch_FlowLoss:56.74132521947225, Epock_CycleLoss:0.356590601719088
+-------------
+Epoch 35/100
+-------------
+（train）
+ Floss: 60.240826, Closs: 0.373123
+ Floss: 47.103004, Closs: 0.254496
+ Floss: 53.808743, Closs: 0.320202
+ Floss: 55.915306, Closs: 0.329050
+ Floss: 54.721313, Closs: 0.327701
+ Floss: 62.664577, Closs: 0.422700
+ Floss: 58.417309, Closs: 0.394965
+ Floss: 60.343445, Closs: 0.434849
+ Floss: 66.840752, Closs: 0.484634
+ Floss: 49.677620, Closs: 0.323775
+ Floss: 58.367317, Closs: 0.383837
+ Floss: 60.259827, Closs: 0.346324
+ Floss: 65.993851, Closs: 0.435911
+ Floss: 60.066856, Closs: 0.385505
+ Floss: 58.965981, Closs: 0.398274
+ Floss: 59.857643, Closs: 0.401241
+ Floss: 57.904999, Closs: 0.352462
+ Floss: 49.986755, Closs: 0.297364
+ Floss: 59.820538, Closs: 0.385603
+ Floss: 57.246696, Closs: 0.369771
+ Floss: 53.992538, Closs: 0.356633
+ Floss: 65.988258, Closs: 0.473232
+ Floss: 68.607742, Closs: 0.480696
+ Floss: 57.902313, Closs: 0.384834
+ Floss: 61.674072, Closs: 0.345551
+ Floss: 47.735241, Closs: 0.267519
+ Floss: 52.879272, Closs: 0.320668
+ Floss: 55.163536, Closs: 0.371775
+ Floss: 48.769859, Closs: 0.254166
+ Floss: 119.042007, Closs: 0.702563
+ Floss: 64.532486, Closs: 0.352344
+ Floss: 55.274384, Closs: 0.266906
+ Floss: 53.599083, Closs: 0.281981
+ Floss: 54.559998, Closs: 0.342037
+ Floss: 50.647564, Closs: 0.294031
+ Floss: 57.867943, Closs: 0.234325
+-------------
+epoch 35 || Epoch_Loss:59.43307495117189, Epoch_FlowLoss:59.067768202887656, Epock_CycleLoss:0.3653068807390001
+-------------
+Epoch 36/100
+-------------
+（train）
+ Floss: 54.525051, Closs: 0.339462
+ Floss: 59.467758, Closs: 0.353625
+ Floss: 58.360558, Closs: 0.319200
+ Floss: 56.108288, Closs: 0.311404
+ Floss: 55.437271, Closs: 0.306706
+ Floss: 64.119301, Closs: 0.400798
+ Floss: 65.170212, Closs: 0.411149
+ Floss: 58.615044, Closs: 0.361368
+ Floss: 54.466015, Closs: 0.336954
+ Floss: 60.706795, Closs: 0.386989
+ Floss: 54.242851, Closs: 0.346849
+ Floss: 48.484825, Closs: 0.292208
+ Floss: 60.334850, Closs: 0.399835
+ Floss: 57.799835, Closs: 0.342838
+ Floss: 51.296474, Closs: 0.326737
+ Floss: 60.788250, Closs: 0.397261
+ Floss: 57.910980, Closs: 0.382847
+ Floss: 51.360466, Closs: 0.347721
+ Floss: 55.288475, Closs: 0.341361
+ Floss: 60.065498, Closs: 0.401866
+ Floss: 52.958870, Closs: 0.331343
+ Floss: 54.332146, Closs: 0.363931
+ Floss: 49.813614, Closs: 0.304627
+ Floss: 49.313217, Closs: 0.303380
+ Floss: 58.656700, Closs: 0.401147
+ Floss: 53.293041, Closs: 0.336337
+ Floss: 50.708107, Closs: 0.338555
+ Floss: 60.664001, Closs: 0.421671
+ Floss: 54.456032, Closs: 0.364593
+ Floss: 64.311829, Closs: 0.479843
+ Floss: 67.848236, Closs: 0.486718
+ Floss: 54.099682, Closs: 0.391281
+ Floss: 57.961956, Closs: 0.394717
+ Floss: 56.102661, Closs: 0.378289
+ Floss: 50.253410, Closs: 0.329171
+ Floss: 36.813065, Closs: 0.128886
+-------------
+epoch 36 || Epoch_Loss:56.36102867126466, Epoch_FlowLoss:56.00376012590197, Epock_CycleLoss:0.3572684795492226
+-------------
+Epoch 37/100
+-------------
+（train）
+ Floss: 54.880669, Closs: 0.369511
+ Floss: 62.920177, Closs: 0.402827
+ Floss: 56.914288, Closs: 0.369451
+ Floss: 53.651176, Closs: 0.362663
+ Floss: 51.675381, Closs: 0.341702
+ Floss: 62.568573, Closs: 0.443655
+ Floss: 52.517822, Closs: 0.348006
+ Floss: 55.384350, Closs: 0.369645
+ Floss: 50.107311, Closs: 0.338890
+ Floss: 56.446304, Closs: 0.390972
+ Floss: 53.016399, Closs: 0.367844
+ Floss: 58.130524, Closs: 0.385437
+ Floss: 42.648800, Closs: 0.246258
+ Floss: 61.128510, Closs: 0.424764
+ Floss: 55.672649, Closs: 0.355759
+ Floss: 51.467770, Closs: 0.326948
+ Floss: 61.246979, Closs: 0.458484
+ Floss: 53.846291, Closs: 0.372034
+ Floss: 51.460766, Closs: 0.363841
+ Floss: 59.414886, Closs: 0.398891
+ Floss: 54.624645, Closs: 0.378351
+ Floss: 63.464520, Closs: 0.458389
+ Floss: 61.154675, Closs: 0.425705
+ Floss: 48.714027, Closs: 0.324943
+ Floss: 56.947227, Closs: 0.401760
+ Floss: 52.598492, Closs: 0.310863
+ Floss: 51.786133, Closs: 0.331798
+ Floss: 48.263470, Closs: 0.328561
+ Floss: 57.793076, Closs: 0.396774
+ Floss: 53.545959, Closs: 0.369528
+ Floss: 53.397972, Closs: 0.364615
+ Floss: 48.530380, Closs: 0.326420
+ Floss: 49.826416, Closs: 0.309493
+ Floss: 52.780411, Closs: 0.343836
+ Floss: 59.393631, Closs: 0.407097
+ Floss: 26.922649, Closs: 0.146913
+-------------
+epoch 37 || Epoch_Loss:54.38627608617147, Epoch_FlowLoss:54.0234252081977, Epock_CycleLoss:0.362850761661927
+-------------
+Epoch 38/100
+-------------
+（train）
+ Floss: 48.829800, Closs: 0.314411
+ Floss: 52.321407, Closs: 0.344696
+ Floss: 56.859432, Closs: 0.383081
+ Floss: 51.650433, Closs: 0.352330
+ Floss: 51.341259, Closs: 0.325871
+ Floss: 51.450142, Closs: 0.343172
+ Floss: 52.334419, Closs: 0.368044
+ Floss: 56.236359, Closs: 0.421398
+ Floss: 48.954277, Closs: 0.317853
+ Floss: 58.804241, Closs: 0.428334
+ Floss: 68.253365, Closs: 0.461940
+ Floss: 58.877258, Closs: 0.388601
+ Floss: 46.801346, Closs: 0.293175
+ Floss: 56.329708, Closs: 0.389414
+ Floss: 56.320065, Closs: 0.394509
+ Floss: 57.374176, Closs: 0.417054
+ Floss: 61.626419, Closs: 0.462002
+ Floss: 53.201004, Closs: 0.374936
+ Floss: 54.704784, Closs: 0.398991
+ Floss: 61.958813, Closs: 0.420817
+ Floss: 56.330563, Closs: 0.367985
+ Floss: 58.463604, Closs: 0.369602
+ Floss: 54.639202, Closs: 0.370693
+ Floss: 50.388824, Closs: 0.308205
+ Floss: 49.244427, Closs: 0.325375
+ Floss: 60.499199, Closs: 0.412533
+ Floss: 50.575523, Closs: 0.347166
+ Floss: 52.744671, Closs: 0.358182
+ Floss: 61.577663, Closs: 0.477421
+ Floss: 46.888611, Closs: 0.301256
+ Floss: 57.964813, Closs: 0.393400
+ Floss: 47.322624, Closs: 0.298774
+ Floss: 68.968857, Closs: 0.508600
+ Floss: 49.976028, Closs: 0.346191
+ Floss: 50.315918, Closs: 0.340447
+ Floss: 59.538200, Closs: 0.214077
+-------------
+epoch 38 || Epoch_Loss:55.36133204566108, Epoch_FlowLoss:54.99076207478841, Epock_CycleLoss:0.37057047006156707
+-------------
+Epoch 39/100
+-------------
+（train）
+ Floss: 48.689896, Closs: 0.276798
+ Floss: 54.710014, Closs: 0.342803
+ Floss: 55.109314, Closs: 0.359569
+ Floss: 48.261070, Closs: 0.306086
+ Floss: 61.366726, Closs: 0.440817
+ Floss: 58.359570, Closs: 0.424559
+ Floss: 54.443138, Closs: 0.378613
+ Floss: 49.159023, Closs: 0.319622
+ Floss: 57.764126, Closs: 0.352848
+ Floss: 58.886314, Closs: 0.393182
+ Floss: 52.959255, Closs: 0.367229
+ Floss: 62.641197, Closs: 0.468879
+ Floss: 64.679985, Closs: 0.468257
+ Floss: 58.163055, Closs: 0.369709
+ Floss: 59.293499, Closs: 0.396587
+ Floss: 54.003418, Closs: 0.376100
+ Floss: 54.010010, Closs: 0.394222
+ Floss: 49.842129, Closs: 0.352263
+ Floss: 48.037773, Closs: 0.325333
+ Floss: 62.217461, Closs: 0.467497
+ Floss: 48.591152, Closs: 0.321713
+ Floss: 50.031425, Closs: 0.338530
+ Floss: 47.522644, Closs: 0.320025
+ Floss: 55.414474, Closs: 0.369140
+ Floss: 64.825836, Closs: 0.467792
+ Floss: 59.158764, Closs: 0.438417
+ Floss: 48.409374, Closs: 0.315687
+ Floss: 60.268486, Closs: 0.439071
+ Floss: 50.063004, Closs: 0.359759
+ Floss: 54.631615, Closs: 0.377117
+ Floss: 50.591026, Closs: 0.342928
+ Floss: 56.828106, Closs: 0.412823
+ Floss: 52.068962, Closs: 0.337079
+ Floss: 51.146873, Closs: 0.370302
+ Floss: 46.545433, Closs: 0.334199
+ Floss: 10.768095, Closs: 0.057699
+-------------
+epoch 39 || Epoch_Loss:53.68459712134468, Epoch_FlowLoss:53.318395667605934, Epock_CycleLoss:0.36620150816937286
+-------------
+Epoch 40/100
+-------------
+（train）
+ Floss: 51.140999, Closs: 0.349029
+ Floss: 51.422756, Closs: 0.345233
+ Floss: 56.822536, Closs: 0.440740
+ Floss: 57.244400, Closs: 0.423212
+ Floss: 51.149330, Closs: 0.310202
+ Floss: 53.951477, Closs: 0.359704
+ Floss: 52.338852, Closs: 0.358817
+ Floss: 52.200562, Closs: 0.362675
+ Floss: 48.246181, Closs: 0.331250
+ Floss: 59.199425, Closs: 0.451275
+ Floss: 58.060379, Closs: 0.425067
+ Floss: 52.455669, Closs: 0.376611
+ Floss: 54.471478, Closs: 0.381320
+ Floss: 56.786369, Closs: 0.451761
+ Floss: 58.857719, Closs: 0.432638
+ Floss: 57.471825, Closs: 0.411793
+ Floss: 51.032852, Closs: 0.357566
+ Floss: 50.388336, Closs: 0.365471
+ Floss: 58.127167, Closs: 0.433698
+ Floss: 48.186775, Closs: 0.349112
+ Floss: 54.248207, Closs: 0.377044
+ Floss: 50.573647, Closs: 0.334776
+ Floss: 51.275414, Closs: 0.354875
+ Floss: 50.415737, Closs: 0.372372
+ Floss: 54.510010, Closs: 0.367199
+ Floss: 47.277969, Closs: 0.349076
+ Floss: 47.479172, Closs: 0.359636
+ Floss: 60.808952, Closs: 0.463862
+ Floss: 48.003609, Closs: 0.339168
+ Floss: 45.180756, Closs: 0.303811
+ Floss: 55.336060, Closs: 0.419000
+ Floss: 48.295372, Closs: 0.339654
+ Floss: 54.766388, Closs: 0.417786
+ Floss: 57.627769, Closs: 0.430686
+ Floss: 55.522930, Closs: 0.395547
+ Floss: 31.173302, Closs: 0.135438
+-------------
+epoch 40 || Epoch_Loss:52.931318812900116, Epoch_FlowLoss:52.556955019632966, Epock_CycleLoss:0.3743640031251643
+-------------
+Epoch 41/100
+-------------
+（train）
+ Floss: 48.644417, Closs: 0.348290
+ Floss: 58.582123, Closs: 0.403605
+ Floss: 58.857246, Closs: 0.406148
+ Floss: 55.316917, Closs: 0.399713
+ Floss: 50.561016, Closs: 0.373659
+ Floss: 56.783031, Closs: 0.451387
+ Floss: 51.198315, Closs: 0.373916
+ Floss: 53.747185, Closs: 0.373488
+ Floss: 60.969475, Closs: 0.452640
+ Floss: 60.580914, Closs: 0.458149
+ Floss: 50.344643, Closs: 0.361246
+ Floss: 53.653404, Closs: 0.401473
+ Floss: 44.119076, Closs: 0.298456
+ Floss: 45.923443, Closs: 0.280176
+ Floss: 59.121521, Closs: 0.402734
+ Floss: 74.424713, Closs: 0.510516
+ Floss: 52.170525, Closs: 0.383207
+ Floss: 62.586502, Closs: 0.430666
+ Floss: 56.061943, Closs: 0.401304
+ Floss: 53.730282, Closs: 0.393440
+ Floss: 43.420238, Closs: 0.295970
+ Floss: 53.110916, Closs: 0.395192
+ Floss: 51.716866, Closs: 0.347854
+ Floss: 46.577118, Closs: 0.330241
+ Floss: 51.937584, Closs: 0.349790
+ Floss: 47.520882, Closs: 0.347544
+ Floss: 50.825466, Closs: 0.367146
+ Floss: 49.189339, Closs: 0.347777
+ Floss: 50.521263, Closs: 0.341929
+ Floss: 54.624233, Closs: 0.398954
+ Floss: 53.053680, Closs: 0.380914
+ Floss: 51.688324, Closs: 0.392037
+ Floss: 54.013687, Closs: 0.391272
+ Floss: 51.007030, Closs: 0.395602
+ Floss: 54.399406, Closs: 0.428635
+ Floss: 22.343643, Closs: 0.142484
+-------------
+epoch 41 || Epoch_Loss:52.96899758444894, Epoch_FlowLoss:52.59239906734891, Epock_CycleLoss:0.3765987331668537
+-------------
+Epoch 42/100
+-------------
+（train）
+ Floss: 49.864834, Closs: 0.338485
+ Floss: 49.586620, Closs: 0.333108
+ Floss: 53.154350, Closs: 0.393542
+ Floss: 56.890984, Closs: 0.445350
+ Floss: 63.300838, Closs: 0.490974
+ Floss: 55.179100, Closs: 0.407996
+ Floss: 54.411892, Closs: 0.419395
+ Floss: 47.183422, Closs: 0.339394
+ Floss: 50.537048, Closs: 0.371740
+ Floss: 46.922081, Closs: 0.317301
+ Floss: 54.211479, Closs: 0.392559
+ Floss: 54.294914, Closs: 0.396347
+ Floss: 60.466690, Closs: 0.454573
+ Floss: 55.842937, Closs: 0.429136
+ Floss: 52.144421, Closs: 0.377606
+ Floss: 46.541531, Closs: 0.327487
+ Floss: 55.286621, Closs: 0.398884
+ Floss: 48.674175, Closs: 0.376844
+ Floss: 51.185696, Closs: 0.382703
+ Floss: 42.684036, Closs: 0.307921
+ Floss: 52.444302, Closs: 0.358359
+ Floss: 56.818573, Closs: 0.427912
+ Floss: 58.941448, Closs: 0.409498
+ Floss: 46.838219, Closs: 0.350779
+ Floss: 72.651337, Closs: 0.518206
+ Floss: 61.448456, Closs: 0.437600
+ Floss: 45.750992, Closs: 0.279256
+ Floss: 52.463203, Closs: 0.361918
+ Floss: 50.636650, Closs: 0.352527
+ Floss: 49.902603, Closs: 0.351516
+ Floss: 48.157684, Closs: 0.354008
+ Floss: 52.700451, Closs: 0.396170
+ Floss: 50.504803, Closs: 0.369628
+ Floss: 53.833305, Closs: 0.382940
+ Floss: 56.495529, Closs: 0.432427
+ Floss: 21.544216, Closs: 0.126346
+-------------
+epoch 42 || Epoch_Loss:52.586274358961326, Epoch_FlowLoss:52.20820670657687, Epock_CycleLoss:0.3780676068531142
+-------------
+Epoch 43/100
+-------------
+（train）
+ Floss: 50.129528, Closs: 0.323317
+ Floss: 53.237972, Closs: 0.360349
+ Floss: 48.179138, Closs: 0.319142
+ Floss: 53.467278, Closs: 0.384889
+ Floss: 65.257782, Closs: 0.494904
+ Floss: 55.682983, Closs: 0.442568
+ Floss: 52.984390, Closs: 0.411197
+ Floss: 59.999687, Closs: 0.484634
+ Floss: 55.617889, Closs: 0.422742
+ Floss: 46.591061, Closs: 0.305067
+ Floss: 58.236816, Closs: 0.444759
+ Floss: 56.267059, Closs: 0.428079
+ Floss: 51.451614, Closs: 0.370992
+ Floss: 55.283459, Closs: 0.414650
+ Floss: 39.044327, Closs: 0.258513
+ Floss: 53.132839, Closs: 0.406675
+ Floss: 77.715683, Closs: 0.560617
+ Floss: 53.897167, Closs: 0.373266
+ Floss: 50.243378, Closs: 0.357058
+ Floss: 43.385235, Closs: 0.297761
+ Floss: 51.291229, Closs: 0.356267
+ Floss: 53.850811, Closs: 0.403021
+ Floss: 52.749802, Closs: 0.384146
+ Floss: 52.029400, Closs: 0.392150
+ Floss: 52.380745, Closs: 0.389512
+ Floss: 55.046535, Closs: 0.409245
+ Floss: 56.334778, Closs: 0.424589
+ Floss: 49.422939, Closs: 0.383923
+ Floss: 48.690716, Closs: 0.345698
+ Floss: 44.615475, Closs: 0.330363
+ Floss: 56.908092, Closs: 0.434750
+ Floss: 46.736290, Closs: 0.324098
+ Floss: 49.580059, Closs: 0.366453
+ Floss: 48.646629, Closs: 0.362624
+ Floss: 45.483826, Closs: 0.336774
+ Floss: 31.506454, Closs: 0.170601
+-------------
+epoch 43 || Epoch_Loss:52.465401331583664, Epoch_FlowLoss:52.08552964528402, Epock_CycleLoss:0.3798719942569732
+-------------
+Epoch 44/100
+-------------
+（train）
+ Floss: 54.295898, Closs: 0.356896
+ Floss: 48.464508, Closs: 0.326905
+ Floss: 46.904022, Closs: 0.335892
+ Floss: 53.027218, Closs: 0.344104
+ Floss: 55.759544, Closs: 0.433509
+ Floss: 57.183849, Closs: 0.447584
+ Floss: 61.957397, Closs: 0.495427
+ Floss: 47.121502, Closs: 0.335924
+ Floss: 58.492599, Closs: 0.470243
+ Floss: 56.769012, Closs: 0.442606
+ Floss: 51.488918, Closs: 0.383020
+ Floss: 54.816498, Closs: 0.395182
+ Floss: 51.130455, Closs: 0.367173
+ Floss: 51.276134, Closs: 0.375490
+ Floss: 46.927696, Closs: 0.347065
+ Floss: 46.465538, Closs: 0.344139
+ Floss: 50.331646, Closs: 0.378539
+ Floss: 50.318672, Closs: 0.397675
+ Floss: 43.887878, Closs: 0.328663
+ Floss: 59.174889, Closs: 0.478350
+ Floss: 51.466103, Closs: 0.384575
+ Floss: 57.205379, Closs: 0.451433
+ Floss: 56.371040, Closs: 0.438025
+ Floss: 50.538540, Closs: 0.376545
+ Floss: 46.806911, Closs: 0.332738
+ Floss: 54.181816, Closs: 0.420137
+ Floss: 54.308350, Closs: 0.406659
+ Floss: 48.962860, Closs: 0.367685
+ Floss: 52.092632, Closs: 0.391873
+ Floss: 55.152748, Closs: 0.442778
+ Floss: 50.661095, Closs: 0.393524
+ Floss: 50.592537, Closs: 0.392653
+ Floss: 49.028557, Closs: 0.360524
+ Floss: 45.760967, Closs: 0.308613
+ Floss: 41.224693, Closs: 0.288258
+ Floss: 9.951917, Closs: 0.059396
+-------------
+epoch 44 || Epoch_Loss:50.936105887095145, Epoch_FlowLoss:50.55833395322165, Epock_CycleLoss:0.3777722007491523
+-------------
+Epoch 45/100
+-------------
+（train）
+ Floss: 53.120628, Closs: 0.381366
+ Floss: 59.278221, Closs: 0.462702
+ Floss: 56.772705, Closs: 0.471027
+ Floss: 53.919930, Closs: 0.429684
+ Floss: 52.679802, Closs: 0.424850
+ Floss: 49.516373, Closs: 0.391285
+ Floss: 54.512245, Closs: 0.429802
+ Floss: 49.242706, Closs: 0.366956
+ Floss: 52.602036, Closs: 0.428294
+ Floss: 48.319145, Closs: 0.358542
+ Floss: 92.708145, Closs: 0.621524
+ Floss: 51.415550, Closs: 0.265698
+ Floss: 50.802925, Closs: 0.278993
+ Floss: 54.921280, Closs: 0.368209
+ Floss: 52.621975, Closs: 0.382979
+ Floss: 50.354515, Closs: 0.357689
+ Floss: 43.633408, Closs: 0.308353
+ Floss: 53.020844, Closs: 0.375283
+ Floss: 51.346279, Closs: 0.347375
+ Floss: 51.558990, Closs: 0.380028
+ Floss: 66.530411, Closs: 0.494576
+ Floss: 54.245251, Closs: 0.380201
+ Floss: 53.274334, Closs: 0.370569
+ Floss: 56.344322, Closs: 0.414162
+ Floss: 50.305412, Closs: 0.368972
+ Floss: 49.769547, Closs: 0.369953
+ Floss: 50.400238, Closs: 0.358382
+ Floss: 54.116619, Closs: 0.371150
+ Floss: 49.326096, Closs: 0.340770
+ Floss: 58.242065, Closs: 0.438705
+ Floss: 46.306900, Closs: 0.336912
+ Floss: 49.000122, Closs: 0.333518
+ Floss: 57.356834, Closs: 0.403455
+ Floss: 56.799400, Closs: 0.411532
+ Floss: 55.060005, Closs: 0.439176
+ Floss: 40.931652, Closs: 0.185468
+-------------
+epoch 45 || Epoch_Loss:54.00569576687284, Epoch_FlowLoss:53.62102529737686, Epock_CycleLoss:0.3846705340676838
+-------------
+Epoch 46/100
+-------------
+（train）
+ Floss: 57.391830, Closs: 0.447524
+ Floss: 52.917046, Closs: 0.384579
+ Floss: 58.003155, Closs: 0.382270
+ Floss: 49.527359, Closs: 0.363594
+ Floss: 62.163841, Closs: 0.474073
+ Floss: 48.288296, Closs: 0.337420
+ Floss: 51.078224, Closs: 0.364529
+ Floss: 51.657959, Closs: 0.355109
+ Floss: 49.782928, Closs: 0.342140
+ Floss: 56.170876, Closs: 0.436596
+ Floss: 54.539124, Closs: 0.404679
+ Floss: 53.018353, Closs: 0.411035
+ Floss: 49.474655, Closs: 0.395828
+ Floss: 45.838585, Closs: 0.334325
+ Floss: 55.562347, Closs: 0.428280
+ Floss: 60.203030, Closs: 0.441820
+ Floss: 50.241753, Closs: 0.379631
+ Floss: 46.798992, Closs: 0.356623
+ Floss: 58.234066, Closs: 0.465742
+ Floss: 51.316544, Closs: 0.385423
+ Floss: 51.162682, Closs: 0.361974
+ Floss: 61.677273, Closs: 0.449787
+ Floss: 51.101269, Closs: 0.415971
+ Floss: 43.151321, Closs: 0.312500
+ Floss: 47.500183, Closs: 0.351604
+ Floss: 46.973511, Closs: 0.342260
+ Floss: 52.540905, Closs: 0.373257
+ Floss: 55.986794, Closs: 0.435481
+ Floss: 53.605938, Closs: 0.401531
+ Floss: 42.584435, Closs: 0.315813
+ Floss: 43.518791, Closs: 0.337218
+ Floss: 55.246746, Closs: 0.462386
+ Floss: 54.571320, Closs: 0.416266
+ Floss: 50.452358, Closs: 0.404307
+ Floss: 56.767437, Closs: 0.427807
+ Floss: 9.436075, Closs: 0.063944
+-------------
+epoch 46 || Epoch_Loss:51.45137013329399, Epoch_FlowLoss:51.06905550426907, Epock_CycleLoss:0.38231462405787575
+-------------
+Epoch 47/100
+-------------
+（train）
+ Floss: 52.983734, Closs: 0.382938
+ Floss: 50.857994, Closs: 0.390763
+ Floss: 51.964916, Closs: 0.407665
+ Floss: 48.073174, Closs: 0.360392
+ Floss: 54.081604, Closs: 0.416746
+ Floss: 47.364258, Closs: 0.385670
+ Floss: 49.317715, Closs: 0.431004
+ Floss: 49.985546, Closs: 0.411422
+ Floss: 55.533138, Closs: 0.423553
+ Floss: 50.261299, Closs: 0.370480
+ Floss: 55.876648, Closs: 0.440402
+ Floss: 46.059608, Closs: 0.354545
+ Floss: 44.999737, Closs: 0.348194
+ Floss: 51.765850, Closs: 0.419141
+ Floss: 48.933372, Closs: 0.388276
+ Floss: 56.770611, Closs: 0.430884
+ Floss: 48.772308, Closs: 0.369940
+ Floss: 50.800976, Closs: 0.401164
+ Floss: 55.376129, Closs: 0.462727
+ Floss: 47.021431, Closs: 0.371592
+ Floss: 45.099586, Closs: 0.340644
+ Floss: 65.104996, Closs: 0.529292
+ Floss: 48.821365, Closs: 0.395059
+ Floss: 48.287182, Closs: 0.394593
+ Floss: 50.770824, Closs: 0.407374
+ Floss: 51.533943, Closs: 0.406660
+ Floss: 43.967796, Closs: 0.345859
+ Floss: 49.736305, Closs: 0.394244
+ Floss: 47.909359, Closs: 0.354486
+ Floss: 49.122147, Closs: 0.369807
+ Floss: 48.260571, Closs: 0.343548
+ Floss: 46.286385, Closs: 0.353496
+ Floss: 51.509819, Closs: 0.439768
+ Floss: 49.897987, Closs: 0.371098
+ Floss: 45.642773, Closs: 0.358253
+ Floss: 15.041533, Closs: 0.081169
+-------------
+epoch 47 || Epoch_Loss:49.6568185488383, Epoch_FlowLoss:49.27201721403335, Epock_CycleLoss:0.3848012627826797
+-------------
+Epoch 48/100
+-------------
+（train）
+ Floss: 51.122604, Closs: 0.385580
+ Floss: 48.466854, Closs: 0.346461
+ Floss: 45.182243, Closs: 0.363555
+ Floss: 46.246033, Closs: 0.364697
+ Floss: 52.942150, Closs: 0.403030
+ Floss: 52.882874, Closs: 0.437225
+ Floss: 54.109886, Closs: 0.451697
+ Floss: 46.144817, Closs: 0.361152
+ Floss: 48.375580, Closs: 0.378062
+ Floss: 48.536755, Closs: 0.371764
+ Floss: 54.543663, Closs: 0.435290
+ Floss: 47.345318, Closs: 0.359496
+ Floss: 49.072521, Closs: 0.404072
+ Floss: 51.598320, Closs: 0.404879
+ Floss: 52.969963, Closs: 0.434091
+ Floss: 52.255337, Closs: 0.429912
+ Floss: 50.671654, Closs: 0.425957
+ Floss: 49.723656, Closs: 0.389475
+ Floss: 54.100170, Closs: 0.422151
+ Floss: 50.910767, Closs: 0.385039
+ Floss: 49.859085, Closs: 0.367377
+ Floss: 55.519501, Closs: 0.432371
+ Floss: 47.666058, Closs: 0.377330
+ Floss: 50.841057, Closs: 0.437543
+ Floss: 41.961494, Closs: 0.321435
+ Floss: 56.659454, Closs: 0.486845
+ Floss: 51.058498, Closs: 0.388779
+ Floss: 49.211594, Closs: 0.383454
+ Floss: 53.677414, Closs: 0.445487
+ Floss: 41.744576, Closs: 0.320092
+ Floss: 44.358440, Closs: 0.345646
+ Floss: 53.090935, Closs: 0.417309
+ Floss: 50.960442, Closs: 0.415112
+ Floss: 43.406006, Closs: 0.338000
+ Floss: 49.614620, Closs: 0.420467
+ Floss: 10.819903, Closs: 0.069861
+-------------
+epoch 48 || Epoch_Loss:49.21030399534436, Epoch_FlowLoss:48.823617802725884, Epock_CycleLoss:0.38668592998551
+-------------
+Epoch 49/100
+-------------
+（train）
+ Floss: 51.282604, Closs: 0.421233
+ Floss: 48.202038, Closs: 0.360823
+ Floss: 54.194611, Closs: 0.415911
+ Floss: 52.986145, Closs: 0.393498
+ Floss: 54.214294, Closs: 0.433515
+ Floss: 52.460049, Closs: 0.454036
+ Floss: 51.900589, Closs: 0.443106
+ Floss: 42.797955, Closs: 0.350439
+ Floss: 42.384766, Closs: 0.309395
+ Floss: 57.269409, Closs: 0.450749
+ Floss: 45.432644, Closs: 0.333524
+ Floss: 123.763550, Closs: 0.751424
+ Floss: 51.566429, Closs: 0.321877
+ Floss: 56.366558, Closs: 0.311302
+ Floss: 51.683178, Closs: 0.327901
+ Floss: 49.513042, Closs: 0.371283
+ Floss: 46.882057, Closs: 0.337779
+ Floss: 58.237175, Closs: 0.433689
+ Floss: 50.488609, Closs: 0.375754
+ Floss: 50.024979, Closs: 0.380098
+ Floss: 57.891533, Closs: 0.419654
+ Floss: 48.545395, Closs: 0.355127
+ Floss: 62.382324, Closs: 0.449219
+ Floss: 52.440319, Closs: 0.399520
+ Floss: 44.657867, Closs: 0.339952
+ Floss: 56.441814, Closs: 0.429845
+ Floss: 41.698219, Closs: 0.306717
+ Floss: 59.668011, Closs: 0.451608
+ Floss: 45.551239, Closs: 0.359424
+ Floss: 50.023933, Closs: 0.407474
+ Floss: 48.569405, Closs: 0.378219
+ Floss: 49.161346, Closs: 0.379117
+ Floss: 44.955498, Closs: 0.336626
+ Floss: 52.901714, Closs: 0.375205
+ Floss: 63.480110, Closs: 0.476924
+ Floss: 14.088820, Closs: 0.067884
+-------------
+epoch 49 || Epoch_Loss:52.722724490695526, Epoch_FlowLoss:52.336339685651986, Epock_CycleLoss:0.3863847512337898
+-------------
+Epoch 50/100
+-------------
+（train）
+ Floss: 57.610992, Closs: 0.439747
+ Floss: 49.940701, Closs: 0.362108
+ Floss: 48.947083, Closs: 0.352193
+ Floss: 55.622646, Closs: 0.426286
+ Floss: 59.862469, Closs: 0.464758
+ Floss: 47.877621, Closs: 0.372687
+ Floss: 50.413250, Closs: 0.410024
+ Floss: 50.912254, Closs: 0.418337
+ Floss: 43.307289, Closs: 0.320623
+ Floss: 48.627640, Closs: 0.376788
+ Floss: 50.356636, Closs: 0.378823
+ Floss: 54.747540, Closs: 0.419488
+ Floss: 56.680382, Closs: 0.469213
+ Floss: 44.762802, Closs: 0.358294
+ Floss: 42.421524, Closs: 0.319652
+ Floss: 54.195190, Closs: 0.432889
+ Floss: 49.129387, Closs: 0.378098
+ Floss: 56.964275, Closs: 0.490870
+ Floss: 42.304848, Closs: 0.327195
+ Floss: 55.880913, Closs: 0.444245
+ Floss: 47.678509, Closs: 0.365933
+ Floss: 53.371468, Closs: 0.440745
+ Floss: 48.297394, Closs: 0.365059
+ Floss: 43.881226, Closs: 0.341449
+ Floss: 46.468651, Closs: 0.387614
+ Floss: 49.229858, Closs: 0.408671
+ Floss: 53.119598, Closs: 0.446471
+ Floss: 54.226528, Closs: 0.456634
+ Floss: 44.542995, Closs: 0.354392
+ Floss: 48.008480, Closs: 0.402857
+ Floss: 48.461441, Closs: 0.368495
+ Floss: 49.175613, Closs: 0.390345
+ Floss: 52.403984, Closs: 0.436598
+ Floss: 50.065933, Closs: 0.404678
+ Floss: 41.879433, Closs: 0.322736
+ Floss: 20.050785, Closs: 0.125166
+-------------
+epoch 50 || Epoch_Loss:49.594653076595726, Epoch_FlowLoss:49.20631493462456, Epock_CycleLoss:0.38833782614933116
+-------------
+Epoch 51/100
+-------------
+（train）
+ Floss: 54.104717, Closs: 0.434613
+ Floss: 46.662834, Closs: 0.350907
+ Floss: 52.418243, Closs: 0.440987
+ Floss: 47.691376, Closs: 0.365255
+ Floss: 46.799850, Closs: 0.362113
+ Floss: 52.301064, Closs: 0.427911
+ Floss: 45.395851, Closs: 0.353998
+ Floss: 52.713417, Closs: 0.436703
+ Floss: 66.319031, Closs: 0.522045
+ Floss: 57.070984, Closs: 0.400058
+ Floss: 46.513054, Closs: 0.334518
+ Floss: 57.589134, Closs: 0.447627
+ Floss: 51.213974, Closs: 0.401776
+ Floss: 51.096855, Closs: 0.408984
+ Floss: 55.719555, Closs: 0.446475
+ Floss: 52.407364, Closs: 0.449630
+ Floss: 48.932594, Closs: 0.404771
+ Floss: 50.285194, Closs: 0.430185
+ Floss: 52.873440, Closs: 0.412150
+ Floss: 50.042747, Closs: 0.388327
+ Floss: 47.787212, Closs: 0.371738
+ Floss: 49.496136, Closs: 0.387187
+ Floss: 43.876572, Closs: 0.346631
+ Floss: 46.874157, Closs: 0.388027
+ Floss: 35.833183, Closs: 0.279591
+ Floss: 54.604454, Closs: 0.438673
+ Floss: 45.441360, Closs: 0.348725
+ Floss: 45.450424, Closs: 0.369919
+ Floss: 52.470032, Closs: 0.427151
+ Floss: 44.583248, Closs: 0.367347
+ Floss: 44.581249, Closs: 0.349017
+ Floss: 56.341137, Closs: 0.455628
+ Floss: 39.409424, Closs: 0.316230
+ Floss: 50.706020, Closs: 0.414289
+ Floss: 45.730328, Closs: 0.378698
+ Floss: 36.569885, Closs: 0.223364
+-------------
+epoch 51 || Epoch_Loss:49.77742618984645, Epoch_FlowLoss:49.386280589633515, Epock_CycleLoss:0.39114577612943124
+-------------
+Epoch 52/100
+-------------
+（train）
+ Floss: 51.240936, Closs: 0.391180
+ Floss: 42.202934, Closs: 0.309576
+ Floss: 47.298431, Closs: 0.339009
+ Floss: 50.182369, Closs: 0.401233
+ Floss: 53.230759, Closs: 0.437516
+ Floss: 54.913963, Closs: 0.447002
+ Floss: 43.660137, Closs: 0.334269
+ Floss: 54.081814, Closs: 0.439403
+ Floss: 43.749889, Closs: 0.356970
+ Floss: 49.569958, Closs: 0.405284
+ Floss: 51.707275, Closs: 0.458881
+ Floss: 45.647808, Closs: 0.369548
+ Floss: 52.845490, Closs: 0.417313
+ Floss: 48.226646, Closs: 0.382165
+ Floss: 48.740005, Closs: 0.394907
+ Floss: 50.592957, Closs: 0.425280
+ Floss: 51.689083, Closs: 0.429477
+ Floss: 49.225811, Closs: 0.402511
+ Floss: 51.130829, Closs: 0.421103
+ Floss: 41.981354, Closs: 0.328960
+ Floss: 55.520393, Closs: 0.446193
+ Floss: 53.632843, Closs: 0.455414
+ Floss: 40.486244, Closs: 0.309114
+ Floss: 49.878685, Closs: 0.382076
+ Floss: 51.123882, Closs: 0.414168
+ Floss: 48.836006, Closs: 0.416495
+ Floss: 37.575111, Closs: 0.300648
+ Floss: 44.531307, Closs: 0.376242
+ Floss: 43.350983, Closs: 0.355324
+ Floss: 54.627045, Closs: 0.458492
+ Floss: 53.074917, Closs: 0.451936
+ Floss: 50.444267, Closs: 0.436136
+ Floss: 50.030712, Closs: 0.409140
+ Floss: 45.660461, Closs: 0.370746
+ Floss: 49.654510, Closs: 0.380765
+ Floss: 9.257255, Closs: 0.074438
+-------------
+epoch 52 || Epoch_Loss:48.153666522767814, Epoch_FlowLoss:47.76675200462342, Epock_CycleLoss:0.38691430600980903
+-------------
+Epoch 53/100
+-------------
+（train）
+ Floss: 46.615417, Closs: 0.372382
+ Floss: 43.334362, Closs: 0.341387
+ Floss: 53.309158, Closs: 0.446630
+ Floss: 57.680061, Closs: 0.501958
+ Floss: 48.223259, Closs: 0.396741
+ Floss: 45.108765, Closs: 0.361321
+ Floss: 50.620750, Closs: 0.405497
+ Floss: 53.867584, Closs: 0.447945
+ Floss: 48.166882, Closs: 0.395531
+ Floss: 50.786507, Closs: 0.440116
+ Floss: 50.737621, Closs: 0.452906
+ Floss: 43.801392, Closs: 0.351747
+ Floss: 42.779419, Closs: 0.321599
+ Floss: 58.419823, Closs: 0.454837
+ Floss: 48.115749, Closs: 0.402481
+ Floss: 44.551170, Closs: 0.364450
+ Floss: 55.200844, Closs: 0.477678
+ Floss: 45.391510, Closs: 0.377465
+ Floss: 48.761261, Closs: 0.367757
+ Floss: 44.894848, Closs: 0.360366
+ Floss: 51.325249, Closs: 0.442416
+ Floss: 52.077423, Closs: 0.446506
+ Floss: 60.618877, Closs: 0.533669
+ Floss: 41.961342, Closs: 0.329502
+ Floss: 47.505703, Closs: 0.381767
+ Floss: 47.530956, Closs: 0.392980
+ Floss: 44.846951, Closs: 0.375390
+ Floss: 47.245056, Closs: 0.405936
+ Floss: 39.466835, Closs: 0.313516
+ Floss: 44.059807, Closs: 0.373871
+ Floss: 50.557507, Closs: 0.416441
+ Floss: 42.783173, Closs: 0.359178
+ Floss: 46.006432, Closs: 0.382681
+ Floss: 47.125031, Closs: 0.395668
+ Floss: 48.581482, Closs: 0.396548
+ Floss: 27.567429, Closs: 0.198313
+-------------
+epoch 53 || Epoch_Loss:48.16141112645466, Epoch_FlowLoss:47.767378701104064, Epock_CycleLoss:0.3940326596299807
+-------------
+Epoch 54/100
+-------------
+（train）
+ Floss: 50.189400, Closs: 0.389567
+ Floss: 48.351028, Closs: 0.367498
+ Floss: 49.997215, Closs: 0.429825
+ Floss: 53.778038, Closs: 0.465323
+ Floss: 58.153107, Closs: 0.461260
+ Floss: 55.531246, Closs: 0.434562
+ Floss: 55.099895, Closs: 0.432078
+ Floss: 55.186123, Closs: 0.446961
+ Floss: 48.032394, Closs: 0.386531
+ Floss: 52.273399, Closs: 0.458527
+ Floss: 44.751373, Closs: 0.371805
+ Floss: 48.264305, Closs: 0.379715
+ Floss: 40.658287, Closs: 0.305584
+ Floss: 46.293758, Closs: 0.369755
+ Floss: 44.734722, Closs: 0.352174
+ Floss: 47.874847, Closs: 0.380802
+ Floss: 49.103088, Closs: 0.398489
+ Floss: 50.207336, Closs: 0.409592
+ Floss: 48.543694, Closs: 0.402268
+ Floss: 43.951073, Closs: 0.356943
+ Floss: 52.999565, Closs: 0.458248
+ Floss: 44.053078, Closs: 0.367336
+ Floss: 51.273254, Closs: 0.397745
+ Floss: 42.599651, Closs: 0.349175
+ Floss: 43.531506, Closs: 0.366380
+ Floss: 51.553474, Closs: 0.450728
+ Floss: 35.389603, Closs: 0.253609
+ Floss: 46.440655, Closs: 0.370697
+ Floss: 42.591209, Closs: 0.338604
+ Floss: 50.377098, Closs: 0.425217
+ Floss: 52.754700, Closs: 0.460901
+ Floss: 58.317566, Closs: 0.545254
+ Floss: 45.050011, Closs: 0.390528
+ Floss: 54.663918, Closs: 0.441163
+ Floss: 47.943539, Closs: 0.391482
+ Floss: 40.816479, Closs: 0.172866
+-------------
+epoch 54 || Epoch_Loss:49.04191186692979, Epoch_FlowLoss:48.64804543389214, Epock_CycleLoss:0.3938664669791857
+-------------
+Epoch 55/100
+-------------
+（train）
+ Floss: 55.069359, Closs: 0.416054
+ Floss: 51.108025, Closs: 0.389937
+ Floss: 51.347710, Closs: 0.395986
+ Floss: 47.207378, Closs: 0.376442
+ Floss: 43.826290, Closs: 0.340093
+ Floss: 50.408005, Closs: 0.404507
+ Floss: 46.947205, Closs: 0.367278
+ Floss: 47.019257, Closs: 0.376377
+ Floss: 46.322403, Closs: 0.382668
+ Floss: 51.948883, Closs: 0.418447
+ Floss: 59.076172, Closs: 0.456932
+ Floss: 47.397324, Closs: 0.367421
+ Floss: 51.191566, Closs: 0.404190
+ Floss: 55.392326, Closs: 0.432634
+ Floss: 53.044388, Closs: 0.429858
+ Floss: 47.368313, Closs: 0.385240
+ Floss: 44.052074, Closs: 0.356492
+ Floss: 48.786865, Closs: 0.402899
+ Floss: 44.315289, Closs: 0.357038
+ Floss: 45.324646, Closs: 0.368405
+ Floss: 52.136642, Closs: 0.425045
+ Floss: 53.953594, Closs: 0.442500
+ Floss: 45.814800, Closs: 0.372280
+ Floss: 53.416954, Closs: 0.450185
+ Floss: 45.302795, Closs: 0.380769
+ Floss: 53.470062, Closs: 0.433911
+ Floss: 46.608437, Closs: 0.395102
+ Floss: 62.251114, Closs: 0.539311
+ Floss: 53.447475, Closs: 0.436589
+ Floss: 52.792267, Closs: 0.441757
+ Floss: 36.683098, Closs: 0.261209
+ Floss: 40.925018, Closs: 0.321070
+ Floss: 52.721264, Closs: 0.426337
+ Floss: 44.725185, Closs: 0.350113
+ Floss: 48.666805, Closs: 0.417984
+ Floss: 8.761197, Closs: 0.067268
+-------------
+epoch 55 || Epoch_Loss:48.68945855564542, Epoch_FlowLoss:48.30083849694993, Epock_CycleLoss:0.3886202488922411
+-------------
+Epoch 56/100
+-------------
+（train）
+ Floss: 49.799950, Closs: 0.446424
+ Floss: 45.424114, Closs: 0.378372
+ Floss: 43.508026, Closs: 0.366200
+ Floss: 40.674530, Closs: 0.334072
+ Floss: 37.493629, Closs: 0.290732
+ Floss: 43.537460, Closs: 0.356195
+ Floss: 48.459743, Closs: 0.390791
+ Floss: 46.679680, Closs: 0.397319
+ Floss: 48.239189, Closs: 0.398424
+ Floss: 46.296600, Closs: 0.383605
+ Floss: 45.605309, Closs: 0.399324
+ Floss: 43.736187, Closs: 0.353010
+ Floss: 48.590660, Closs: 0.407901
+ Floss: 45.482067, Closs: 0.389844
+ Floss: 57.464981, Closs: 0.484130
+ Floss: 44.508949, Closs: 0.374731
+ Floss: 46.759827, Closs: 0.394751
+ Floss: 51.591866, Closs: 0.446538
+ Floss: 42.654331, Closs: 0.350389
+ Floss: 49.891201, Closs: 0.442781
+ Floss: 41.195358, Closs: 0.349294
+ Floss: 45.251122, Closs: 0.374804
+ Floss: 59.035858, Closs: 0.507656
+ Floss: 52.947517, Closs: 0.429873
+ Floss: 46.309326, Closs: 0.396486
+ Floss: 46.784203, Closs: 0.394856
+ Floss: 55.632915, Closs: 0.484082
+ Floss: 49.761536, Closs: 0.428508
+ Floss: 54.925518, Closs: 0.462022
+ Floss: 55.660904, Closs: 0.508052
+ Floss: 47.578976, Closs: 0.428023
+ Floss: 49.063354, Closs: 0.434858
+ Floss: 39.564255, Closs: 0.321256
+ Floss: 49.835175, Closs: 0.365425
+ Floss: 49.427643, Closs: 0.392693
+ Floss: 9.203140, Closs: 0.077354
+-------------
+epoch 56 || Epoch_Loss:47.0198850631714, Epoch_FlowLoss:46.627086109585235, Epock_CycleLoss:0.3927993176298009
+-------------
+Epoch 57/100
+-------------
+（train）
+ Floss: 45.884075, Closs: 0.382895
+ Floss: 45.209637, Closs: 0.377463
+ Floss: 48.340820, Closs: 0.395219
+ Floss: 46.130013, Closs: 0.358343
+ Floss: 47.265530, Closs: 0.397280
+ Floss: 37.538902, Closs: 0.319653
+ Floss: 46.709412, Closs: 0.399957
+ Floss: 47.922741, Closs: 0.409228
+ Floss: 43.089851, Closs: 0.342195
+ Floss: 51.783550, Closs: 0.428456
+ Floss: 49.791992, Closs: 0.423393
+ Floss: 53.175411, Closs: 0.474123
+ Floss: 43.402206, Closs: 0.363833
+ Floss: 46.105141, Closs: 0.407310
+ Floss: 49.475807, Closs: 0.414723
+ Floss: 47.131294, Closs: 0.393592
+ Floss: 46.164497, Closs: 0.394508
+ Floss: 45.447372, Closs: 0.393801
+ Floss: 47.394012, Closs: 0.413863
+ Floss: 49.820877, Closs: 0.413495
+ Floss: 46.909496, Closs: 0.413773
+ Floss: 55.887402, Closs: 0.499652
+ Floss: 50.195477, Closs: 0.417710
+ Floss: 39.867249, Closs: 0.325090
+ Floss: 50.022301, Closs: 0.429050
+ Floss: 43.481884, Closs: 0.370192
+ Floss: 49.786652, Closs: 0.442873
+ Floss: 47.160366, Closs: 0.396785
+ Floss: 46.350914, Closs: 0.400181
+ Floss: 57.876526, Closs: 0.481029
+ Floss: 49.435051, Closs: 0.400052
+ Floss: 43.795452, Closs: 0.363270
+ Floss: 49.635723, Closs: 0.438399
+ Floss: 50.625515, Closs: 0.460809
+ Floss: 50.638866, Closs: 0.436121
+ Floss: 20.924421, Closs: 0.115882
+-------------
+epoch 57 || Epoch_Loss:47.351962354448105, Epoch_FlowLoss:46.95490100648669, Epock_CycleLoss:0.39706110271314776
+-------------
+Epoch 58/100
+-------------
+（train）
+ Floss: 43.593548, Closs: 0.327601
+ Floss: 50.700420, Closs: 0.398463
+ Floss: 40.984581, Closs: 0.344403
+ Floss: 44.783760, Closs: 0.378186
+ Floss: 41.935402, Closs: 0.350533
+ Floss: 46.024277, Closs: 0.375557
+ Floss: 46.289639, Closs: 0.391357
+ Floss: 50.515121, Closs: 0.408426
+ Floss: 59.688274, Closs: 0.514062
+ Floss: 45.182564, Closs: 0.383491
+ Floss: 49.195427, Closs: 0.445708
+ Floss: 44.357536, Closs: 0.345661
+ Floss: 44.745987, Closs: 0.355334
+ Floss: 48.758446, Closs: 0.380963
+ Floss: 46.886589, Closs: 0.387287
+ Floss: 47.407280, Closs: 0.416166
+ Floss: 45.888222, Closs: 0.388326
+ Floss: 47.042381, Closs: 0.382275
+ Floss: 48.080914, Closs: 0.391019
+ Floss: 52.796780, Closs: 0.465280
+ Floss: 58.808769, Closs: 0.524336
+ Floss: 46.574173, Closs: 0.400203
+ Floss: 50.954468, Closs: 0.438557
+ Floss: 44.247948, Closs: 0.355415
+ Floss: 51.368530, Closs: 0.421992
+ Floss: 50.406261, Closs: 0.445550
+ Floss: 56.650414, Closs: 0.511505
+ Floss: 47.390327, Closs: 0.424112
+ Floss: 54.067398, Closs: 0.467326
+ Floss: 40.051193, Closs: 0.317440
+ Floss: 43.806149, Closs: 0.356145
+ Floss: 43.703705, Closs: 0.344810
+ Floss: 46.055077, Closs: 0.371923
+ Floss: 53.743237, Closs: 0.464389
+ Floss: 47.977276, Closs: 0.393827
+ Floss: 26.944443, Closs: 0.111694
+-------------
+epoch 58 || Epoch_Loss:47.827384312947586, Epoch_FlowLoss:47.4335142771403, Epock_CycleLoss:0.39387009541193646
+-------------
+Epoch 59/100
+-------------
+（train）
+ Floss: 43.593376, Closs: 0.351656
+ Floss: 42.578964, Closs: 0.328466
+ Floss: 50.511459, Closs: 0.404465
+ Floss: 50.736034, Closs: 0.436199
+ Floss: 43.410942, Closs: 0.379350
+ Floss: 49.135704, Closs: 0.413250
+ Floss: 49.803799, Closs: 0.407854
+ Floss: 47.168701, Closs: 0.394019
+ Floss: 45.974148, Closs: 0.388433
+ Floss: 45.219753, Closs: 0.389735
+ Floss: 50.290329, Closs: 0.409018
+ Floss: 47.550339, Closs: 0.402477
+ Floss: 44.196484, Closs: 0.367934
+ Floss: 54.670090, Closs: 0.461762
+ Floss: 47.387814, Closs: 0.404309
+ Floss: 40.706245, Closs: 0.337437
+ Floss: 47.047771, Closs: 0.395583
+ Floss: 47.605328, Closs: 0.400332
+ Floss: 57.487240, Closs: 0.499868
+ Floss: 46.312775, Closs: 0.390568
+ Floss: 48.125992, Closs: 0.428532
+ Floss: 44.100708, Closs: 0.364044
+ Floss: 51.292587, Closs: 0.432391
+ Floss: 48.282814, Closs: 0.415161
+ Floss: 61.945354, Closs: 0.550444
+ Floss: 55.133003, Closs: 0.471645
+ Floss: 39.998650, Closs: 0.326331
+ Floss: 48.213879, Closs: 0.415672
+ Floss: 43.183044, Closs: 0.352305
+ Floss: 53.624477, Closs: 0.465045
+ Floss: 42.505615, Closs: 0.367768
+ Floss: 42.677029, Closs: 0.377276
+ Floss: 43.839844, Closs: 0.374598
+ Floss: 58.472267, Closs: 0.513870
+ Floss: 47.925903, Closs: 0.395168
+ Floss: 10.638248, Closs: 0.083615
+-------------
+epoch 59 || Epoch_Loss:47.37898045116, Epoch_FlowLoss:46.981853061252174, Epock_CycleLoss:0.3971271556284692
+-------------
+Epoch 60/100
+-------------
+（train）
+ Floss: 49.435410, Closs: 0.405088
+ Floss: 51.062561, Closs: 0.417214
+ Floss: 45.211864, Closs: 0.374387
+ Floss: 51.897667, Closs: 0.484864
+ Floss: 39.954060, Closs: 0.354111
+ Floss: 55.136639, Closs: 0.492141
+ Floss: 50.042007, Closs: 0.400966
+ Floss: 47.076763, Closs: 0.367849
+ Floss: 44.600098, Closs: 0.384196
+ Floss: 51.874931, Closs: 0.446621
+ Floss: 43.727825, Closs: 0.355775
+ Floss: 47.446621, Closs: 0.363458
+ Floss: 49.587002, Closs: 0.421536
+ Floss: 55.539818, Closs: 0.509056
+ Floss: 50.815487, Closs: 0.446454
+Traceback (most recent call last):
+  File "src/train.py", line 169, in <module>
+    train()
+  File "src/train.py", line 132, in train
+    assert not torch.isnan(floss).item(), "Loss Error: is nan !!"
+AssertionError: Loss Error: is nan !!

@@ -32,10 +32,9 @@ class AllLoss():
         loss_combi = floss + alpha * closs
 
         if self.optical_loss_on == 1:
-            oloss = self.optical_loss(
-                tm_personlabel,
-                tm2t_flow_label,
-                output_before_foward)
+            oloss = self.optical_loss(tm_personlabel,
+                                      tm2t_flow_label,
+                                      output_before_foward)
             loss_combi += beta * oloss
 
         # loss_combi /= self.bathsize

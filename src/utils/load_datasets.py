@@ -136,9 +136,9 @@ class CrowdDatasets(torch.utils.data.Dataset):
         cv2.imwrite(imgfolder+"flow_test.png", heatmap)
         # print(gt_flow_img_data.shape)
         # print(np.max(np.sum(gt_flow_img_data, axis=2)))
+        """
 
         gt_flow_img_data = self.transform(gt_flow_img_data)
-        """
 
         return gt_flow_img_data
 

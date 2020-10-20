@@ -1,4 +1,5 @@
 import os
+import datetime
 import numpy as np
 import random
 import torch
@@ -59,7 +60,7 @@ def train():
         Traindataset, batch_size=minibatch_size, shuffle=True, num_workers=8)
     data_len = len(Traindataset)
 
-    criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
+    criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=1)
     """
     optimizer = optim.SGD(
         CANnet.parameters(),
@@ -75,6 +76,8 @@ def train():
 
     # reporter.report()
 
+    batch_repeet_num = int(-(-data_len // minibatch_size))
+
     losses = []
 
     for epock in range(epock_num):
@@ -87,7 +90,7 @@ def train():
         print('-------------')
         print('（train）')
 
-        bar = Bar('training... ', max=int(-(-data_len // minibatch_size)))
+        bar = Bar('training... ', max=batch_repeet_num)
 
         for i, data in enumerate(TrainLoader):
 
@@ -124,16 +127,20 @@ def train():
                                                    output_befoer_forward, output_before_back,
                                                    output_after_forward, output_after_back)
 
-            e_loss += loss.item() / int(-(-data_len // minibatch_size))
-            e_floss += floss.item() / int(-(-data_len // minibatch_size))
-            e_closs += closs.item() / int(-(-data_len // minibatch_size))
+            loss_item = loss.item()
+            floss_item = floss.item()
+            closs_item = closs.item()
+
+            e_loss += loss_item / batch_repeet_num
+            e_floss += floss_item / batch_repeet_num
+            e_closs += closs_item / batch_repeet_num
 
             assert not torch.isnan(floss).item(), "Loss Error: is nan !!"
 
             loss.backward()
             optimizer.step()
             bar.next()
-            print(" Floss: {:8f}, Closs: {:8f}".format(floss.item(), closs.item()))
+            print(" Floss: {:8f}, Closs: {:8f}".format(floss_item, closs_item))
 
             del tm_img, t_img, tp_img
             del tm_person, t_person, tp_person
@@ -144,7 +151,7 @@ def train():
         print('-------------')
         print('epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(epock + 1, e_loss, e_floss, e_closs))
         if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num or (epock+1) % 100 == 0:
-            save_path = os.path.join("models", 'CrowdCounting_{}_{}_epoch_{}.pth'.format(args.height, args.width, epock + 1))
+            save_path = os.path.join("models", '{}_{}_{}_epoch_{}.pth'.format(datetime.date.today(), args.height, args.width, epock + 1))
             torch.save(CANnet.state_dict(), save_path)
 
     print("Training Done!!")
