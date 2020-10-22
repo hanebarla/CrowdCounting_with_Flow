@@ -30,17 +30,11 @@ def train():
     epock_num = args.epoch
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    # device = "cpu"
 
     CANnet = model.CANNet()
     if torch.cuda.device_count() > 1:
         print("You can use {} GPUs!".format(torch.cuda.device_count()))
         CANnet = torch.nn.DataParallel(CANnet)
-
-    """
-    for p in CANnet.parameters():
-        p.data.clamp_(-0.1, 0.1)
-    """
 
     CANnet.to(device)
     CANnet.train()
@@ -50,29 +44,26 @@ def train():
     torch.backends.cudnn.benchmark = True
 
     trans = torchvision.transforms.ToTensor()
-    Traindataset = LD.CrowdDatasets(
-        transform=trans,
-        width=args.width,
-        height=args.height,
-        Trainpath=train_d_path)
+    Traindataset = LD.CrowdDatasets(transform=trans,
+                                    width=args.width,
+                                    height=args.height,
+                                    Trainpath=train_d_path)
 
-    TrainLoader = torch.utils.data.DataLoader(
-        Traindataset, batch_size=minibatch_size, shuffle=True, num_workers=8)
+    TrainLoader = torch.utils.data.DataLoader(Traindataset,
+                                              batch_size=minibatch_size,
+                                              shuffle=True,
+                                              num_workers=8)
     data_len = len(Traindataset)
 
-    criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=1)
-    """
-    optimizer = optim.SGD(
-        CANnet.parameters(),
-        lr=0.01,
-        weight_decay=0.001)
-    """
-    optimizer = optim.Adam(
-        CANnet.parameters(),
-        lr=0.0001,
-        betas=(0.9, 0.999),
-        eps=1e-8,
-        weight_decay=0.001)
+    criterion = functions.AllLoss(device=device,
+                                  batchsize=minibatch_size,
+                                  optical_loss_on=1)
+
+    optimizer = optim.Adam(CANnet.parameters(),
+                           lr=0.001,
+                           betas=(0.9, 0.999),
+                           eps=1e-8,
+                           weight_decay=0.001)
 
     # reporter.report()
 
@@ -135,7 +126,9 @@ def train():
             e_floss += floss_item / batch_repeet_num
             e_closs += closs_item / batch_repeet_num
 
-            assert not torch.isnan(floss).item(), "Loss Error: is nan !!"
+            if torch.isnan(floss).item():
+                print("Nan break !!")
+                break
 
             loss.backward()
             optimizer.step()
@@ -149,9 +142,18 @@ def train():
 
         losses.append(e_loss)
         print('-------------')
-        print('epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(epock + 1, e_loss, e_floss, e_closs))
-        if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num or (epock+1) % 100 == 0:
-            save_path = os.path.join("models", '{}_{}_{}_epoch_{}.pth'.format(datetime.date.today(), args.height, args.width, epock + 1))
+        print(
+            'epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(
+                epock + 1,
+                e_loss,
+                e_floss,
+                e_closs))
+        if (epock + 1) == (epock_num - 5) or (epock + 1) == epock_num or (epock + 1) % 100 == 0:
+            save_path = os.path.join("models",
+                                     '{}_{}_{}_epoch_{}.pth'.format(datetime.date.today(),
+                                                                    args.height,
+                                                                    args.width,
+                                                                    epock + 1))
             torch.save(CANnet.state_dict(), save_path)
 
     print("Training Done!!")
@@ -159,11 +161,17 @@ def train():
     # CANnet = CANnet.to('cpu')
     # print("Save Done!!")
 
+    save_fig_name = os.path.join("Logs",
+                                 '{}_{}_{}_epoch_{}.png'.format(
+                                     datetime.date.today(),
+                                     args.height,
+                                     args.width,
+                                     epock_num))
     x = [i for i in range(len(losses))]
     plt.plot(x, losses)
     plt.title("loss")
     plt.show()
-    plt.savefig("loss_record.png")
+    plt.savefig(save_fig_name)
 
 
 if __name__ == "__main__":

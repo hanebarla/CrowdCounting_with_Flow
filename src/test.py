@@ -47,7 +47,7 @@ def test():
     data_len = len(Testdataset)
 
     # Loss Func
-    criterion = functions.AllLoss(batchsize=minibatch_size, optical_loss_on=0)
+    criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
     mae = torch.nn.L1Loss()
     mse = torch.nn.MSELoss()
 

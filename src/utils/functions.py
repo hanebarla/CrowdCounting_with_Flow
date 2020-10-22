@@ -51,15 +51,15 @@ class AllLoss():
     def flow_loss(self, output_before_forward, output_after_forward, label):
         est_sum_before = self.sum_flow(output_before_forward)
         est_sum_after = torch.sum(output_after_forward, dim=1, keepdim=True)
-        # print("{}, {}".format(torch.max(est_sum_after), torch.max(est_sum_before)))
+        print("est_sum_before: {:8f}, est_sum_after: {:8f}".format(torch.max(est_sum_before), torch.max(est_sum_after)))
 
         res_before = label - est_sum_before
         res_after = label - est_sum_after
 
-        # print(res_before)
-
         se_before = res_before * res_before
         se_after = res_after * res_after
+
+        print("se_before: {}, se_after: {}".format(se_before, se_after))
 
         floss = torch.sum((se_before + se_after)) / self.bathsize
 
