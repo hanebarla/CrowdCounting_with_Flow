@@ -158,13 +158,13 @@ class CrowdDatasets(torch.utils.data.Dataset):
             return print("CRC error: {}".format(mask_path))
         mask_img = np.reshape(mask_img, (mask_img.shape[0], mask_img.shape[1], 1))
 
-        input_img = input_img / 255
+        input_img = (input_img - 127.0) / 127  # range [-1:1]
         mask_img = cv2.resize(mask_img, (self.out_width, self.out_height)) / 255  # width, height
 
         input_img = self.transform(input_img)
         mask_img = self.transform(mask_img)
-        # print(torch.max(mask_img))
-        # print(torch.min(mask_img))
+        # print("input max: {}".format(torch.max(input_img)))
+        # print("intpu min: {}".format(torch.min(input_img)))
 
         return input_img, mask_img
 

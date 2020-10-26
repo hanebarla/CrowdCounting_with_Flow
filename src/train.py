@@ -4,6 +4,7 @@ import numpy as np
 import random
 import torch
 import torch.optim as optim
+from torch.autograd import detect_anomaly
 import torchvision
 import argparse
 import matplotlib.pyplot as plt
@@ -86,51 +87,62 @@ def train():
         for i, data in enumerate(TrainLoader):
 
             torch.cuda.empty_cache()
-            inputs, persons, flows = data
 
-            tm_img, t_img, tp_img = inputs[0], inputs[1], inputs[2]
-            tm_person, t_person, tp_person = persons[0], persons[1], persons[2]
-            tm2t_flow, t2tp_flow = flows[0], flows[1]
+            with detect_anomaly():
+                inputs, persons, flows = data
 
-            tm_img, t_img, tp_img = tm_img.to(device, dtype=torch.float),\
-                t_img.to(device, dtype=torch.float),\
-                tp_img.to(device, dtype=torch.float)
+                tm_img, t_img, tp_img = inputs[0], inputs[1], inputs[2]
+                tm_person, t_person, tp_person = persons[0], persons[1], persons[2]
+                tm2t_flow, t2tp_flow = flows[0], flows[1]
 
-            tm_person, t_person, tp_person = tm_person.to(
-                device, dtype=torch.float), t_person.to(
-                device, dtype=torch.float), tp_person.to(
-                device, dtype=torch.float)
+                tm_img, t_img, tp_img = tm_img.to(device, dtype=torch.float),\
+                    t_img.to(device, dtype=torch.float),\
+                    tp_img.to(device, dtype=torch.float)
 
-            tm2t_flow, t2tp_flow = tm2t_flow.to(device, dtype=torch.float),\
-                t2tp_flow.to(device, dtype=torch.float)
+                tm_person, t_person, tp_person = tm_person.to(
+                    device, dtype=torch.float), t_person.to(
+                    device, dtype=torch.float), tp_person.to(
+                    device, dtype=torch.float)
 
-            optimizer.zero_grad()
+                tm2t_flow, t2tp_flow = tm2t_flow.to(device, dtype=torch.float),\
+                    t2tp_flow.to(device, dtype=torch.float)
 
-            with torch.set_grad_enabled(False):
-                output_befoer_forward = CANnet(tm_img, t_img)
-                output_before_back = CANnet(t_img, tm_img)
-                output_after_back = CANnet(tp_img, t_img)
+                """
+                for m in CANnet.parameters():
+                    print("Param: {}".format(torch.max(m)))
+                """
 
-            with torch.set_grad_enabled(True):
-                output_after_forward = CANnet(t_img, tp_img)
+                with torch.set_grad_enabled(False):
+                    output_befoer_forward = CANnet(tm_img, t_img)
+                    # print(torch.isnan(torch.sum(output_befoer_forward)))
+                    output_before_back = CANnet(t_img, tm_img)
+                    # print(torch.isnan(torch.sum(output_before_back)))
+                    output_after_back = CANnet(tp_img, t_img)
+                    # print(torch.isnan(torch.sum(output_after_back)))
+                    # print("output: {}".format(torch.max(output_after_back)))
 
-            loss, floss, closs = criterion.forward(tm_person, t_person, tm2t_flow,
-                                                   output_befoer_forward, output_before_back,
-                                                   output_after_forward, output_after_back)
+                with torch.set_grad_enabled(True):
+                    output_after_forward = CANnet(t_img, tp_img)
+                    # print(torch.isnan(torch.sum(output_after_forward)))
 
-            loss_item = loss.item()
-            floss_item = floss.item()
-            closs_item = closs.item()
+                loss, floss, closs = criterion.forward(tm_person, t_person, tm2t_flow,
+                                                       output_befoer_forward, output_before_back,
+                                                       output_after_forward, output_after_back)
 
-            e_loss += loss_item / batch_repeet_num
-            e_floss += floss_item / batch_repeet_num
-            e_closs += closs_item / batch_repeet_num
+                loss_item = loss.item()
+                floss_item = floss.item()
+                closs_item = closs.item()
 
-            if torch.isnan(floss).item():
-                print("Nan break !!")
-                break
+                e_loss += loss_item / batch_repeet_num
+                e_floss += floss_item / batch_repeet_num
+                e_closs += closs_item / batch_repeet_num
 
-            loss.backward()
+                assert not torch.isnan(floss).item(), "floss is Nan !!"
+
+                optimizer.zero_grad()
+                loss.backward()
+            # for m in CANnet.parameters():
+                # print("grad: {}, {}".format(torch.min(m.grad), torch.isnan(torch.sum(m.grad))))
             optimizer.step()
             bar.next()
             print(" Floss: {:8f}, Closs: {:8f}".format(floss_item, closs_item))
@@ -175,9 +187,4 @@ def train():
 
 
 if __name__ == "__main__":
-    # シード値の固定
-    np.random.seed(0)
-    random.seed(0)
-    torch.manual_seed(0)
-    torch.cuda.manual_seed(0)
     train()

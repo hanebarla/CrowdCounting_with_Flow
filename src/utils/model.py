@@ -15,7 +15,7 @@ class ContextualModule(nn.Module):
 
     def __make_weight(self, feature, scale_feature):
         weight_feature = feature - scale_feature
-        return torch.sigmoid(self.weight_net(weight_feature))
+        return nn.LeakyReLU(0.001)(self.weight_net(weight_feature))  # もともとはsigmoid
 
     def _make_scale(self, features, size):
         prior = nn.AdaptiveAvgPool2d(output_size=(size, size))
