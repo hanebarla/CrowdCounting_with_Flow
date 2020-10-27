@@ -1,1 +1,1 @@
-nohup python src/train.py -e 250 > `date +Logs/%Y%m%d_%H-%M-%S`.log
+nohup python src/train.py -e 100 > `date +Logs/%Y%m%d_%H-%M-%S`.log

@@ -203,7 +203,7 @@ def output_to_img(output):
     out = output_num[0, 0, :, :]
 
     heatmap = cv2.resize(out, (out.shape[1]*8, out.shape[0]*8))
-    heatmap = np.array(heatmap*(255), dtype=np.uint8)
+    heatmap = np.array(heatmap*(255/np.max(heatmap)), dtype=np.uint8)
 
     cv2.imwrite(imgfolder+"test.png", heatmap)
 
