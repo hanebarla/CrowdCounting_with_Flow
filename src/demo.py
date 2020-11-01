@@ -57,10 +57,7 @@ def demo():
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
 
-            output = torch.sum(output_before_forward, dim=1, keepdim=True)
-            print("max: {}".format(torch.max(output_before_forward)))
-            print("min: {}".format(torch.min(output_before_forward)))
-            functions.output_to_img(output)
+            functions.output_to_img(output_before_forward)
 
 
 if __name__ == "__main__":

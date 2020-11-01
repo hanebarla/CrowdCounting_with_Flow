@@ -162,6 +162,8 @@ def train(lr=1e-3, wd=1e-3):
     plt.show()
     plt.savefig(save_fig_name)
 
+    return loss
+
 
 if __name__ == "__main__":
-    train()
+    loss = train()

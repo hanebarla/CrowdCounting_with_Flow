@@ -45,6 +45,7 @@ def test():
     TestLoader = torch.utils.data.DataLoader(
         Testdataset, batch_size=minibatch_size, shuffle=False, num_workers=8)
     data_len = len(Testdataset)
+    batch_repeet_num = int(-(-data_len // minibatch_size))
 
     # Loss Func
     criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
@@ -54,7 +55,7 @@ def test():
     all_mae = 0
     all_rmse = 0
 
-    bar = Bar('testing... ', max=int(-(-data_len // minibatch_size)))
+    bar = Bar('testing... ', max=batch_repeet_num)
     for i, data in enumerate(TestLoader):
         torch.cuda.empty_cache()
         inputs, persons, flows = data
@@ -88,8 +89,8 @@ def test():
             d_mse = mse(output, t_person)
             d_rmse = torch.sqrt(d_mse)
 
-            all_mae += d_mae.item()/int(-(-data_len // minibatch_size))
-            all_rmse += d_rmse.item()/int(-(-data_len // minibatch_size))
+            all_mae += d_mae.item()/batch_repeet_num
+            all_rmse += d_rmse.item()/batch_repeet_num
 
         bar.next()
         del tm_img, t_img

@@ -7,6 +7,11 @@ import torch
 # from utils  import model
 
 
+ChannelToLocation = ['aboveleft', 'above', 'aboveright',
+                     'left', 'center', 'right',
+                     'belowleft', 'below', 'belowright']
+
+
 class AllLoss():
     def __init__(self, device, optical_loss_on=1, batchsize=1):
         # super().__init__()
@@ -198,14 +203,19 @@ def output_to_img(output):
     root = os.getcwd()
     imgfolder = os.path.join(root, "images/")
 
-    # d_max = torch.max(output).item()
     output_num = output.detach().cpu().numpy()
-    out = output_num[0, 0, :, :]
 
-    heatmap = cv2.resize(out, (out.shape[1]*8, out.shape[0]*8))
-    heatmap = np.array(heatmap*(255/np.max(heatmap)), dtype=np.uint8)
+    o_max = np.max(output_num)
 
-    cv2.imwrite(imgfolder+"test.png", heatmap)
+    for i in range(9):
+        out = output_num[0, i, :, :]
+        mean = np.mean(out)
+        std = np.std(out)
+        print("{} max: {}".format(ChannelToLocation[i], np.max(out)))
+        print("{} min: {}".format(ChannelToLocation[i], np.min(out)))
+        heatmap = np.array(255*(out/o_max), dtype=np.uint8)
+
+        cv2.imwrite(imgfolder+"demo_{}.png".format(ChannelToLocation[i]), heatmap)
 
 
 if __name__ == "__main__":

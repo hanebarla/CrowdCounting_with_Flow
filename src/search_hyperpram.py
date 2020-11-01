@@ -10,7 +10,7 @@ def search():
         for wd in weight_decay:
             print("==========lr: {}, wd: {} Start!=========".format(lr, wd))
             try:
-                train.train(lr, wd)
+                loss = train.train(lr, wd)
             except AssertionError:
                 print("lr: {}, wd: {}: Error occursed".format(lr, wd))
 
