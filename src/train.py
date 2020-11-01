@@ -156,8 +156,9 @@ def train(lr=1e-3, wd=1e-3):
                                      lr,
                                      wd))
     x = [i for i in range(len(losses))]
-    plt.plot(x, losses)
+    plt.plot(x, losses, label="lr:{}, wd:{}".format(lr, wd))
     plt.title("loss")
+    plt.legend(bbox_to_anchor=(1, 1), loc='upper right', borderaxespad=0, fontsize=18)
     plt.show()
     plt.savefig(save_fig_name)
 

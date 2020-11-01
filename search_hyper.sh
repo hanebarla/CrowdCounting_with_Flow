@@ -1,0 +1,1 @@
+nohup python src/search_hyperpram.py > `date +Logs/%Y%m%d_%H-%M-%S`.log
