@@ -8,7 +8,10 @@ TRIAL_SIZE = 100
 def objective(trial):
     lr = trial.suggest_loguniform('lr', 1e-5, 1e-1)
     weight_decay = trial.suggest_loguniform('weight_decay', 1e-10, 1e-2)
-    loss = train.train(lr=lr, wd=weight_decay)
+    try:
+        loss = train.train(lr=lr, wd=weight_decay)
+    except AssertionError:
+        loss = 1000
 
     return loss
 

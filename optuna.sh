@@ -1,0 +1,1 @@
+nohup python src/train_optuning.py> `date +Logs/%Y%m%d_%H-%M-%S`.log
