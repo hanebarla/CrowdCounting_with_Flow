@@ -119,13 +119,15 @@ def train(lr=1e-3, wd=1e-3):
             e_floss += floss_item / batch_repeet_num
             e_closs += closs_item / batch_repeet_num
 
-            assert not torch.isnan(floss).item(), "floss is Nan !!"
+            # assert not torch.isnan(floss).item(), "floss is Nan !!"
+            if torch.isnan(floss).item():
+                return loss.item()
 
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
             bar.next()
-            print(" Floss: {:8f}, Closs: {:8f}".format(floss_item, closs_item))
+            # print(" Floss: {:8f}, Closs: {:8f}".format(floss_item, closs_item))
 
             del tm_img, t_img, tp_img
             del tm_person, t_person, tp_person
@@ -148,6 +150,7 @@ def train(lr=1e-3, wd=1e-3):
 
     print("Training Done!!")
 
+    """
     save_fig_name = os.path.join("Logs",
                                  '{}_h_{}_w_{}_lr_{}_wd_{}.png'.format(
                                      datetime.date.today(),
@@ -161,8 +164,9 @@ def train(lr=1e-3, wd=1e-3):
     plt.legend(bbox_to_anchor=(1, 1), loc='upper right', borderaxespad=0)
     plt.show()
     plt.savefig(save_fig_name)
+    """
 
-    return loss
+    return losses[-1]
 
 
 if __name__ == "__main__":
