@@ -150,7 +150,6 @@ def train(lr=1e-3, wd=1e-3):
 
     print("Training Done!!")
 
-    """
     save_fig_name = os.path.join("Logs",
                                  '{}_h_{}_w_{}_lr_{}_wd_{}.png'.format(
                                      datetime.date.today(),
@@ -164,10 +163,9 @@ def train(lr=1e-3, wd=1e-3):
     plt.legend(bbox_to_anchor=(1, 1), loc='upper right', borderaxespad=0)
     plt.show()
     plt.savefig(save_fig_name)
-    """
 
     return losses[-1]
 
 
 if __name__ == "__main__":
-    loss = train()
+    loss = train(lr=0.0004719475861107414, wd=0.007307616924875147)
