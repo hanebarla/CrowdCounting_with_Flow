@@ -2,6 +2,9 @@ import os
 import cv2
 import numpy as np
 import torch
+import matplotlib.pyplot as plt
+from torch._C import dtype
+import torchvision
 # import model
 # import pytorch_memlab
 # from utils  import model
@@ -199,23 +202,63 @@ class AllLoss():
         return output
 
 
-def output_to_img(output):
+def output_to_img(inputimg, output):
+    ts = torchvision.transforms.ToPILImage()
     root = os.getcwd()
     imgfolder = os.path.join(root, "images/")
 
     output_num = output.detach().cpu().numpy()
+    inputimg = inputimg.cpu()
+    inputimg_pil = ts(inputimg[0, :, :, :])
+    # inputimg_pil *= 255
+    inputimg_pil.save(imgfolder+"demo_input.png")
 
     o_max = np.max(output_num)
+    heats_u = np.zeros_like(output_num[0, 0, :, :])
+    heats_v = np.zeros_like(output_num[0, 0, :, :])
 
     for i in range(9):
         out = output_num[0, i, :, :]
-        mean = np.mean(out)
-        std = np.std(out)
+        # mean = np.mean(out)
+        # std = np.std(out)
         print("{} max: {}".format(ChannelToLocation[i], np.max(out)))
         print("{} min: {}".format(ChannelToLocation[i], np.min(out)))
         heatmap = np.array(255*(out/o_max), dtype=np.uint8)
 
+        if i == 0:
+            heats_u -= heatmap/255/np.sqrt(2)
+            heats_v += heatmap/255/np.sqrt(2)
+        elif i == 1:
+            heats_v += heatmap/255
+        elif i == 2:
+            heats_u += heatmap/255/np.sqrt(2)
+            heats_v += heatmap/255/np.sqrt(2)
+        elif i == 3:
+            heats_u -= heatmap/255
+        elif i == 5:
+            heats_u += heatmap/255
+        elif i == 6:
+            heats_u -= heatmap/255/np.sqrt(2)
+            heats_v -= heatmap/255/np.sqrt(2)
+        elif i == 7:
+            heats_v -= heatmap/255
+        elif i == 8:
+            heats_u += heatmap/255/np.sqrt(2)
+            heats_v -= heatmap/255/np.sqrt(2)
+
         cv2.imwrite(imgfolder+"demo_{}.png".format(ChannelToLocation[i]), heatmap)
+
+    x, y = heats_u.shape[0], heats_u.shape[1]
+    imX = np.zeros_like(heats_u)
+    for i in range(y):
+        imX[:, i] = np.linspace(0, x, x)
+    imY = np.zeros_like(heats_v)
+    for i in range(x):
+        imY[i, :] = np.linspace(y, 0, y)
+    plt.quiver(imY, imX, heats_u, heats_v)
+    plt.grid()
+    plt.draw()
+    plt.savefig(imgfolder+"demo_quiver.png")
 
 
 if __name__ == "__main__":

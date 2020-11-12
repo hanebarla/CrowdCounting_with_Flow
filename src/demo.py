@@ -57,7 +57,7 @@ def demo():
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
 
-            functions.output_to_img(output_before_forward)
+            functions.output_to_img(tm_img, output_before_forward)
 
 
 if __name__ == "__main__":
