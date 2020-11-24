@@ -203,22 +203,23 @@ class AllLoss():
 
 
 def output_to_img(inputimg, output):
+    plt.cla()
     ts = torchvision.transforms.ToPILImage()
     root = os.getcwd()
     imgfolder = os.path.join(root, "images/")
 
     output_num = output.detach().cpu().numpy()
     inputimg = inputimg.cpu()
-    inputimg_pil = ts(inputimg[0, :, :, :])
+    inputimg_pil = ts(inputimg)
     # inputimg_pil *= 255
     inputimg_pil.save(imgfolder+"demo_input.png")
 
     o_max = np.max(output_num)
-    heats_u = np.zeros_like(output_num[0, 0, :, :])
-    heats_v = np.zeros_like(output_num[0, 0, :, :])
+    heats_u = np.zeros_like(output_num[0, :, :])
+    heats_v = np.zeros_like(output_num[0, :, :])
 
     for i in range(9):
-        out = output_num[0, i, :, :]
+        out = output_num[i, :, :]
         # mean = np.mean(out)
         # std = np.std(out)
         print("{} max: {}".format(ChannelToLocation[i], np.max(out)))
@@ -261,7 +262,81 @@ def output_to_img(inputimg, output):
     plt.savefig(imgfolder+"demo_quiver.png")
 
 
+def NormalizeQuiver(inputimg, output):
+    plt.cla()
+    # ts = torchvision.transforms.ToPILImage()
+    root = os.getcwd()
+    imgfolder = os.path.join(root, "images/")
+
+    output_num = output.detach().cpu().numpy()
+    # inputimg = inputimg.cpu()
+    # inputimg_pil = ts(inputimg)
+    # inputimg_pil *= 255
+    # inputimg_pil.save(imgfolder+"demo_input.png")
+
+    o_max = np.max(output_num)
+    heats_u = np.zeros_like(output_num[0, :, :])
+    heats_v = np.zeros_like(output_num[0, :, :])
+
+    for i in range(9):
+        out = output_num[i, :, :]
+        # mean = np.mean(out)
+        # std = np.std(out)
+        # print("{} max: {}".format(ChannelToLocation[i], np.max(out)))
+        # print("{} min: {}".format(ChannelToLocation[i], np.min(out)))
+        heatmap = np.array(255*(out/o_max), dtype=np.uint8)
+
+        if i == 0:
+            heats_u -= heatmap/255/np.sqrt(2)
+            heats_v += heatmap/255/np.sqrt(2)
+        elif i == 1:
+            heats_v += heatmap/255
+        elif i == 2:
+            heats_u += heatmap/255/np.sqrt(2)
+            heats_v += heatmap/255/np.sqrt(2)
+        elif i == 3:
+            heats_u -= heatmap/255
+        elif i == 5:
+            heats_u += heatmap/255
+        elif i == 6:
+            heats_u -= heatmap/255/np.sqrt(2)
+            heats_v -= heatmap/255/np.sqrt(2)
+        elif i == 7:
+            heats_v -= heatmap/255
+        elif i == 8:
+            heats_u += heatmap/255/np.sqrt(2)
+            heats_v -= heatmap/255/np.sqrt(2)
+
+    x, y = heats_u.shape[0], heats_u.shape[1]
+    imX = np.zeros_like(heats_u)
+    for i in range(y):
+        imX[:, i] = np.linspace(0, x, x)
+    imY = np.zeros_like(heats_v)
+    for i in range(x):
+        imY[i, :] = np.linspace(y, 0, y)
+
+    """
+    imY.reshape(-1)
+    imX.reshape(-1)
+    heats_u.reshape(-1)
+    heats_v.reshape(-1)
+    """
+
+    v_leng = np.abs(heats_u * heats_v)
+    v_leng_true = v_leng > np.mean(v_leng)
+    imX = imX[v_leng_true]
+    imY = imY[v_leng_true]
+    heats_u_cut = heats_u[v_leng_true] / v_leng[v_leng_true]
+    heats_v_cut = heats_v[v_leng_true] / v_leng[v_leng_true]
+
+    plt.quiver(imY, imX, heats_u_cut, heats_v_cut)
+    plt.grid()
+    plt.draw()
+    plt.savefig(imgfolder+"demo_normalize_quiver.png")
+
+
 if __name__ == "__main__":
+    import model
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # device = "cpu"
     can_model = model.CANNet(load_weights=True)

@@ -8,6 +8,9 @@ from utils import functions
 from utils import load_datasets as LD
 
 
+default_model_path = "models/2020-11-09_h_360_w_640_lr_0.0004719475861107414_wd_0.007307616924875147_e_100.pth"
+
+
 def demo():
     parser = argparse.ArgumentParser(description="""
                                                  Please specify the csv file of the Datasets path.
@@ -17,7 +20,7 @@ def demo():
     parser.add_argument('-p', '--path', default='TestData_Path.csv')  # Testdata path csv
     parser.add_argument('-wd', '--width', type=int, default=640)  # image width that input to model
     parser.add_argument('-ht', '--height', type=int, default=360)  # image height thta input to model
-    parser.add_argument('-mw', '--model_weight', default="CrowdCounting_model_cpu_epoch_45.pth")
+    parser.add_argument('-mw', '--model_weight', default=default_model_path)
 
     args = parser.parse_args()
     test_d_path = args.path
@@ -38,7 +41,7 @@ def demo():
         Trainpath=test_d_path,
         test_on=True)
     TestLoader = torch.utils.data.DataLoader(
-        Testdataset, batch_size=1, shuffle=False)
+        Testdataset, batch_size=1, shuffle=True)
 
     for i, data in enumerate(TestLoader):
         if i > 0:
@@ -57,7 +60,8 @@ def demo():
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
 
-            functions.output_to_img(tm_img, output_before_forward)
+            functions.output_to_img(tm_img[0, :, :, :], output_before_forward[0, :, :, :])
+            functions.NormalizeQuiver(tm_img[0, :, :, :], output_before_forward[0, :, :, :])
 
 
 if __name__ == "__main__":
