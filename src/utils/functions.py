@@ -37,7 +37,10 @@ class AllLoss():
                                 output_after_foward=output_aftter_foward,
                                 output_after_back=output_after_back)
 
-        loss_combi = floss + alpha * closs
+        flow_res_loss = self.peaple_flow_loss(output_before_foward) + \
+            self.peaple_flow_loss(output_aftter_foward)
+
+        loss_combi = floss + alpha * closs + 0.1 * flow_res_loss
 
         if self.optical_loss_on == 1:
             oloss = self.optical_loss(tm_personlabel,
@@ -119,14 +122,7 @@ class AllLoss():
 
         return loss
 
-    def sum_flow(self, output):
-        """
-        Sum tm2tflow to trajectories map
-        -------------
-            Slide flows to sum flows for trajectories map
-            Step t-1 2 t flow -> Step t Trajectory map
-            output(10 channel) -> Trajectories map(1 channel)
-        """
+    def roll_flow(self, output):
         o_shape = output.size()
 
         for i in range(10):
@@ -160,6 +156,18 @@ class AllLoss():
                 output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, 1), dims=(1, 2))
                 output[:, i, 0, :o_shape[3]] = 0.0
                 output[:, i, :o_shape[2], 0] = 0.0
+
+        return output
+
+    def sum_flow(self, output):
+        """
+        Sum tm2tflow to trajectories map
+        -------------
+            Slide flows to sum flows for trajectories map
+            Step t-1 2 t flow -> Step t Trajectory map
+            output(10 channel) -> Trajectories map(1 channel)
+        """
+        output = self.roll_flow(output)
 
         return torch.sum(output, dim=1, keepdim=True)
 
@@ -200,6 +208,16 @@ class AllLoss():
                 output[:, 9, :o_shape[2], 0] += output[:, i, :o_shape[2], 0]
 
         return output
+
+    def peaple_flow_loss(self, flow_output):
+        o_shape = flow_output.size()
+        roll_flow = flow_output.clone().detach()
+        roll_flow = self.roll_flow(roll_flow)
+
+        rolled_mse = roll_flow[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)] * \
+            flow_output[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)]
+
+        return torch.sum(rolled_mse)
 
 
 def output_to_img(inputimg, output):
@@ -252,10 +270,10 @@ def output_to_img(inputimg, output):
     x, y = heats_u.shape[0], heats_u.shape[1]
     imX = np.zeros_like(heats_u)
     for i in range(y):
-        imX[:, i] = np.linspace(0, x, x)
+        imX[:, i] = np.linspace(x, 0, x)
     imY = np.zeros_like(heats_v)
     for i in range(x):
-        imY[i, :] = np.linspace(y, 0, y)
+        imY[i, :] = np.linspace(0, y, y)
     plt.quiver(imY, imX, heats_u, heats_v)
     plt.grid()
     plt.draw()
@@ -310,10 +328,10 @@ def NormalizeQuiver(inputimg, output):
     x, y = heats_u.shape[0], heats_u.shape[1]
     imX = np.zeros_like(heats_u)
     for i in range(y):
-        imX[:, i] = np.linspace(0, x, x)
+        imX[:, i] = np.linspace(x, 0, x)
     imY = np.zeros_like(heats_v)
     for i in range(x):
-        imY[i, :] = np.linspace(y, 0, y)
+        imY[i, :] = np.linspace(0, y, y)
 
     """
     imY.reshape(-1)
