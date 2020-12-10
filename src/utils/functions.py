@@ -16,17 +16,18 @@ ChannelToLocation = ['aboveleft', 'above', 'aboveright',
 
 
 class AllLoss():
-    def __init__(self, device, optical_loss_on=1, batchsize=1):
+    def __init__(self, device, optical_loss_on=1, direction_loss_on=1, batchsize=1):
         # super().__init__()
         self.device = device
         self.optical_loss_on = optical_loss_on
+        self.direction_loss_on = direction_loss_on
         if self.optical_loss_on == 0:
             print("***Not Using Optical Loss***")
         self.bathsize = batchsize
 
     def forward(self, tm_personlabel, t_person_label, tm2t_flow_label,
                 output_before_foward, output_before_back,
-                output_aftter_foward, output_after_back, alpha=1, beta=1e-4):
+                output_aftter_foward, output_after_back, alpha=1, beta=1e-4, gamma=1e-2):
 
         floss = self.flow_loss(output_before_forward=output_before_foward,
                                output_after_forward=output_aftter_foward,
@@ -37,16 +38,18 @@ class AllLoss():
                                 output_after_foward=output_aftter_foward,
                                 output_after_back=output_after_back)
 
-        flow_res_loss = self.peaple_flow_loss(output_before_foward) + \
-            self.peaple_flow_loss(output_aftter_foward)
-
-        loss_combi = floss + alpha * closs + 0.1 * flow_res_loss
+        loss_combi = floss + alpha * closs
 
         if self.optical_loss_on == 1:
             oloss = self.optical_loss(tm_personlabel,
                                       tm2t_flow_label,
                                       output_before_foward)
             loss_combi += beta * oloss
+
+        if self.direction_loss_on == 1:
+            dloss = self.direction_loss(output_before_foward) + \
+                self.direction_loss(output_aftter_foward)
+            loss_combi += gamma * dloss
 
         # loss_combi /= self.bathsize
 
@@ -209,7 +212,7 @@ class AllLoss():
 
         return output
 
-    def peaple_flow_loss(self, flow_output):
+    def direction_loss(self, flow_output):
         o_shape = flow_output.size()
         roll_flow = flow_output.clone().detach()
         roll_flow = self.roll_flow(roll_flow)

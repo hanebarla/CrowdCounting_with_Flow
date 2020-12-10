@@ -15,7 +15,7 @@ from utils import load_datasets as LD
 # import pytorch_memlab as PM
 
 
-def train(lr=1e-3, wd=1e-3):
+def train(lr=1e-3, wd=1e-3, gamma=1e-2):
     parser = argparse.ArgumentParser(description="""
                                                  Please specify the csv file of the Datasets path.
                                                  In default, path is 'TrainData_Path.csv'
@@ -55,7 +55,8 @@ def train(lr=1e-3, wd=1e-3):
 
     criterion = functions.AllLoss(device=device,
                                   batchsize=minibatch_size,
-                                  optical_loss_on=1)
+                                  optical_loss_on=1,
+                                  direction_loss_on=1)
     optimizer = optim.Adam(CANnet.parameters(),
                            lr=lr,
                            betas=(0.9, 0.999),
@@ -109,7 +110,8 @@ def train(lr=1e-3, wd=1e-3):
 
             loss, floss, closs = criterion.forward(tm_person, t_person, tm2t_flow,
                                                    output_befoer_forward, output_before_back,
-                                                   output_after_forward, output_after_back)
+                                                   output_after_forward, output_after_back,
+                                                   gamma)
 
             loss_item = loss.item()
             floss_item = floss.item()
