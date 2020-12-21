@@ -10,7 +10,7 @@ import argparse
 import matplotlib.pyplot as plt
 from progress.bar import Bar
 from utils import model
-from utils import functions
+from utils import loss_funtions as Losses
 from utils import load_datasets as LD
 # import pytorch_memlab as PM
 
@@ -53,10 +53,10 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
                                               num_workers=8)
     data_len = len(Traindataset)
 
-    criterion = functions.AllLoss(device=device,
-                                  batchsize=minibatch_size,
-                                  optical_loss_on=1,
-                                  direction_loss_on=1)
+    criterion = Losses.AllLoss(device=device,
+                               batchsize=minibatch_size,
+                               optical_loss_on=1,
+                               direction_loss_on=1)
     optimizer = optim.Adam(CANnet.parameters(),
                            lr=lr,
                            betas=(0.9, 0.999),

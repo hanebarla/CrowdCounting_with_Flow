@@ -4,7 +4,7 @@ import torchvision
 import argparse
 from progress.bar import Bar
 from utils import model
-from utils import functions
+from utils import loss_function as Losses
 from utils import load_datasets as LD
 
 
@@ -48,7 +48,7 @@ def test():
     batch_repeet_num = int(-(-data_len // minibatch_size))
 
     # Loss Func
-    criterion = functions.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
+    criterion = Losses.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
     mae = torch.nn.L1Loss()
     mse = torch.nn.MSELoss()
 

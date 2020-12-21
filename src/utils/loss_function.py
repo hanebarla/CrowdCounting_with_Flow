@@ -3,7 +3,6 @@ import cv2
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
-from torch._C import dtype
 import torchvision
 # import model
 # import pytorch_memlab
@@ -13,6 +12,44 @@ import torchvision
 ChannelToLocation = ['aboveleft', 'above', 'aboveright',
                      'left', 'center', 'right',
                      'belowleft', 'below', 'belowright']
+
+
+def roll_flow(self, output):
+    o_shape = output.size()
+
+    for i in range(10):
+        if i == 4 or i == 9:
+            continue
+        elif i == 0:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, -1), dims=(1, 2))
+            output[:, i, :o_shape[2], (o_shape[3]-1)] = 0.0
+            output[:, i, (o_shape[2]-1), :o_shape[2]] = 0.0
+        elif i == 1:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=1)
+            output[:, i, o_shape[2]-1, :o_shape[3]] = 0.0
+        elif i == 2:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, 1), dims=(1, 2))
+            output[:, i, :o_shape[2], 0] = 0.0
+            output[:, i, (o_shape[2]-1), :o_shape[2]] = 0.0
+        elif i == 3:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=2)
+            output[:, i, :o_shape[2], o_shape[3]-1] = 0.0
+        elif i == 5:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=2)
+            output[:, i, :o_shape[2], 0] = 0.0
+        elif i == 6:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, -1), dims=(1, 2))
+            output[:, i, 0, :(o_shape[3])] = 0.0
+            output[:, i, :o_shape[2], o_shape[3]-1] = 0.0
+        elif i == 7:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=1)
+            output[:, i, 0, :o_shape[3]] = 0.0
+        elif i == 8:
+            output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, 1), dims=(1, 2))
+            output[:, i, 0, :o_shape[3]] = 0.0
+            output[:, i, :o_shape[2], 0] = 0.0
+
+    return output
 
 
 class AllLoss():
@@ -125,43 +162,6 @@ class AllLoss():
 
         return loss
 
-    def roll_flow(self, output):
-        o_shape = output.size()
-
-        for i in range(10):
-            if i == 4 or i == 9:
-                continue
-            elif i == 0:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, -1), dims=(1, 2))
-                output[:, i, :o_shape[2], (o_shape[3]-1)] = 0.0
-                output[:, i, (o_shape[2]-1), :o_shape[2]] = 0.0
-            elif i == 1:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=1)
-                output[:, i, o_shape[2]-1, :o_shape[3]] = 0.0
-            elif i == 2:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], (-1, 1), dims=(1, 2))
-                output[:, i, :o_shape[2], 0] = 0.0
-                output[:, i, (o_shape[2]-1), :o_shape[2]] = 0.0
-            elif i == 3:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], -1, dims=2)
-                output[:, i, :o_shape[2], o_shape[3]-1] = 0.0
-            elif i == 5:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=2)
-                output[:, i, :o_shape[2], 0] = 0.0
-            elif i == 6:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, -1), dims=(1, 2))
-                output[:, i, 0, :(o_shape[3])] = 0.0
-                output[:, i, :o_shape[2], o_shape[3]-1] = 0.0
-            elif i == 7:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], 1, dims=1)
-                output[:, i, 0, :o_shape[3]] = 0.0
-            elif i == 8:
-                output[:, i, :, :] = torch.roll(output[:, i, :, :], (1, 1), dims=(1, 2))
-                output[:, i, 0, :o_shape[3]] = 0.0
-                output[:, i, :o_shape[2], 0] = 0.0
-
-        return output
-
     def sum_flow(self, output):
         """
         Sum tm2tflow to trajectories map
@@ -170,7 +170,7 @@ class AllLoss():
             Step t-1 2 t flow -> Step t Trajectory map
             output(10 channel) -> Trajectories map(1 channel)
         """
-        output = self.roll_flow(output)
+        output = roll_flow(output)
 
         return torch.sum(output, dim=1, keepdim=True)
 
@@ -215,145 +215,12 @@ class AllLoss():
     def direction_loss(self, flow_output):
         o_shape = flow_output.size()
         roll_flow = flow_output.clone().detach()
-        roll_flow = self.roll_flow(roll_flow)
+        roll_flow = roll_flow(roll_flow)
 
         rolled_mse = roll_flow[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)] * \
             flow_output[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)]
 
         return torch.sum(rolled_mse)
-
-
-def output_to_img(inputimg, output):
-    plt.cla()
-    ts = torchvision.transforms.ToPILImage()
-    root = os.getcwd()
-    imgfolder = os.path.join(root, "images/")
-
-    output_num = output.detach().cpu().numpy()
-    inputimg = inputimg.cpu()
-    inputimg_pil = ts(inputimg)
-    # inputimg_pil *= 255
-    inputimg_pil.save(imgfolder+"demo_input.png")
-
-    o_max = np.max(output_num)
-    heats_u = np.zeros_like(output_num[0, :, :])
-    heats_v = np.zeros_like(output_num[0, :, :])
-
-    for i in range(9):
-        out = output_num[i, :, :]
-        # mean = np.mean(out)
-        # std = np.std(out)
-        print("{} max: {}".format(ChannelToLocation[i], np.max(out)))
-        print("{} min: {}".format(ChannelToLocation[i], np.min(out)))
-        heatmap = np.array(255*(out/o_max), dtype=np.uint8)
-
-        if i == 0:
-            heats_u -= heatmap/255/np.sqrt(2)
-            heats_v += heatmap/255/np.sqrt(2)
-        elif i == 1:
-            heats_v += heatmap/255
-        elif i == 2:
-            heats_u += heatmap/255/np.sqrt(2)
-            heats_v += heatmap/255/np.sqrt(2)
-        elif i == 3:
-            heats_u -= heatmap/255
-        elif i == 5:
-            heats_u += heatmap/255
-        elif i == 6:
-            heats_u -= heatmap/255/np.sqrt(2)
-            heats_v -= heatmap/255/np.sqrt(2)
-        elif i == 7:
-            heats_v -= heatmap/255
-        elif i == 8:
-            heats_u += heatmap/255/np.sqrt(2)
-            heats_v -= heatmap/255/np.sqrt(2)
-
-        cv2.imwrite(imgfolder+"demo_{}.png".format(ChannelToLocation[i]), heatmap)
-
-    x, y = heats_u.shape[0], heats_u.shape[1]
-    imX = np.zeros_like(heats_u)
-    for i in range(y):
-        imX[:, i] = np.linspace(x, 0, x)
-    imY = np.zeros_like(heats_v)
-    for i in range(x):
-        imY[i, :] = np.linspace(0, y, y)
-    plt.quiver(imY, imX, heats_u, heats_v)
-    plt.grid()
-    plt.draw()
-    plt.savefig(imgfolder+"demo_quiver.png")
-
-
-def NormalizeQuiver(inputimg, output):
-    plt.cla()
-    # ts = torchvision.transforms.ToPILImage()
-    root = os.getcwd()
-    imgfolder = os.path.join(root, "images/")
-
-    output_num = output.detach().cpu().numpy()
-    # inputimg = inputimg.cpu()
-    # inputimg_pil = ts(inputimg)
-    # inputimg_pil *= 255
-    # inputimg_pil.save(imgfolder+"demo_input.png")
-
-    o_max = np.max(output_num)
-    heats_u = np.zeros_like(output_num[0, :, :])
-    heats_v = np.zeros_like(output_num[0, :, :])
-
-    for i in range(9):
-        out = output_num[i, :, :]
-        # mean = np.mean(out)
-        # std = np.std(out)
-        # print("{} max: {}".format(ChannelToLocation[i], np.max(out)))
-        # print("{} min: {}".format(ChannelToLocation[i], np.min(out)))
-        heatmap = np.array(255*(out/o_max), dtype=np.uint8)
-
-        if i == 0:
-            heats_u -= heatmap/255/np.sqrt(2)
-            heats_v += heatmap/255/np.sqrt(2)
-        elif i == 1:
-            heats_v += heatmap/255
-        elif i == 2:
-            heats_u += heatmap/255/np.sqrt(2)
-            heats_v += heatmap/255/np.sqrt(2)
-        elif i == 3:
-            heats_u -= heatmap/255
-        elif i == 5:
-            heats_u += heatmap/255
-        elif i == 6:
-            heats_u -= heatmap/255/np.sqrt(2)
-            heats_v -= heatmap/255/np.sqrt(2)
-        elif i == 7:
-            heats_v -= heatmap/255
-        elif i == 8:
-            heats_u += heatmap/255/np.sqrt(2)
-            heats_v -= heatmap/255/np.sqrt(2)
-
-    x, y = heats_u.shape[0], heats_u.shape[1]
-    imX = np.zeros_like(heats_u)
-    for i in range(y):
-        imX[:, i] = np.linspace(x, 0, x)
-    imY = np.zeros_like(heats_v)
-    for i in range(x):
-        imY[i, :] = np.linspace(0, y, y)
-
-    """
-    imY.reshape(-1)
-    imX.reshape(-1)
-    heats_u.reshape(-1)
-    heats_v.reshape(-1)
-    """
-
-    v_leng = np.abs(heats_u * heats_v)
-    v_leng_true = v_leng > np.mean(v_leng)
-    imX = imX[v_leng_true]
-    imY = imY[v_leng_true]
-    heats_u_cut = heats_u[v_leng_true] / v_leng[v_leng_true]
-    heats_v_cut = heats_v[v_leng_true] / v_leng[v_leng_true]
-
-    plt.quiver(imY, imX, heats_u_cut, heats_v_cut)
-    plt.grid()
-    plt.draw()
-    plt.savefig(imgfolder+"demo_normalize_quiver.png")
 
 
 if __name__ == "__main__":

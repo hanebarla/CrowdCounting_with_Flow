@@ -5,7 +5,7 @@ import cv2
 import numpy as np
 import torch
 import torchvision
-from . import functions as fc
+from . import loss_function as fc
 
 ras2bits = 0.71
 IP = {0: 202.5, 1: 247.5, 2: 292.5, 3: 157.5, 5: 337.5, 6: 22.5, 7: 67.5, 8: 112.5}
