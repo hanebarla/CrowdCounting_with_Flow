@@ -49,8 +49,6 @@ def test():
 
     # Loss Func
     criterion = Losses.AllLoss(device=device, batchsize=minibatch_size, optical_loss_on=0)
-    mae = torch.nn.L1Loss()
-    mse = torch.nn.MSELoss()
 
     all_mae = 0
     all_rmse = 0
@@ -69,8 +67,6 @@ def test():
         t_person = t_person.to(device, dtype=torch.float)
         tm2t_flow = tm2t_flow.to(device, dtype=torch.float)
 
-        flow = torch.sum(tm2t_flow, dim=1)
-
         with torch.set_grad_enabled(False):
             output_before_forward = CANnet(tm_img, t_img)
 
@@ -85,9 +81,11 @@ def test():
                 t_person = t_person.type(torch.uint8)
                 t_person = t_person.type(torch.float)
 
-            d_mae = mae(output, t_person)
-            d_mse = mse(output, t_person)
-            d_rmse = torch.sqrt(d_mse)
+            abs_err = torch.abs(output - t_person)
+            root_squ_err = torch.sqrt(abs_err * abs_err)
+
+            d_mae = torch.sum(abs_err) / minibatch_size
+            d_rmse = torch.sum(root_squ_err) / minibatch_size
 
             all_mae += d_mae.item()/batch_repeet_num
             all_rmse += d_rmse.item()/batch_repeet_num

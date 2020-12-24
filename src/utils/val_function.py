@@ -175,3 +175,11 @@ def NormalizeQuiver(output):
     heats_v_cut = heats_v[v_leng_true] / v_leng[v_leng_true]
 
     return (imY, imX, heats_u_cut, heats_v_cut)
+
+
+def output_res_img(label, output):
+    res = (label - output) * (label - output)
+    res_max = np.max(res)
+    res = res / res_max
+
+    return res

@@ -1,4 +1,4 @@
-from ast import parse
+import numpy as np
 import torch
 import torch.nn.functional as F
 import torchvision
@@ -60,8 +60,10 @@ def demo():
                      'label',
                      'normal',
                      'normal_quiver',
+                     'normal_dense_res',
                      'direct',
-                     'direct_quiver']
+                     'direct_quiver',
+                     'direct_dense_res']
 
     img_dict = {
         img_dict_keys[0]: ('img', None),
@@ -69,7 +71,9 @@ def demo():
         img_dict_keys[2]: ('img', None),
         img_dict_keys[3]: ('quiver', None),
         img_dict_keys[4]: ('img', None),
-        img_dict_keys[5]: ('quiver', None)
+        img_dict_keys[5]: ('img', None),
+        img_dict_keys[6]: ('quiver', None),
+        img_dict_keys[7]: ('img', None)
     }
 
     DemoImg = Valid.CompareOutput(img_dict_keys)
@@ -112,13 +116,18 @@ def demo():
         normal_dense = Valid.tm_output_to_dense(normal_num)
         direct_dense = Valid.tm_output_to_dense(direct_num)
 
+        normal_res_dense = Valid.output_res_img(np.squeeze(label_num), normal_dense)
+        direct_res_dense = Valid.output_res_img(np.squeeze(label_num), direct_dense)
+
         img_dict = {
             img_dict_keys[0]: ('img', input_num),
             img_dict_keys[1]: ('img', label_num),
             img_dict_keys[2]: ('img', normal_dense),
             img_dict_keys[3]: ('quiver', normal_quiver),
-            img_dict_keys[4]: ('img', direct_dense),
-            img_dict_keys[5]: ('quiver', direct_quiver)
+            img_dict_keys[4]: ('img', normal_res_dense),
+            img_dict_keys[5]: ('img', direct_dense),
+            img_dict_keys[6]: ('quiver', direct_quiver),
+            img_dict_keys[7]: ('img', direct_res_dense),
         }
 
         DemoImg.append_pred(img_dict)

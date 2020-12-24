@@ -14,7 +14,7 @@ ChannelToLocation = ['aboveleft', 'above', 'aboveright',
                      'belowleft', 'below', 'belowright']
 
 
-def roll_flow(self, output):
+def roll_flow(output):
     o_shape = output.size()
 
     for i in range(10):
