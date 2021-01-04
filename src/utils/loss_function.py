@@ -214,10 +214,10 @@ class AllLoss():
 
     def direction_loss(self, flow_output):
         o_shape = flow_output.size()
-        roll_flow = flow_output.clone().detach()
-        roll_flow = roll_flow(roll_flow)
+        roll_flow_tensor = flow_output.clone().detach()
+        roll_flow_tensor = roll_flow(roll_flow_tensor)
 
-        rolled_mse = roll_flow[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)] * \
+        rolled_mse = roll_flow_tensor[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)] * \
             flow_output[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)]
 
         return torch.sum(rolled_mse)

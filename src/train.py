@@ -10,7 +10,7 @@ import argparse
 import matplotlib.pyplot as plt
 from progress.bar import Bar
 from utils import model
-from utils import loss_funtions as Losses
+from utils import loss_function as Losses
 from utils import load_datasets as LD
 # import pytorch_memlab as PM
 
