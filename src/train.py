@@ -71,6 +71,8 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
         e_loss = 0.0
         e_floss = 0.0
         e_closs = 0.0
+        e_oloss = 0.0
+        e_dloss = 0.0
 
         print('-------------')
         print('Epoch {}/{}'.format(epock + 1, epock_num))
@@ -108,28 +110,31 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
             with torch.set_grad_enabled(True):
                 output_after_forward = CANnet(t_img, tp_img)
 
-            loss, floss, closs = criterion.forward(tm_person, t_person, tm2t_flow,
-                                                   output_befoer_forward, output_before_back,
-                                                   output_after_forward, output_after_back,
-                                                   gamma)
+            loss_all = criterion.forward(tm_person, t_person, tm2t_flow,
+                                         output_befoer_forward, output_before_back,
+                                         output_after_forward, output_after_back,
+                                         gamma=gamma)
 
-            loss_item = loss.item()
-            floss_item = floss.item()
-            closs_item = closs.item()
+            loss_item = loss_all[0].item()  # all loss
+            floss_item = loss_all[1].item()  # flow loss
+            closs_item = loss_all[2].item()  # cycle loss
+            oloss_item = loss_all[3].item()  # optical loss
+            dloss_item = loss_all[4].item()  # direct loss
 
             e_loss += loss_item / batch_repeet_num
             e_floss += floss_item / batch_repeet_num
             e_closs += closs_item / batch_repeet_num
+            e_oloss += oloss_item / batch_repeet_num
+            e_dloss += dloss_item / batch_repeet_num
 
             # assert not torch.isnan(floss).item(), "floss is Nan !!"
-            if torch.isnan(floss).item():
-                return loss.item()
+            if torch.isnan(loss_all[1]).item():
+                return loss_all[0].item()
 
             optimizer.zero_grad()
-            loss.backward()
+            loss_all[0].backward()
             optimizer.step()
             bar.next()
-            # print(" Floss: {:8f}, Closs: {:8f}".format(floss_item, closs_item))
 
             del tm_img, t_img, tp_img
             del tm_person, t_person, tp_person
@@ -139,12 +144,14 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
         losses.append(e_loss)
         print('-------------')
         print(
-            'epoch {} || Epoch_Loss:{}, Epoch_FlowLoss:{}, Epock_CycleLoss:{}'.format(
+            'epoch {} || Loss:{}, FlowLoss:{}, CycleLoss:{}, OptiLoss:{}, DirectLoss:{}'.format(
                 epock +
                 1,
                 e_loss,
                 e_floss,
-                e_closs))
+                e_closs,
+                e_oloss,
+                e_dloss))
         if (epock + 1) == epock_num or (epock + 1) % 100 == 0:
             save_path = os.path.join("models", '{}_h_{}_w_{}_lr_{}_wd_{}_e_{}.pth'.format(
                 datetime.date.today(), args.height, args.width, lr, wd, epock + 1))
@@ -170,4 +177,4 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
 
 
 if __name__ == "__main__":
-    loss = train(lr=0.0022961891160849187, wd=3.776888134461094e-07, gamma=0.0006254739711208767)
+    loss = train(lr=1e-3, wd=1e-4, gamma=1e-2)

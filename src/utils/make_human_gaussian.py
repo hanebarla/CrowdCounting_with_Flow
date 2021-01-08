@@ -55,7 +55,7 @@ def person_annotate_img_generator(txtfile, frame):
         elif pos[0] < 0 or pos[1] < 0:
             continue
         tmp_img[pos[0], pos[1]] = 1.0
-        tmp_img = ndimage.filters.gaussian_filter(tmp_img, 10)
+        tmp_img = ndimage.filters.gaussian_filter(tmp_img, 3)
         max_num = tmp_img.max()
         tmp_img = np.array(tmp_img * (128 / max_num), dtype=np.uint8)
         init_img += tmp_img

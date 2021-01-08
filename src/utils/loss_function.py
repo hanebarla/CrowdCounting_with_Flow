@@ -77,12 +77,14 @@ class AllLoss():
 
         loss_combi = floss + alpha * closs
 
+        oloss = None
         if self.optical_loss_on == 1:
             oloss = self.optical_loss(tm_personlabel,
                                       tm2t_flow_label,
                                       output_before_foward)
             loss_combi += beta * oloss
 
+        dloss = None
         if self.direction_loss_on == 1:
             dloss = self.direction_loss(output_before_foward) + \
                 self.direction_loss(output_aftter_foward)
@@ -97,7 +99,7 @@ class AllLoss():
 
         print("floss_nan: {}, closs_nan: {}, oloss_nan: {}".format(floss_nan, closs_nan, oloss_nan))
         """
-        return loss_combi, floss, closs  # 後で減らす
+        return loss_combi, floss, closs, oloss, dloss  # 後で減らす
 
     def flow_loss(self, output_before_forward, output_after_forward, label):
         # print("output_before_forward: {:8f}, output_after_forward: {:8f}".format(torch.max(output_before_forward), torch.max(output_after_forward)))
@@ -113,7 +115,8 @@ class AllLoss():
 
         # print("se_before: {}, se_after: {}".format(torch.max(se_before), torch.max(se_after)))
 
-        floss = torch.sum((se_before + se_after)) / self.bathsize
+        # floss = torch.sum((se_before + se_after)) / self.bathsize
+        floss = torch.mean((se_before + se_after))
 
         return floss
 
@@ -131,13 +134,14 @@ class AllLoss():
         se_before = torch.sum(
             (res_before * res_before),
             dim=1,
-            keepdim=True) / self.bathsize
+            keepdim=True)
         se_after = torch.sum(
             (res_after * res_after),
             dim=1,
-            keepdim=True) / self.bathsize
+            keepdim=True)
 
-        closs = torch.sum((se_before + se_after)) / self.bathsize
+        # closs = torch.sum((se_before + se_after)) / self.bathsize
+        closs = torch.mean((se_before + se_after))
 
         return closs
 
@@ -156,9 +160,9 @@ class AllLoss():
                 indisize[2],
                 indisize[3]).to(self.device))
         se = (flow_label - flow_output) * \
-            (flow_label - flow_output) / self.bathsize
+            (flow_label - flow_output)
 
-        loss = torch.sum((indicator * se)) / self.bathsize
+        loss = torch.mean((indicator * se))
 
         return loss
 
@@ -220,7 +224,7 @@ class AllLoss():
         rolled_mse = roll_flow_tensor[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)] * \
             flow_output[:, :, 1:(o_shape[2]-1), 1:(o_shape[3]-1)]
 
-        return torch.sum(rolled_mse)
+        return torch.mean(rolled_mse)
 
 
 if __name__ == "__main__":
