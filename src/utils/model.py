@@ -70,7 +70,7 @@ class CANNet(nn.Module):
         x = self.backend(x)
         x = self.output_layer(x)
         x = nn.ReLU()(x)
-        x = nn.Sigmoid()(x)
+        # x = nn.Sigmoid()(x)
         return x
 
     def _initialize_weights(self):

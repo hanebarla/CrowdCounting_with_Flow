@@ -77,14 +77,14 @@ class AllLoss():
 
         loss_combi = floss + alpha * closs
 
-        oloss = None
+        oloss = torch.tensor([0])
         if self.optical_loss_on == 1:
             oloss = self.optical_loss(tm_personlabel,
                                       tm2t_flow_label,
                                       output_before_foward)
             loss_combi += beta * oloss
 
-        dloss = None
+        dloss = torch.tensor([0])
         if self.direction_loss_on == 1:
             dloss = self.direction_loss(output_before_foward) + \
                 self.direction_loss(output_aftter_foward)

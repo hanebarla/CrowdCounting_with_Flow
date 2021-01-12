@@ -21,7 +21,7 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
                                                  In default, path is 'TrainData_Path.csv'
                                                  """)
     parser.add_argument('-p', '--path', default='TrainData_Path.csv')
-    parser.add_argument('-e', '--epoch', type=int, default=100)
+    parser.add_argument('-e', '--epoch', type=int, default=50)
     parser.add_argument('-wd', '--width', type=int, default=640)
     parser.add_argument('-ht', '--height', type=int, default=360)
     args = parser.parse_args()
@@ -29,6 +29,16 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
 
     minibatch_size = 48
     epock_num = args.epoch
+
+    lr = 0.004883871414132006
+    wd = 1.1233220133366867e-08
+    gamma = 0.00010961378774781317
+    ol = 1
+    dl = 0
+    datatime = str(datetime.date.today())
+    savedir = os.path.join('exp', datatime)
+    if not os.path.isdir(savedir):
+        os.mkdir(savedir)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -55,8 +65,8 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
 
     criterion = Losses.AllLoss(device=device,
                                batchsize=minibatch_size,
-                               optical_loss_on=1,
-                               direction_loss_on=1)
+                               optical_loss_on=ol,
+                               direction_loss_on=dl)
     optimizer = optim.Adam(CANnet.parameters(),
                            lr=lr,
                            betas=(0.9, 0.999),
@@ -95,9 +105,10 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
                 t_img.to(device, dtype=torch.float),\
                 tp_img.to(device, dtype=torch.float)
 
-            tm_person, t_person, tp_person = tm_person.to(device, dtype=torch.float), \
-                t_person.to(device, dtype=torch.float),\
-                tp_person.to(device, dtype=torch.float)
+            tm_person, t_person, tp_person = tm_person.to(
+                device, dtype=torch.float), t_person.to(
+                device, dtype=torch.float), tp_person.to(
+                device, dtype=torch.float)
 
             tm2t_flow, t2tp_flow = tm2t_flow.to(device, dtype=torch.float),\
                 t2tp_flow.to(device, dtype=torch.float)
@@ -110,10 +121,15 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
             with torch.set_grad_enabled(True):
                 output_after_forward = CANnet(t_img, tp_img)
 
-            loss_all = criterion.forward(tm_person, t_person, tm2t_flow,
-                                         output_befoer_forward, output_before_back,
-                                         output_after_forward, output_after_back,
-                                         gamma=gamma)
+            loss_all = criterion.forward(
+                tm_person,
+                t_person,
+                tm2t_flow,
+                output_befoer_forward,
+                output_before_back,
+                output_after_forward,
+                output_after_back,
+                gamma=gamma)
 
             loss_item = loss_all[0].item()  # all loss
             floss_item = loss_all[1].item()  # flow loss
@@ -145,23 +161,22 @@ def train(lr=1e-3, wd=1e-3, gamma=1e-2):
         print('-------------')
         print(
             'epoch {} || Loss:{}, FlowLoss:{}, CycleLoss:{}, OptiLoss:{}, DirectLoss:{}'.format(
-                epock +
-                1,
+                epock + 1,
                 e_loss,
                 e_floss,
                 e_closs,
                 e_oloss,
                 e_dloss))
-        if (epock + 1) == epock_num or (epock + 1) % 100 == 0:
-            save_path = os.path.join("models", '{}_h_{}_w_{}_lr_{}_wd_{}_e_{}.pth'.format(
-                datetime.date.today(), args.height, args.width, lr, wd, epock + 1))
+        if (epock + 1) == epock_num or (epock + 1) % 50 == 0:
+            save_path = os.path.join(
+                savedir, '{}_{}_{}_e{}.pth'.format(
+                    "normal", "oloss" * ol, "dloss" * dl, epock + 1))
             torch.save(CANnet.state_dict(), save_path)
 
     print("Training Done!!")
 
-    save_fig_name = os.path.join("Logs",
-                                 '{}_h_{}_w_{}_lr_{}_wd_{}.png'.format(
-                                     datetime.date.today(),
+    save_fig_name = os.path.join(savedir,
+                                 'h_{}_w_{}_lr_{}_wd_{}.png'.format(
                                      args.height,
                                      args.width,
                                      lr,
